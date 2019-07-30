@@ -8,13 +8,11 @@ import { darken } from 'polished'
 
 const Header = ({ siteTitle }) => (
   <NavigatonBar>
-    <LogoContainer>
-      <h1>
-        <Logo
-        to="/">
+    <LogoContainer
+    to="/">
+        <Logo>
           {siteTitle}
         </Logo>
-      </h1>
     </LogoContainer>
     <Navmenu>
       <Navlink
@@ -58,9 +56,9 @@ const Navlink = styled(Link)`
 `
 const Navmenu = styled.nav`
 `
-const LogoContainer = styled.div`
+const LogoContainer = styled(Link)`
 `
-const Logo = styled(Link)`
+const Logo = styled.div`
 `
 const NavigatonBar = styled.header`
   background-color: #fff;
@@ -71,6 +69,7 @@ const NavigatonBar = styled.header`
     max-width: 960px;
     margin-right: 2rem;
     position: relative;
+    text-decoration: none;
     padding: 0 1.0875rem;
     &::before {
       content: "";
@@ -81,17 +80,21 @@ const NavigatonBar = styled.header`
       height: 100%;
       position: absolute;
       left: 2px;
+      transition: background-color 250ms ease-in-out;
     }
-    h1 {
+    &:hover {
+      &::before {
+        background-color: ${darken(0.2, variable.SiteColor)};
+      }
+    }
+    ${Logo} {
+      color: white;
       margin: unset;
       z-index: 1;
       position: relative;
       font-size: 1.4rem;
       line-height: 62px;
-      ${Logo} {
-        color: white;
-        text-decoration: none;
-      }
+      font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
     }
   }
   ${Navmenu} {
@@ -133,18 +136,23 @@ const NavigatonBar = styled.header`
         color: #fff;
         background-color: ${variable.SiteColor};
         text-decoration: unset;
+        background-size: 135px 1px;  
         font-size: 0.85rem;
         padding: 8px 17px;
         font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
         transition: background-color 230ms ease-in-out;
         &:hover {
-          background-color: ${darken(0.15, variable.SiteColor)}
+          background-color: ${darken(0.15, variable.SiteColor)};
         }
       }
     }
   }
-  @media screen and ${variable.BelowMidPoint} {
-    ${Actionbtns},
+  @media screen and (max-width: 719px) {
+    ${Actionbtns} {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 580px) {
     ${Navmenu} {
       display: none;
     }
