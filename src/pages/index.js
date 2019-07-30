@@ -12,20 +12,22 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Hero>
       <Image />
-      <QuoteBox>
-        <QHeader>Request A Quote TODAY!</QHeader>
-        <Body>
-          <PhoneNumber
-          href="tel:909-000-0000">
-            (909) 000-0000
-          </PhoneNumber>
-          <p>OR</p>
-          <RequestBtn
-          href="mailto:support@cylinderheadexchangeshop.com">
-            Request Quote
-          </RequestBtn>
-        </Body>
-      </QuoteBox>
+      <QuoteContainer>
+        <QuoteBox>
+          <QHeader>Request A Quote TODAY!</QHeader>
+          <Body>
+            <PhoneNumber
+            href="tel:909-000-0000">
+              (909) 000-0000
+            </PhoneNumber>
+            <p>OR</p>
+            <RequestBtn
+            href="mailto:support@cylinderheadexchangeshop.com">
+              Request Quote
+            </RequestBtn>
+          </Body>
+        </QuoteBox>
+      </QuoteContainer>
     </Hero>
     <Navigation>
       <Tab
@@ -61,6 +63,9 @@ Viverra vitae congue eu consequat ac. Donec pretium vulputate sapien nec sagitti
 )
 
 export default IndexPage
+
+const QuoteContainer = styled.div`
+`
 
 const RequestBtn = styled.a`
 `
@@ -115,58 +120,75 @@ const Hero = styled.div`
     background-color: rgba(0,0,0,.5);
     z-index: 1;
   }
-  ${QuoteBox} {
+  ${QuoteContainer} {
+    z-index: 2;
+    right: 3rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    right: 4rem;
-    top: 40%;
-    z-index: 2;
-    font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
-    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
-    ${QHeader} {
-      background-color: ${variable.SiteColor};
-      color: #fff;
-      font-size: 1rem;
-      padding: 10px 45px;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      text-align: center;
-    }
-    ${Body} {
-      background-color: #fff;
-      padding: 21px 16px;
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
+    justify-content: center;
+    ${QuoteBox} {
       display: flex;
       flex-direction: column;
-      ${PhoneNumber} {
-        align-self: center;
-        color: ${variable.SiteColor};
-        font-weight: bold;
-        text-decoration: unset;
-        font-size: 2rem;
-        transition: 250ms color ease-in-out;
-        &:hover {
-          color: ${darken(0.18, variable.SiteColor)}
-        }
-      }
-      p {
-        align-self: center;
-        margin: 0.5rem 0;
-        font-size: 0.6rem;
-      }
-      ${RequestBtn} {
-        align-self: center;
+      z-index: 2;
+      font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
+      box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+      ${QHeader} {
         background-color: ${variable.SiteColor};
-        padding: 8px 16px;
         color: #fff;
-        text-decoration: unset;
-        border-radius: 3px;
-        transition: 250ms background-color ease-in-out;
-        &:hover {
-          background-color ${darken(0.18, variable.SiteColor)};
+        font-size: 1rem;
+        padding: 10px 45px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        text-align: center;
+      }
+      ${Body} {
+        background-color: #fff;
+        padding: 21px 16px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        ${PhoneNumber} {
+          align-self: center;
+          color: ${variable.SiteColor};
+          font-weight: bold;
+          text-decoration: unset;
+          font-size: 2rem;
+          transition: 250ms all ease-in-out;
+          &:hover {
+            color: ${darken(0.18, variable.SiteColor)}
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
+          }
         }
+        p {
+          align-self: center;
+          margin: 0.5rem 0;
+          font-size: 0.6rem;
+        }
+        ${RequestBtn} {
+          align-self: center;
+          background-color: ${variable.SiteColor};
+          padding: 8px 16px;
+          color: #fff;
+          text-decoration: unset;
+          border-radius: 3px;
+          transition: 250ms background-color ease-in-out;
+          &:hover {
+            background-color ${darken(0.18, variable.SiteColor)};
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 719px) {
+    ${QuoteContainer} {
+      right: unset;
+      width: 100%;
+      ${QuoteBox} {
+        margin: 0 auto;
       }
     }
   }
