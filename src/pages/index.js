@@ -141,7 +141,7 @@ const Hero = styled.div`
     z-index: 1;
   }
   ${Actionbtns} {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
     margin: 0 auto;
@@ -246,6 +246,9 @@ const Hero = styled.div`
   @media screen and (max-width: 719px) {
     ${QuoteContainer} {
       display: none;
+    }
+    ${Actionbtns} {
+      display: flex;
     }
   }
 `
