@@ -28,6 +28,23 @@ const IndexPage = () => (
           </Body>
         </QuoteBox>
       </QuoteContainer>
+      <Actionbtns>
+        <Container>
+          <Btn
+          target="_blank"
+          href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385">
+            Get Directions
+          </Btn>
+          <Btn 
+          href="mailto:support@cylinderheadexchangeshop.com">
+            Request Quote
+          </Btn>
+          <Btn 
+          href="tel:909-000-0000">
+            Call Us
+          </Btn>
+        </Container>
+      </Actionbtns>
     </Hero>
     <Navigation>
       <Tab
@@ -64,25 +81,25 @@ Viverra vitae congue eu consequat ac. Donec pretium vulputate sapien nec sagitti
 
 export default IndexPage
 
+const Btn = styled.a`
+`
+const Actionbtns = styled.div`
+`
 const QuoteContainer = styled.div`
 `
-
 const RequestBtn = styled.a`
 `
-
 const PhoneNumber = styled.a`
 `
-
 const Tab = styled.a`
 `
-
 const QuoteBox = styled.div`
 `
-
 const QHeader = styled.div`
 `
-
 const Body = styled.div`
+`
+const Container = styled.div`
 `
 
 const Navigation = styled.div`
@@ -103,6 +120,9 @@ const Navigation = styled.div`
       background-color: #fff;
       color: ${variable.SiteColor};
     }
+    &:last-child {
+      margin-right: unset;
+    }
   }
 `
 
@@ -120,9 +140,49 @@ const Hero = styled.div`
     background-color: rgba(0,0,0,.5);
     z-index: 1;
   }
+  ${Actionbtns} {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 0 auto;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    justify-content: center;
+    ${Container} {
+      display: flex;
+      flex-direction: column;
+      max-width: 320px;
+      margin: 0 auto;
+      ${Btn} {
+        margin: 0 auto;
+        background-color: ${variable.SiteColor};
+        color: #fff;
+        text-decoration: unset;
+        text-align: center;
+        padding: 13px 75px;
+        margin-bottom: 1rem;
+        width: 100%;
+        font-size: 1.13rem;
+        transition: background-color 250ms ease-in-out;
+        &:last-child {
+          margin-bottom: unset;
+        }
+        &:first-child {
+          background-color: #fff;
+          color: ${variable.SiteColor};
+        }
+        &:hover {
+          background-color: ${darken(0.18, variable.SiteColor)};
+          color: #fff;
+        }
+      }
+    }
+  }
   ${QuoteContainer} {
     z-index: 2;
-    right: 3rem;
+    left: 3rem;
     height: 100%;
     position: absolute;
     top: 0;
@@ -157,10 +217,9 @@ const Hero = styled.div`
           font-weight: bold;
           text-decoration: unset;
           font-size: 2rem;
-          transition: 250ms all ease-in-out;
+          transition: 250ms color ease-in-out;
           &:hover {
-            color: ${darken(0.18, variable.SiteColor)}
-            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
+            color: ${darken(0.18, variable.SiteColor)};
           }
         }
         p {
@@ -175,9 +234,10 @@ const Hero = styled.div`
           color: #fff;
           text-decoration: unset;
           border-radius: 3px;
-          transition: 250ms background-color ease-in-out;
+          transition: 250ms all ease-in-out;
           &:hover {
             background-color ${darken(0.18, variable.SiteColor)};
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
           }
         }
       }
@@ -185,11 +245,7 @@ const Hero = styled.div`
   }
   @media screen and (max-width: 719px) {
     ${QuoteContainer} {
-      right: unset;
-      width: 100%;
-      ${QuoteBox} {
-        margin: 0 auto;
-      }
+      display: none;
     }
   }
 `
