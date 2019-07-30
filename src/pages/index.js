@@ -112,10 +112,11 @@ const Navigation = styled.div`
   ${Tab} {
     color: #fff;
     text-decoration: unset;
-    padding: 11px 15px;
+    padding: 14px 28px;
     font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
     margin-right: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    transition: all 250ms ease-in-out;
     &:hover {
       background-color: #fff;
       color: ${variable.SiteColor};
