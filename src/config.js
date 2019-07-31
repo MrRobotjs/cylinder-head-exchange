@@ -13,3 +13,5 @@ export const MidPoint = '(min-width: 850px)';
 export const BelowMidPoint = '(max-width: 849px)';
 
 export const Desktop = '(min-width: 768px)';
+
+export const iP5s = '(max-width: 320px)';

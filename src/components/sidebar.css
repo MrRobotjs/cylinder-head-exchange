@@ -49,10 +49,57 @@
         display: initial;
     }
   }
+
+  @media screen and (max-width: 425px) {
+    .bm-burger-button {
+        width: 33px;
+        height: 27px;
+        left: 18px;
+        top: 18px;
+    }
+  }
+  @media screen and (max-width: 405px) {
+    .bm-burger-button {
+        width: 28px;
+        height: 22px;
+        left: 15px;
+    }
+  }
+  @media screen and (max-width: 385px) {
+    .bm-burger-button {
+        width: 24px;
+        height: 22px;
+        left: 13px;
+    }
+  }
+  @media screen and (max-width: 365px) {
+    .bm-burger-button {
+        left: 9px;
+    }
+  }
+  @media screen and (max-width: 330px) {
+    .bm-burger-button {
+        width: 22px;
+        height: 22px;
+    }
+  }
+  @media screen and (max-width: 313px) {
+    .bm-burger-button {
+        width: 20px;
+        height: 20px;
+        left: 6.5px;
+    }
+  }
   
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
     background: #ff2b3c;
+  }
+
+  @media screen and (max-width: 357px) {
+    .bm-burger-bars {
+        background: #fff;
+    }
   }
   
   /* Position and sizing of clickable cross button */

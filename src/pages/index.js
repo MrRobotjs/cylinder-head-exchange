@@ -252,4 +252,14 @@ const Hero = styled.div`
       display: flex;
     }
   }
+  @media screen and ${variable.iP5s} {
+    ${Actionbtns} {
+      ${Container} {
+        ${Btn} {
+          padding: 10px 45px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 `

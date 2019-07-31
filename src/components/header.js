@@ -95,6 +95,7 @@ const NavigatonBar = styled.header`
       font-size: 1.4rem;
       line-height: 62px;
       font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
+      white-space: nowrap;
     }
   }
   ${Navmenu} {
@@ -202,6 +203,17 @@ const NavigatonBar = styled.header`
     }
     to {
       transform: skew(-19deg,0deg) translatex(-9.5px) translatey(0);
+    }
+  }
+  @media screen and (max-width: 357px) {
+    background-color: ${variable.SiteColor};
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
+  }
+  @media screen and ${variable.iP5s} {
+    ${LogoContainer} {
+      ${Logo} {
+        text-indent: 15px;
+      }
     }
   }
 `
