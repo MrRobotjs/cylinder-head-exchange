@@ -23,7 +23,7 @@ const Header = ({ siteTitle }) => (
       activeClassName="active">Page 2</Navlink>
       <Navlink
       to="/page-3"
-      activeClassName="active">Page 3</Navlink>
+      activeClassName="active">404</Navlink>
     </Navmenu>
     <Actionbtns>
       <Ripplescontainer
@@ -104,7 +104,6 @@ const NavigatonBar = styled.header`
       line-height: 60px;
       height: 100%;
       margin-right: 1.5rem;
-      border-bottom: 2px solid transparent;
       text-decoration: unset;
       color: #5f6368;
       font-size: 0.8rem;
@@ -112,14 +111,40 @@ const NavigatonBar = styled.header`
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       transition: border-color ease-in-out 230ms;
-      &:hover,
+      position: relative;
+      z-index: 1;
+      padding: 0px 10px;
+      &::before {
+        content: "";
+        transform: skew(-19deg,0deg) translatex(-9.5px) translatey(-72px);
+        background-color: #ff2b3c;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: background-color 250ms ease-in-out;
+        z-index: -1;
+      }
       &.active {
-        border-color: ${variable.SiteColor};
-        color: ${variable.SiteColor};
         font-weight: bold;
+        color: #fff;
+        &:hover {
+          color: #fff;
+          &::before {
+            background-color: ${darken(0.17, variable.SiteColor)};
+          }
+        }
+        &::before {
+          animation-fill-mode: forwards;
+          animation-name: transform;
+          animation-duration: 230ms;
+          animation-timing-function: ease-out;
+        }
       }
       &:hover {
+        color: #fff;
         font-weight: unset;
+        color: ${variable.SiteColor};
         &.active {
           font-weight: bold;
         }
@@ -147,17 +172,36 @@ const NavigatonBar = styled.header`
       }
     }
   }
-  @media screen and (max-width: 719px) {
+  @media screen and (max-width: 960px) {
     ${Actionbtns} {
       display: none;
     }
   }
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 719px) {
     ${Navmenu} {
       display: none;
     }
     ${LogoContainer} {
       margin: 0 auto;
+    }
+  }
+  @keyframes height {
+    0% {
+      height: 0%;
+    }
+    50% {
+      height: 50%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  @keyframes transform {
+    from {
+      transform: skew(-19deg,0deg) translatex(-9.5px) translatey(-72px);
+    }
+    to {
+      transform: skew(-19deg,0deg) translatex(-9.5px) translatey(0);
     }
   }
 `
