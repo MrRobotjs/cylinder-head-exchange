@@ -20,6 +20,7 @@
     "react": "^16.8.6",
     "react-burger-menu": "^2.6.10",
     "react-dom": "^16.8.6",
+    "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.1",
     "react-ripples": "^2.1.1",
     "smooth-scroll": "^16.1.0",

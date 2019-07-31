@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Ripples from 'react-ripples'
 import * as variable from 'src/config' 
 import { darken } from 'polished'
+import SideBar from "../components/sidebar"
 
 const Header = ({ siteTitle }) => (
   <NavigatonBar>
@@ -25,6 +26,7 @@ const Header = ({ siteTitle }) => (
       to="/page-3"
       activeClassName="active">404</Navlink>
     </Navmenu>
+    <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} right/>
     <Actionbtns>
       <Ripplescontainer
       color="rgba(255,255,255,0.7)">

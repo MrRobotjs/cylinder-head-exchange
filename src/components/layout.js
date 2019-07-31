@@ -10,7 +10,6 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
-import SideBar from "../components/sidebar"
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -29,9 +28,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div id="App">
-      <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
-      <div id="page-wrap">
+    <>
       <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
         <footer>
@@ -39,8 +36,7 @@ const Layout = ({ children }) => {
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
-    </div>
+    </>
   )
 }
 

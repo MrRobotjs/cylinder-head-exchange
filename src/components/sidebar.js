@@ -1,5 +1,5 @@
 import React from "react";
-import { elastic as Menu } from "react-burger-menu";
+import { slide as Menu } from "react-burger-menu";
 import 'src/components/sidebar.css'
 import { Link } from 'gatsby'
 
