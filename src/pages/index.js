@@ -107,7 +107,7 @@ const Navigation = styled.div`
   position: sticky;
   top: 0;
   background-color: ${variable.SiteColor};
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
   justify-content: center;
   ${Tab} {
     color: #fff;

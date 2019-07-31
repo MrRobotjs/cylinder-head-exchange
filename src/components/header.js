@@ -106,7 +106,6 @@ const NavigatonBar = styled.header`
       align-self: center;
       line-height: 60px;
       height: 100%;
-      margin-right: 1.5rem;
       text-decoration: unset;
       color: #5f6368;
       font-size: 0.8rem;
@@ -116,10 +115,10 @@ const NavigatonBar = styled.header`
       transition: border-color ease-in-out 230ms;
       position: relative;
       z-index: 1;
-      padding: 0px 10px;
+      padding: 0px 17px;
       &::before {
         content: "";
-        transform: skew(-19deg,0deg) translatex(-9.5px) translatey(-72px);
+        transform: skew(-19deg,0deg) translatey(-72px);
         background-color: #ff2b3c;
         display: block;
         width: 100%;
@@ -127,6 +126,28 @@ const NavigatonBar = styled.header`
         position: absolute;
         transition: background-color 250ms ease-in-out;
         z-index: -1;
+        border-right: 1px solid #eee;
+        bottom: left;
+        left: 0;
+      }
+      &::after {
+        content: "";
+        transform: skew(-19deg,0deg);
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: background-color 250ms ease-in-out;
+        z-index: -1;
+        border-left: 1px solid #ebebeb;
+        left: 0;
+        bottom: 0;
+      }
+      &:first-child {
+        margin-left: 1.5rem;
+      }
+      &:last-child {
+        margin-right: 0px solid transparent;
       }
       &.active {
         font-weight: bold;
@@ -142,6 +163,10 @@ const NavigatonBar = styled.header`
           animation-name: transform;
           animation-duration: 230ms;
           animation-timing-function: ease-out;
+          border-right: 1px solid transparent;
+        }
+        &::after {
+          border-color: transparent;
         }
       }
       &:hover {
@@ -201,10 +226,10 @@ const NavigatonBar = styled.header`
   }
   @keyframes transform {
     from {
-      transform: skew(-19deg,0deg) translatex(-9.5px) translatey(-72px);
+      transform: skew(-19deg,0deg) translatey(-72px);
     }
     to {
-      transform: skew(-19deg,0deg) translatex(-9.5px) translatey(0);
+      transform: skew(-19deg,0deg) translatey(0);
     }
   }
   @media screen and (max-width: 357px) {
