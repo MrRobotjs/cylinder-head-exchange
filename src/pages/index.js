@@ -6,6 +6,9 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import * as variable from 'src/config.js'
 import {darken} from 'polished'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import "react-tabs/style/react-tabs.css";
+import GoogleMapReact from 'google-map-react';
 
 const IndexPage = () => (
   <Layout>
@@ -28,6 +31,38 @@ const IndexPage = () => (
           </Body>
         </QuoteBox>
       </QuoteContainer>
+      <TContainer>
+        <TTContainer>
+          <TabsContainer>
+            <TabListt>
+              <Tabt>Quote</Tabt>
+              <Tabt>Directions</Tabt>
+            </TabListt>
+        
+            <TabPanelt>
+            QuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuote
+            </TabPanelt>
+            <TabPanelt>
+            <div style={{height: '10rem', width: '100%'}}> 
+              <GoogleMapReact
+              bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
+              defaultCenter={{lat: 34.05, lng: -117.68}}
+              defaultZoom={11}>
+                <div 
+                lat={34.056489}
+                lng={-117.685391}
+                style={{height: '2rem', width: '2rem', backgroundColor: 'red'}}>Cylinder Head Exchange</div>
+              </GoogleMapReact>
+            </div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta. In iaculis nunc sed augue lacus. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Sagittis purus sit amet volutpat consequat mauris. Maecenas volutpat blandit aliquam etiam. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Quis enim lobortis scelerisque fermentum dui faucibus. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Augue eget arcu dictum varius duis at consectetur.
+            </TabPanelt>
+          </TabsContainer>
+          <Text>
+            <Header>AUTO REPAIR SERVICES</Header>
+            <SubHeader>WE ARE THE SOLUTION TO ALL YOUR VEHICLE PROBLEMS FOR THE BEST PRICE GURANTEED!</SubHeader>
+          </Text>
+        </TTContainer>
+      </TContainer>
       <Actionbtns>
         <Container>
           <Btn
@@ -47,18 +82,18 @@ const IndexPage = () => (
       </Actionbtns>
     </Hero>
     <Navigation>
-      <Tab
+      <Tabd
       href="#top">
-        Home
-      </Tab>
-      <Tab
+        top
+      </Tabd>
+      <Tabd
       href="#bottom">
         bottom
-      </Tab>
-      <Tab
+      </Tabd>
+      <Tabd
       href="">
-        Home
-      </Tab>
+        refresh
+      </Tabd>
     </Navigation>
     <h2 id="top">My Cool Header</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta. In iaculis nunc sed augue lacus. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Sagittis purus sit amet volutpat consequat mauris. Maecenas volutpat blandit aliquam etiam. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Quis enim lobortis scelerisque fermentum dui faucibus. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Augue eget arcu dictum varius duis at consectetur.
@@ -80,7 +115,24 @@ Viverra vitae congue eu consequat ac. Donec pretium vulputate sapien nec sagitti
 )
 
 export default IndexPage
-
+const Header = styled.h2`
+`
+const SubHeader = styled.h3`
+`
+const TabPanelt = styled(TabPanel)`
+`
+const Text = styled.div`
+`
+const Tabt = styled(Tab)`
+`
+const TabListt = styled(TabList)`
+`
+const TContainer = styled.div`
+`
+const TTContainer = styled.div`
+`
+const TabsContainer = styled(Tabs)`
+`
 const Btn = styled.a`
 `
 const Actionbtns = styled.div`
@@ -91,7 +143,7 @@ const RequestBtn = styled.a`
 `
 const PhoneNumber = styled.a`
 `
-const Tab = styled.a`
+const Tabd = styled.a`
 `
 const QuoteBox = styled.div`
 `
@@ -109,7 +161,7 @@ const Navigation = styled.div`
   background-color: ${variable.SiteColor};
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
   justify-content: center;
-  ${Tab} {
+  ${Tabd} {
     color: #fff;
     text-decoration: unset;
     padding: 14px 28px;
@@ -131,7 +183,6 @@ const Hero = styled.div`
   max-height: calc(100vh - 3rem);
   display: block;
   width: 100%;
-  margin-top: -26px;
   position: relative;
   overflow: hidden;
   &::before {
@@ -181,6 +232,113 @@ const Hero = styled.div`
       }
     }
   }
+  ${TContainer} {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    ${TTContainer} {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 2rem;
+      padding-top: 2rem;
+      margin-bottom: 2rem;
+      max-height: 100%;
+      ${TabsContainer} {
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        ${TabListt} {
+          display: flex;
+          margin: unset;
+          ${Tabt} {
+            flex: 1;
+            color: rgba(255,255,255,0.8);
+            list-style: none;
+            padding: 10px 18px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
+            transition: all linear 200ms;
+            background-color: ${darken(0.18,variable.SiteColor)};
+            margin: unset;
+            &.react-tabs__tab--selected {
+              background-color: ${variable.SiteColor};
+              color: #fff;
+              border-color: ${variable.SiteColor};
+            }
+            &:focus {
+              outline: unset;
+            }
+            &:first-child {
+              border-top-right-radius: 0;
+              border-top-left-radius: 7px;
+              border-right: 1.5px solid ${darken(0.27,variable.SiteColor)};
+            }
+            &:last-child {
+              border-top-left-radius: 0;
+              border-top-right-radius: 7px;
+              border-left: 1.5px solid ${darken(0.27,variable.SiteColor)};
+            }
+            &:hover {
+              cursor: pointer;
+              color: #fff;
+              background-color: ${darken(0.21,variable.SiteColor)};
+              &.react-tabs__tab--selected {
+                background-color: ${variable.SiteColor};
+              }
+            }
+          }
+        }
+        ${TabPanelt} {
+          background-color: ${variable.SiteColor};
+          padding: 10px 15px;
+          border-bottom-left-radius: 7px;
+          border-bottom-right-radius: 7px;
+          display: none;
+          word-break: break-all;
+          max-height: calc(100% - 46px);
+          overflow: auto;
+          &.react-tabs__tab-panel--selected {
+            display: block;
+          }
+        }
+      }
+      ${Text} {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        padding-left: 25px;
+        padding-top: unset;
+        padding-right: unset;
+        padding-bottom: 30px;
+        justify-content: flex-end;
+        ${Header} {
+          color: #fff;
+          font-size: 3.4rem;
+          margin-bottom: 0.9rem;
+          text-shadow: 2px 2px 2px #000;
+          max-width: 23rem;
+          line-height: 94%;
+        }
+        ${SubHeader} {
+          margin: unset;
+          max-width: calc(100% - 14rem);
+          color: #fff;
+          font-weight: normal;
+          line-height: 135%;
+          text-shadow: 2px 2px 2px #000;
+        }
+      }
+    }
+  }
   ${QuoteContainer} {
     z-index: 2;
     left: 3rem;
@@ -188,6 +346,7 @@ const Hero = styled.div`
     position: absolute;
     top: 0;
     display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     ${QuoteBox} {
@@ -245,11 +404,24 @@ const Hero = styled.div`
     }
   }
   @media screen and (max-width: 719px) {
+    ${TContainer} {
+      ${TTContainer} {
+        ${TabsContainer} {
+          ${TabPanelt} {
+             
+          }
+        }
+        ${Text} {
+          display: none;
+        }
+      }
+    }
     ${QuoteContainer} {
       display: none;
     }
     ${Actionbtns} {
       display: flex;
+      display: none;
     }
   }
   @media screen and ${variable.iP5s} {
