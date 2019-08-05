@@ -31,7 +31,6 @@ const IndexPage = () => (
           </Body>
         </QuoteBox>
       </QuoteContainer>
-      <TContainer>
         <TTContainer>
           <TabsContainer>
             <TabListt>
@@ -62,7 +61,6 @@ const IndexPage = () => (
             <SubHeader>WE ARE THE SOLUTION TO ALL YOUR VEHICLE PROBLEMS FOR THE BEST PRICE GURANTEED!</SubHeader>
           </Text>
         </TTContainer>
-      </TContainer>
       <Actionbtns>
         <Container>
           <Btn
@@ -232,28 +230,23 @@ const Hero = styled.div`
       }
     }
   }
-  ${TContainer} {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     ${TTContainer} {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       margin: 0 2rem;
-      padding-top: 2rem;
-      margin-bottom: 2rem;
-      max-height: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 2;
       ${TabsContainer} {
         flex: 1;
-        height: 100%;
         overflow: hidden;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 2rem);
         ${TabListt} {
           display: flex;
           margin: unset;
@@ -304,8 +297,8 @@ const Hero = styled.div`
           border-bottom-right-radius: 7px;
           display: none;
           word-break: break-all;
-          max-height: calc(100% - 46px);
           overflow: auto;
+          -webkit-overflow-scrolling: touch;
           &.react-tabs__tab-panel--selected {
             display: block;
           }
@@ -316,10 +309,7 @@ const Hero = styled.div`
         flex-direction: column;
         flex: 2;
         padding-left: 25px;
-        padding-top: unset;
-        padding-right: unset;
-        padding-bottom: 30px;
-        justify-content: flex-end;
+        align-self: center;
         ${Header} {
           color: #fff;
           font-size: 3.4rem;
@@ -338,7 +328,7 @@ const Hero = styled.div`
         }
       }
     }
-  }
+  
   ${QuoteContainer} {
     z-index: 2;
     left: 3rem;
@@ -431,6 +421,15 @@ const Hero = styled.div`
           padding: 10px 45px;
           font-size: 1rem;
         }
+      }
+    }
+  }
+  @media screen and (max-width: 790px) {
+    ${TTContainer} {
+      ${TabsContainer} {
+      }
+      ${Text} {
+        display: none;
       }
     }
   }
