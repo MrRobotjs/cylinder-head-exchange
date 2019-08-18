@@ -51,6 +51,12 @@
   .bm-menu-wrap {
     top: 0;
   }
+
+  @media screen and (max-width: 719px) {
+    .bm-burger-button {
+        display: initial;
+    }
+  }
   
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
