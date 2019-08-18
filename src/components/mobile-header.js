@@ -156,7 +156,7 @@ const MobileNavigationBar = styled.nav`
         background-color: #eee;
         }
   }
-  @media ${variable.MidPoint} {
+  @media screen and (min-width: 720px) {
     vertical-align: top;
     width: auto;
     padding: 0;

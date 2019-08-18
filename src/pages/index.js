@@ -248,6 +248,7 @@ const Hero = styled.div`
         flex-direction: column;
         justify-content: center;
         height: calc(100% - 2rem);
+        width: 100%;
         ${TabListt} {
           display: flex;
           margin: unset;
@@ -433,7 +434,7 @@ const Hero = styled.div`
       width: 100%;
       margin: unset;
       ${TabsContainer} {
-        margin: 1rem;
+        margin: 0 1rem;
       }
       ${Text} {
         display: none;

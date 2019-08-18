@@ -20,6 +20,8 @@ export default props => {
       activeClassName="active">
         Page 2
       </Link>
+
+      <a href="mailto:contact@cylinderheadexchangeshop.com" target="_blank" className="contact">Contact Us</a>
     </Menu>
   );
 };
