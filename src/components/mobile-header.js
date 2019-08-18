@@ -103,7 +103,6 @@ const MobileNavigationBar = styled.nav`
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
   ${Tab} {
     display: flex;
-    flex: 1 1;
     align-items: center;
     flex-direction: column;
     margin: unset;
@@ -121,7 +120,7 @@ const MobileNavigationBar = styled.nav`
         width: 22px;
         margin: unset;
         fill: #ff2b3c;
-        opacity: 0.6;
+        opacity: 0.8;
         transition: .2s linear ease-in-out;
         g, path, circle {
             fill: ${variable.SiteColor};
@@ -129,7 +128,8 @@ const MobileNavigationBar = styled.nav`
         & ~ ${Title} {
             top: -3.7px;
             position: relative;
-            color: hsla(355, 100%, 58%,.8);
+            color: ${variable.SiteColor};
+            opacity: 0.8;
         }
       }
     &[class*="active"] {
@@ -149,7 +149,7 @@ const MobileNavigationBar = styled.nav`
             opacity: 1;
         }
         ${Title} {
-            color: #ff2b3c;
+            opacity: 1;
         }
     }
     &:active, &:focus {
