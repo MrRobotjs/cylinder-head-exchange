@@ -253,6 +253,7 @@ const Hero = styled.div`
           display: flex;
           margin: unset;
           ${Tabt} {
+            flex-shrink: 0;
             flex: 1;
             color: rgba(255,255,255,0.8);
             list-style: none;
