@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
+import MobileHeader from "./mobile-header"
 import "./layout.css"
 
 if (typeof window !== "undefined") {
@@ -30,6 +31,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
+      <MobileHeader />
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
