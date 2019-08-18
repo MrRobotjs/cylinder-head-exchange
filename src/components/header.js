@@ -15,15 +15,23 @@ const Header = ({ siteTitle }) => (
         </Logo>
     </LogoContainer>
     <Navmenu>
-      <Navlink
-      to="/"
-      activeClassName="active">Home</Navlink>
-      <Navlink
-      to="/page-2"
-      activeClassName="active">Page 2</Navlink>
-      <Navlink
-      to="/page-3"
-      activeClassName="active">404</Navlink>
+      <ul>
+        <li>
+          <Navlink
+          to="/"
+          activeClassName="active">Home</Navlink>
+        </li>
+        <li>
+          <Navlink
+          to="/page-2"
+          activeClassName="active">Page 2</Navlink>
+        </li>
+        <li>
+          <Navlink
+          to="/page-3"
+          activeClassName="active">404</Navlink>
+        </li>
+      </ul>
     </Navmenu>
     <Actionbtns>
       <Ripplescontainer
@@ -100,80 +108,88 @@ const NavigatonBar = styled.header`
     }
   }
   ${Navmenu} {
-    display: flex;
-    ${Navlink} {
-      align-self: center;
-      line-height: 60px;
+    ul {
+      display: flex;
+      margin: unset;
       height: 100%;
-      text-decoration: unset;
-      color: #5f6368;
-      font-size: 0.8rem;
-      font-weight: 400;
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      transition: border-color ease-in-out 230ms;
-      position: relative;
-      z-index: 1;
-      padding: 0px 17px;
-      &::before {
-        content: "";
-        transform: skew(-19deg,0deg) translatey(-72px);
-        background-color: #ff2b3c;
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: background-color 250ms ease-in-out;
-        z-index: -1;
-        border-right: 1px solid #eee;
-        bottom: left;
-        left: 0;
-      }
-      &::after {
-        content: "";
-        transform: skew(-19deg,0deg);
-        background-color: transparent;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: background-color 250ms ease-in-out;
-        z-index: -1;
-        border-left: 1px solid #ebebeb;
-        left: 0;
-        bottom: 0;
-      }
-      &:first-child {
-        margin-left: 1.5rem;
-      }
-      &:last-child {
-        margin-right: 0px solid transparent;
-      }
-      &.active {
-        font-weight: bold;
-        color: #fff;
-        &:hover {
-          color: #fff;
-          &::before {
-            background-color: ${darken(0.17, variable.SiteColor)};
+      li {
+        margin-bottom: unset;
+        list-style: none;
+        position: relative;
+        &:first-child {
+          margin-left: 1.5rem;
+        }
+        &:last-child {
+          margin-right: 0px solid transparent;
+        }
+        ${Navlink} {
+          align-self: center;
+          line-height: 60px;
+          height: 100%;
+          text-decoration: unset;
+          color: #5f6368;
+          font-size: 0.8rem;
+          font-weight: 400;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+          transition: border-color ease-in-out 230ms;
+          position: relative;
+          z-index: 1;
+          display: block;
+          padding: 0px 17px;
+          &:hover {
+            color: ${variable.SiteColor};
+            &.active {
+              font-weight: bold;
+            }
           }
-        }
-        &::before {
-          animation-fill-mode: forwards;
-          animation-name: transform;
-          animation-duration: 230ms;
-          animation-timing-function: ease-out;
-          border-right: 1px solid transparent;
-        }
-        &::after {
-          border-color: transparent;
-        }
-      }
-      &:hover {
-        color: #fff;
-        font-weight: unset;
-        color: ${variable.SiteColor};
-        &.active {
-          font-weight: bold;
+          &::before {
+            content: "";
+            transform: skew(-19deg,0deg) translatey(-72px);
+            background-color: ${variable.SiteColor};
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: background-color 250ms ease-in-out;
+            z-index: -1;
+            border-right: 1px solid #eee;
+            bottom: left;
+            left: 0;
+          }
+          &::after {
+            content: "";
+            transform: skew(-19deg,0deg);
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: background-color 250ms ease-in-out;
+            z-index: -1;
+            border-left: 1px solid #ebebeb;
+            left: 0;
+            bottom: 0;
+          }
+          &.active {
+            font-weight: bold;
+            color: #fff;
+            &:hover {
+              color: #fff;
+              &::before {
+                background-color: ${darken(0.17, variable.SiteColor)};
+              }
+            }
+            &::before {
+              animation-fill-mode: forwards;
+              animation-name: transform;
+              animation-duration: 230ms;
+              animation-timing-function: ease-out;
+              border-right: 1px solid transparent;
+            }
+            &::after {
+              border-color: transparent;
+            }
+          }
         }
       }
     }
