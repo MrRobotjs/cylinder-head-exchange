@@ -252,8 +252,9 @@ const Hero = styled.div`
         ${TabListt} {
           display: flex;
           margin: unset;
+          min-height: 45px;
           ${Tabt} {
-            min-height: 20px;
+            min-height: 45px;
             flex: 1;
             color: rgba(255,255,255,0.8);
             list-style: none;
