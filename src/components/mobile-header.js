@@ -106,7 +106,6 @@ const MobileNavigationBar = styled.nav`
     flex-direction: column;
     margin: unset;
     border-bottom: 1px solid hsla(0,0%,100%,0);
-    color: hsla(355, 100%, 58%,.6);
     transition: color .2s linear,border-bottom .2s linear;
     text-decoration: none;
     z-index: 1;
@@ -128,6 +127,7 @@ const MobileNavigationBar = styled.nav`
         & ~ ${Title} {
             top: -3.7px;
             position: relative;
+            color: hsla(355, 100%, 58%,.8);
         }
       }
     &[class*="active"] {

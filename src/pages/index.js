@@ -396,7 +396,9 @@ const Hero = styled.div`
   @media screen and (max-width: 719px) {
     ${TContainer} {
       ${TTContainer} {
+        
         ${TabsContainer} {
+          
           ${TabPanelt} {
              
           }
@@ -427,8 +429,9 @@ const Hero = styled.div`
   @media screen and (max-width: 790px) {
     ${TTContainer} {
       width: 100%;
+      margin: unset;
       ${TabsContainer} {
-        margin: 1rem 0;
+        margin: 1rem;
       }
       ${Text} {
         display: none;

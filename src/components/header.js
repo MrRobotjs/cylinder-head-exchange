@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Ripples from 'react-ripples'
 import * as variable from 'src/config' 
 import { darken } from 'polished'
-import SideBar from "../components/sidebar"
 
 const Header = ({ siteTitle }) => (
   <NavigatonBar>
