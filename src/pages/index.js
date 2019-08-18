@@ -47,10 +47,9 @@ const IndexPage = () => (
               bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
               defaultCenter={{lat: 34.05, lng: -117.68}}
               defaultZoom={11}>
-                <div 
+                <Tooltip data-tooltip="Cylinder Head Exchange" data-tooltip-position="top"
                 lat={34.056489}
-                lng={-117.685391}
-                style={{height: '2rem', width: '2rem', backgroundColor: 'red'}}>Cylinder Head Exchange</div>
+                lng={-117.685391}></Tooltip>
               </GoogleMapReact>
             </div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta. In iaculis nunc sed augue lacus. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Sagittis purus sit amet volutpat consequat mauris. Maecenas volutpat blandit aliquam etiam. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Quis enim lobortis scelerisque fermentum dui faucibus. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Augue eget arcu dictum varius duis at consectetur.
@@ -115,6 +114,8 @@ Viverra vitae congue eu consequat ac. Donec pretium vulputate sapien nec sagitti
 
 export default IndexPage
 const Header = styled.h2`
+`
+const Tooltip = styled.span`
 `
 const SubHeader = styled.h3`
 `
@@ -306,6 +307,52 @@ const Hero = styled.div`
           -webkit-overflow-scrolling: touch;
           &.react-tabs__tab-panel--selected {
             display: block;
+          }
+          ${Tooltip} {
+            display: inline-block;
+            position: relative;
+            cursor: help;
+            padding: 4px;
+            height: 0.5rem;
+            width: 0.5rem;
+            background-color: red;
+            border-radius: 50%;
+            &::before {
+              content: attr(data-tooltip);
+              position: absolute;
+              background: #000;
+              color: #fff;
+              padding: 4px 8px;
+              font-size: 14px;
+              line-height: 1.4;
+              min-width: 107px;
+              text-align: center;
+              border-radius: 4px;
+              font-family: "Racing Sans One";
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 0;
+              border-color: transparent;
+              border-style: solid;
+              z-index: 50;
+            }
+            &[data-tooltip-position="top"] {
+              &::before {
+                left: -500%;
+                bottom: 100%;
+                margin-bottom: 6px;
+              }
+              &::after {
+                left: 50%;
+                margin-left: -6px;
+                bottom: 100%;
+                border-width: 6px 6px 0;
+                border-top-color: #000;
+              }
+            }
           }
         }
       }

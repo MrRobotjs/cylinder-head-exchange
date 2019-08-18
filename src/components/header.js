@@ -119,9 +119,6 @@ const NavigatonBar = styled.header`
         &:first-child {
           margin-left: 1.5rem;
         }
-        &:last-child {
-          margin-right: 0px solid transparent;
-        }
         ${Navlink} {
           align-self: center;
           line-height: 60px;
