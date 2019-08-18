@@ -41,11 +41,7 @@ const mobileHeader = () => (
             <Title>Call</Title>
         </Tab>
         <Tab 
-            to="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" 
-            activeClassName="active"
-            cover
-            bg="#0a0a0a"
-            duration={0.65}
+            href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" 
             >
             <Icon
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,11 +60,7 @@ const mobileHeader = () => (
             <Title>Directions</Title>
         </Tab>
         <Tab 
-            to="/menu/" 
-            activeClassName="active"
-            cover
-            bg="#0a0a0a"
-            duration={0.65}
+            href="#"
             >
             <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} right/>
             <Icon xmlns='http://www.w3.org/2000/svg' id='Capa_1' height='60' viewBox='0 0 512 512' width='22'>
