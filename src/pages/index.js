@@ -251,7 +251,6 @@ const Hero = styled.div`
         ${TabListt} {
           display: flex;
           margin: unset;
-          z-index: 5;
           ${Tabt} {
             flex: 1;
             color: rgba(255,255,255,0.8);
@@ -264,6 +263,7 @@ const Hero = styled.div`
             transition: all linear 200ms;
             background-color: ${darken(0.18,variable.SiteColor)};
             margin: unset;
+            z-index: 5;
             &.react-tabs__tab--selected {
               background-color: ${variable.SiteColor};
               color: #fff;
