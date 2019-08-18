@@ -30,7 +30,8 @@ const Header = ({ siteTitle }) => (
       color="rgba(255,255,255,0.7)">
         <Directionsbtn
         href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385"
-        target="_blank">Get Directions</Directionsbtn>
+        target="_blank"
+        rel="noreferrer">Get Directions</Directionsbtn>
       </Ripplescontainer>
     </Actionbtns>
   </NavigatonBar>
