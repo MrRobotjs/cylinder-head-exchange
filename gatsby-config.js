@@ -8,6 +8,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Racing Sans One', 'Roboto']
+        }
+      }
+    },
+    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         displayName: `true`,

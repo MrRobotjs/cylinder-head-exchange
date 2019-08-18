@@ -21,7 +21,7 @@ export default props => {
         Page 2
       </Link>
 
-      <a href="mailto:contact@cylinderheadexchangeshop.com" target="_blank" className="contact">Contact Us</a>
+      <a href="mailto:contact@cylinderheadexchangeshop.com" target="_blank" rel="noopener noreferrer" className="contact">Contact Us</a>
     </Menu>
   );
 };

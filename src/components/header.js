@@ -95,7 +95,7 @@ const NavigatonBar = styled.header`
       position: relative;
       font-size: 1.4rem;
       line-height: 62px;
-      font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
+      font-family: "Racing Sans One";
       white-space: nowrap;
     }
   }
