@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import * as variable from 'src/config.js'
-import {darken} from 'polished'
+import {darken, rgba} from 'polished'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import GoogleMapReact from 'google-map-react';
@@ -16,20 +16,8 @@ const IndexPage = () => (
     <Hero>
       <Image />
       <QuoteContainer>
-        <QuoteBox>
-          <QHeader>Request A Quote TODAY!</QHeader>
-          <Body>
-            <PhoneNumber
-            href="tel:909-000-0000">
-              (909) 000-0000
-            </PhoneNumber>
-            <p>OR</p>
-            <RequestBtn
-            href="mailto:support@cylinderheadexchangeshop.com">
-              Request Quote
-            </RequestBtn>
-          </Body>
-        </QuoteBox>
+        <Call>Call Today Now!</Call>
+        <Phone>(909) 282-5198</Phone>
       </QuoteContainer>
         <TTContainer>
           <TabsContainer>
@@ -82,11 +70,15 @@ const IndexPage = () => (
     <Navigation>
       <Tabd
       href="#top">
-        top
+        Services
       </Tabd>
       <Tabd
       href="#bottom">
-        bottom
+        Directions
+      </Tabd>
+      <Tabd
+      href="#bottom">
+        About Us
       </Tabd>
       <Tabd
       href="">
@@ -115,6 +107,7 @@ Viverra vitae congue eu consequat ac. Donec pretium vulputate sapien nec sagitti
 export default IndexPage
 const Header = styled.h2`
 `
+const Phone = styled.div``
 const Tooltip = styled.span`
 `
 const SubHeader = styled.h3`
@@ -123,6 +116,7 @@ const TabPanelt = styled(TabPanel)`
 `
 const Text = styled.div`
 `
+const Call = styled.div``
 const Tabt = styled(Tab)`
 `
 const TabListt = styled(TabList)`
@@ -161,6 +155,8 @@ const Navigation = styled.div`
   background-color: ${variable.SiteColor};
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
   justify-content: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   ${Tabd} {
     color: #fff;
     text-decoration: unset;
@@ -169,6 +165,7 @@ const Navigation = styled.div`
     margin-right: 10px;
     font-size: 1rem;
     transition: all 250ms ease-in-out;
+    white-space: nowrap;
     &:hover {
       background-color: #fff;
       color: ${variable.SiteColor};
@@ -234,6 +231,7 @@ const Hero = styled.div`
   }
     ${TTContainer} {
       display: flex;
+      display: none;
       justify-content: center;
       flex-wrap: wrap;
       margin: 0 2rem;
@@ -380,69 +378,28 @@ const Hero = styled.div`
         }
       }
     }
-  
   ${QuoteContainer} {
-    z-index: 2;
-    left: 3rem;
-    height: 100%;
+    background-color: ${rgba(variable.SiteColor, 0.5)};
     position: absolute;
+    left: 0;
+    height: 100%;
     top: 0;
     display: flex;
-    display: none;
     flex-direction: column;
-    justify-content: center;
-    ${QuoteBox} {
-      display: flex;
-      flex-direction: column;
-      z-index: 2;
-      font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
-      box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
-      ${QHeader} {
-        background-color: ${variable.SiteColor};
-        color: #fff;
-        font-size: 1rem;
-        padding: 10px 45px;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
-        text-align: center;
-      }
-      ${Body} {
-        background-color: #fff;
-        padding: 21px 16px;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
-        display: flex;
-        flex-direction: column;
-        ${PhoneNumber} {
-          align-self: center;
-          color: ${variable.SiteColor};
-          font-weight: bold;
-          text-decoration: unset;
-          font-size: 2rem;
-          transition: 250ms color ease-in-out;
-          &:hover {
-            color: ${darken(0.18, variable.SiteColor)};
-          }
-        }
-        p {
-          align-self: center;
-          margin: 0.5rem 0;
-          font-size: 0.6rem;
-        }
-        ${RequestBtn} {
-          align-self: center;
-          background-color: ${variable.SiteColor};
-          padding: 8px 16px;
-          color: #fff;
-          text-decoration: unset;
-          border-radius: 3px;
-          transition: 250ms all ease-in-out;
-          &:hover {
-            background-color ${darken(0.18, variable.SiteColor)};
-            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
-          }
-        }
-      }
+    padding: 1.5rem 3.5rem;
+    z-index: 2;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    ${Call} {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    ${Phone} {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.8rem;
     }
   }
   @media screen and (max-width: 719px) {

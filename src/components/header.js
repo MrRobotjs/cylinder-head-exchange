@@ -101,7 +101,7 @@ const NavigatonBar = styled.header`
       margin: unset;
       z-index: 1;
       position: relative;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       line-height: 62px;
       font-family: "Racing Sans One";
       white-space: nowrap;
@@ -125,7 +125,7 @@ const NavigatonBar = styled.header`
           height: 100%;
           text-decoration: unset;
           color: #5f6368;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
           font-weight: 400;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
