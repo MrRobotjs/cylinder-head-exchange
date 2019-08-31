@@ -165,12 +165,19 @@ const Navigation = styled.div`
     font-size: 1rem;
     transition: all 250ms ease-in-out;
     white-space: nowrap;
+    margin: 0 0.5rem;
     &:hover {
       background-color: #fff;
       color: ${variable.SiteColor};
     }
     &:last-child {
       margin-right: unset;
+    }
+  }
+  @media screen and (max-width: 719px) {
+    justify-content: unset;
+    ${Tabd} {
+      margin: unset;
     }
   }
 `
