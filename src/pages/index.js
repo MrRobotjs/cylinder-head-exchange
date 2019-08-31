@@ -162,7 +162,6 @@ const Navigation = styled.div`
     text-decoration: unset;
     padding: 14px 28px;
     font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
-    margin-right: 10px;
     font-size: 1rem;
     transition: all 250ms ease-in-out;
     white-space: nowrap;
