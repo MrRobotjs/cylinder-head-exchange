@@ -6,10 +6,8 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import * as variable from 'src/config.js'
 import {darken} from 'polished'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import GoogleMapReact from 'google-map-react';
-import { redirectTo } from "@reach/router";
 
 const IndexPage = () => (
   <Layout>
@@ -67,6 +65,7 @@ const IndexPage = () => (
             </Center>
           </Right>
         </DetailsContainer>
+        <HoursContainer>
         <ShopHeader>Shop Hours:</ShopHeader>
         <TableHours>
           <Row>
@@ -78,6 +77,7 @@ const IndexPage = () => (
             <Data style={{color: "red",}}>Closed</Data>
           </Row>
         </TableHours>
+        </HoursContainer>
       </QuoteContainer>
     </Hero>
     <Navigation>
@@ -118,17 +118,8 @@ Viverra vitae congue eu consequat ac. Donec pretium vulputate sapien nec sagitti
 )
 
 export default IndexPage
-const Header = styled.h2``
 const Tooltip = styled.span``
-const SubHeader = styled.h3``
-const TabPanelt = styled(TabPanel)``
-const Text = styled.div``
 const LocationHeader = styled.div``
-const Tabt = styled(Tab)``
-const TabListt = styled(TabList)``
-const TContainer = styled.div``
-const TTContainer = styled.div``
-const TabsContainer = styled(Tabs)``
 const Btn = styled.a``
 const Actionbtns = styled.div``
 const QuoteContainer = styled.div``
@@ -146,6 +137,7 @@ const ShopHeader = styled.div``
 const TableHours = styled.table``
 const Row = styled.tr``
 const Data = styled.td``
+const HoursContainer = styled.div``
 
 const Navigation = styled.div`
   display: flex;
@@ -263,6 +255,7 @@ const Hero = styled.div`
     ${DetailsContainer} {
       display: flex;
       margin: 0 1rem;
+      margin-bottom: 0.2rem;
       ${Left} {
         flex: 1;
         padding-right: 0.2rem;
@@ -385,24 +378,27 @@ const Hero = styled.div`
         }
       }
     }
-    ${ShopHeader} {
-      margin: 0 1rem;
-      color: #000;
-      margin-bottom: 0.7rem;
-      font-weight: 800;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: -1px;
-      white-space: nowrap;
-      transform: scale(1, 1.18);
-    }
-    ${TableHours} {
-      margin: 0 1rem;
-      ${Row} {
-        ${Data} {
-          border: unset;
-          font-weight: 700;
-          padding: unset;
+    ${HoursContainer} {
+      display: block;
+      ${ShopHeader} {
+        margin: 0 1rem;
+        color: #000;
+        margin-bottom: 0.7rem;
+        font-weight: 800;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        white-space: nowrap;
+        transform: scale(1, 1.18);
+      }
+      ${TableHours} {
+        margin: 0 1rem;
+        ${Row} {
+          ${Data} {
+            border: unset;
+            font-weight: 700;
+            padding: unset;
+          }
         }
       }
     }
@@ -426,16 +422,6 @@ const Hero = styled.div`
     }
   }
   @media screen and (max-width: 790px) {
-    ${TTContainer} {
-      width: 100%;
-      margin: unset;
-      ${TabsContainer} {
-        margin: 0 1rem;
-      }
-      ${Text} {
-        display: none;
-      }
-    }
   }
   @media screen and (max-width: 375px) {
     ${QuoteContainer} {
