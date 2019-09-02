@@ -181,6 +181,7 @@ const MapContainer = styled.div``
 const Navigation = styled.div`
   display: flex;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background-color: ${variable.SiteColor};
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
@@ -456,15 +457,6 @@ const Hero = styled.div`
           }
         }
       }
-    }
-  }
-  @media screen and (max-width: 719px) {
-    ${QuoteContainer} {
-      width: 92%;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
     }
   }
   @media screen and (max-width: 719px) {
