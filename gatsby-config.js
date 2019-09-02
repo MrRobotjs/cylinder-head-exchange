@@ -43,7 +43,7 @@ module.exports = {
         name: `Cylinder Head Exchange`,
         short_name: `CHX`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#ff2b3c`,
         theme_color: `#ff2b3c`,
         display: `standalone`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
