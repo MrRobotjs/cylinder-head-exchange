@@ -356,6 +356,52 @@ const Hero = styled.div`
             display: none;
           }
         }
+       ${Tooltip} {
+          display: inline-block;
+          position: relative;
+          cursor: help;
+          padding: 4px;
+          height: 0.5rem;
+          width: 0.5rem;
+          background-color: red;
+          border-radius: 50%;
+          &::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            background: #000;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 14px;
+            line-height: 1.4;
+            min-width: 107px;
+            text-align: center;
+            border-radius: 4px;
+            font-family: "Racing Sans One";
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            z-index: 50;
+          }
+          &[data-tooltip-position="top"] {
+            &::before {
+              left: -500%;
+              bottom: 100%;
+              margin-bottom: 6px;
+            }
+            &::after {
+              left: 50%;
+              margin-left: -6px;
+              bottom: 100%;
+              border-width: 6px 6px 0;
+              border-top-color: #000;
+            }
+          }
+        }
       }
       ${Right} {
         flex: 1;
