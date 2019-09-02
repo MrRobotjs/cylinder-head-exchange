@@ -63,8 +63,7 @@ const mobileHeader = () => (
                 </Icon>
                 <Title>Directions</Title>
             </Tab>
-            <Tab 
-                href="#"
+            <Tabmore
                 >
                 <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} right/>
                 <Icon xmlns='http://www.w3.org/2000/svg' id='Capa_1' height='60' viewBox='0 0 512 512' width='22'>
@@ -78,7 +77,7 @@ const mobileHeader = () => (
                     </g>
                 </Icon>
                 <Title>More</Title>
-            </Tab>
+            </Tabmore>
         </MobileNavigationBar>
     </Headtop>
 )
@@ -88,6 +87,8 @@ export default mobileHeader
 const Title = styled.span``
 const Tab = styled.a``
 const Icon = styled.svg``
+const Tabmore = styled.div``
+
 const Headtop = styled(Headroom)`
 height: unset !important;
     .headroom {
@@ -120,7 +121,7 @@ const MobileNavigationBar = styled.nav`
   margin-left: unset;
   display: flex;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
-  ${Tab} {
+  ${Tab}, ${Tabmore} {
     display: flex;
     align-items: center;
     flex-direction: column;
