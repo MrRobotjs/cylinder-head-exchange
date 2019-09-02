@@ -479,6 +479,7 @@ const Hero = styled.div`
   @media screen and (max-width: 475px) {
     ${QuoteContainer} {
       height: 86%;
+      padding-bottom: 0.4rem;
       ${HoursContainer} {
         display: none;
       }
@@ -525,7 +526,7 @@ const Hero = styled.div`
           ${HoursContainer} {
             display: block;
             margin-top: 0.6rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.4rem;
             ${ShopHeader} {
               margin-bottom: 0.7rem;
             }
