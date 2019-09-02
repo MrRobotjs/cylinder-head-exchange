@@ -416,6 +416,14 @@ const Hero = styled.div`
       right: 0;
     }
   }
+  @media screen and (max-width: 719px) {
+    ${QuoteContainer} {
+      width: 92%;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+    }
   }
   @media screen and (max-width: 790px) {
     ${TTContainer} {
@@ -425,6 +433,14 @@ const Hero = styled.div`
         margin: 0 1rem;
       }
       ${Text} {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 375px) {
+    ${QuoteContainer} {
+      height: 86%;
+      ${Right} {
         display: none;
       }
     }
