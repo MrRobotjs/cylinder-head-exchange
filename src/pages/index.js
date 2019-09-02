@@ -277,6 +277,7 @@ const Hero = styled.div`
     z-index: 2;
     overflow: auto;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     ${ScheduleHeader} {
       color: ${variable.SiteColor};
@@ -524,7 +525,7 @@ const Hero = styled.div`
           ${HoursContainer} {
             display: block;
             margin-top: 0.6rem;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
             ${ShopHeader} {
               margin-bottom: 0.7rem;
             }
