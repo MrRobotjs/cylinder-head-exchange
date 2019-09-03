@@ -6,10 +6,13 @@ html {
   width: 100%;
 }
 body {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-width: 100% !important;
+}
+body, html{
+  margin:0;
+  padding:0;
 }
 article,
 aside,
