@@ -217,7 +217,7 @@ const NavigatonBar = styled.header`
       display: none;
     }
   }
-  @media screen and (max-width: 719px) {
+  @media screen and (max-width: 798px) {
     ${Navmenu} {
       display: none;
     }

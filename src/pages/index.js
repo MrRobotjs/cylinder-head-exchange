@@ -8,6 +8,7 @@ import * as variable from 'src/config.js'
 import {darken} from 'polished'
 import "react-tabs/style/react-tabs.css";
 import GoogleMapReact from 'google-map-react';
+import windowSize from 'react-window-size';
 
 const IndexPage = () => (
   <Layout>
@@ -117,6 +118,10 @@ const IndexPage = () => (
           </TableHours>
         </HoursContainer>
       </QuoteContainer>
+      <HeroText>
+        <PrimaryText>Need a Repair?</PrimaryText>
+        <SecondaryText>We can repair </SecondaryText>
+      </HeroText>
     </Hero>
     <Navigation>
       <Tabd
@@ -156,13 +161,12 @@ Viverra vitae congue eu consequat ac. Donec pretium vulputate sapien nec sagitti
 )
 
 export default IndexPage
+const SecondaryText =styled.div``
+const PrimaryText = styled.div``
 const Tooltip = styled.span``
 const LocationHeader = styled.div``
-const Btn = styled.a``
-const Actionbtns = styled.div``
 const QuoteContainer = styled.div``
 const Tabd = styled.a``
-const Container = styled.div``
 const ScheduleHeader = styled.div``
 const Left = styled.div``
 const Right = styled.div``
@@ -177,6 +181,7 @@ const Row = styled.tr``
 const Data = styled.td``
 const HoursContainer = styled.div``
 const MapContainer = styled.div``
+const HeroText = styled.div``
 
 const Navigation = styled.div`
   display: flex;
@@ -226,44 +231,31 @@ const Hero = styled.div`
     background-color: rgba(0,0,0,.5);
     z-index: 1;
   }
-  ${Actionbtns} {
-    display: none;
-    flex-direction: column;
+  ${HeroText} {
     position: absolute;
-    margin: 0 auto;
+    right: 1rem;
+    height: 93%;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
     z-index: 2;
-    width: 100%;
-    height: 100%;
-    top: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     justify-content: center;
-    ${Container} {
-      display: flex;
-      flex-direction: column;
-      max-width: 320px;
-      margin: 0 auto;
-      ${Btn} {
-        margin: 0 auto;
-        background-color: ${variable.SiteColor};
-        color: #fff;
-        text-decoration: unset;
-        text-align: center;
-        padding: 13px 75px;
-        margin-bottom: 1rem;
-        width: 100%;
-        font-size: 1.13rem;
-        transition: background-color 250ms ease-in-out;
-        &:last-child {
-          margin-bottom: unset;
-        }
-        &:first-child {
-          background-color: #fff;
-          color: ${variable.SiteColor};
-        }
-        &:hover {
-          background-color: ${darken(0.18, variable.SiteColor)};
-          color: #fff;
-        }
-      }
+    ${PrimaryText} {
+      color: #fff;
+      font-weight: bold;
+      align-self: flex-end;
+      font-size: 5rem;
+    }
+    ${SecondaryText} {
+      color: #fff;
+      font-weight: bold;
+      align-self: flex-end;
+      font-size: 3rem;
     }
   }
   ${QuoteContainer} {
@@ -505,7 +497,48 @@ const Hero = styled.div`
       }
     }
   }
-  @media screen and (max-width: 719px) {
+  @media screen and (max-width: 1080px) {
+    ${HeroText} {
+      ${PrimaryText} {
+        font-size: 4rem;
+      }
+      ${SecondaryText} {
+
+      }
+    }
+  }
+  @media screen and (max-width: 964px) {
+    ${HeroText} {
+      ${PrimaryText} {
+        font-size: 3rem;
+      }
+      ${SecondaryText} {
+        font-size: 2rem;
+      }
+    }
+  }
+  @media screen and (max-width: 854px) {
+    ${HeroText} {
+      ${PrimaryText} {
+        font-size: 2.5rem;
+      }
+      ${SecondaryText} {
+          font-size: 1.5rem;
+      }
+    }
+  }
+  @media screen and (max-width: 798px) {
+    ${HeroText} {
+      display: none;
+      ${PrimaryText} {
+        font-size: 2.5rem;
+      }
+      ${SecondaryText} {
+          font-size: 1.5rem;
+      }
+    }
+  }
+  @media screen and (max-width: 798px) {
     ${QuoteContainer} {
       width: 92%;
       margin-left: auto;

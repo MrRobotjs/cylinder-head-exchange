@@ -26,6 +26,7 @@
     "react-helmet": "^5.2.1",
     "react-ripples": "^2.1.1",
     "react-tabs": "^3.0.0",
+    "react-window-size": "^1.2.2",
     "smooth-scroll": "^16.1.0",
     "styled-components": "^4.3.2"
   },

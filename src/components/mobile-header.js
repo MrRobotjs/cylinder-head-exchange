@@ -176,7 +176,7 @@ const MobileNavigationBar = styled.nav`
         background-color: #eee;
         }
   }
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 798px) {
     vertical-align: top;
     width: auto;
     padding: 0;
