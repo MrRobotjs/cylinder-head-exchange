@@ -125,8 +125,8 @@ const IndexPage = () => (
     </Hero>
     <Navigation>
       <Tabd
-      href="#top">
-        Services
+      href="#Offers">
+        Offers
       </Tabd>
       <Tabd
       href="#bottom">
@@ -141,7 +141,32 @@ const IndexPage = () => (
         refresh
       </Tabd>
     </Navigation>
-    <h2 id="top">My Cool Header</h2>
+    <OffersHeader id="Offers">Featured Coupons and Offers</OffersHeader>
+    <Smalltext>Read details for limitations</Smalltext>
+    <OffersContainer>
+      <Card>
+        <Left></Left>
+        <Right>
+          <Title>$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change </Title>
+          Test
+        </Right>
+      </Card>
+      <Card>
+        <Left></Left>
+        <Right>
+        <Title>$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change </Title>
+          Test
+        </Right>
+      </Card>
+      <Card>
+       <Left></Left>
+        <Right>
+        <Title>$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change </Title>
+          Test
+        </Right>
+      </Card>
+    </OffersContainer>
+    <OffersBtn to="/page-2">View All Offers</OffersBtn>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta. In iaculis nunc sed augue lacus. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Sagittis purus sit amet volutpat consequat mauris. Maecenas volutpat blandit aliquam etiam. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Quis enim lobortis scelerisque fermentum dui faucibus. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Augue eget arcu dictum varius duis at consectetur.
 
 Odio euismod lacinia at quis risus sed vulputate odio. Diam maecenas ultricies mi eget mauris. Et ultrices neque ornare aenean. Id aliquet risus feugiat in. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Pulvinar pellentesque habitant morbi tristique senectus. Diam vulputate ut pharetra sit amet aliquam id. Ultrices sagittis orci a scelerisque purus. Amet risus nullam eget felis. Et odio pellentesque diam volutpat commodo. Neque aliquam vestibulum morbi blandit cursus risus at ultrices mi. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Aliquet sagittis id consectetur purus ut faucibus pulvinar. Pellentesque pulvinar pellentesque habitant morbi. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Adipiscing tristique risus nec feugiat in. Non odio euismod lacinia at quis risus sed. Rhoncus dolor purus non enim praesent.
@@ -182,8 +207,70 @@ const Data = styled.td``
 const HoursContainer = styled.div``
 const MapContainer = styled.div``
 const HeroText = styled.div``
+const Card = styled.div``
+const Title = styled.div``
+
+
+const OffersBtn = styled(Link)`
+  text-align: center;
+  color: red;
+  
+`
+
+const Smalltext = styled.p`
+  text-align: center;
+  color: #a2a2a2;
+  font-size: 0.6rem;
+  text-transform: lowercase;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+`
+
+const OffersHeader = styled.h2`
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  transform: scale(1,1.18);
+  letter-spacing: -1px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+`
+
+const OffersContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+margin: 0 auto;
+justify-content: center;
+  ${Card} {
+    flex-basis: 18rem;
+    border: 1px solid #eee;
+    display: flex;
+    margin-right: 2.5rem;
+    margin-bottom: 1rem;
+    height: 17rem;
+    border: 2px #000 dashed;
+    ${Left} {
+      background-color: red;
+      width: 12rem;
+      height: 100%;
+    }
+    ${Right} {
+      width: 100%;
+      padding: 10px;
+      ${Title} {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      }
+    }
+  }
+`
 
 const Navigation = styled.div`
+  z-index: 1;
   display: flex;
   position: sticky;
   position: -webkit-sticky;

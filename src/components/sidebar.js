@@ -23,6 +23,13 @@ export default props => {
 
       <Link 
       className="menu-item" 
+      to="/offers" 
+      activeClassName="active">
+        Coupons
+      </Link>
+
+      <Link 
+      className="menu-item" 
       to="/404" 
       activeClassName="active">
         404
