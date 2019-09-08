@@ -110,4 +110,21 @@ const Card = styled.div`
         }
       }
     }
+    @media screen and (max-width: 719px) {
+      word-break: break-all;
+    }
+    @media screen and (max-width: 644px) {
+      flex-basis: 24rem;
+    }
+    @media screen and (max-width: 450px) {
+      flex-basis: 21rem;
+    }
+    @media screen and (max-width: 380px) {
+      flex-basis: 16rem;
+      flex-direction: column;
+      ${Left} {
+        width: 100%;
+        background-size: contain;
+      }
+    }
 `
