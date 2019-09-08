@@ -214,7 +214,7 @@ const Title = styled.div``
 const OffersBtn = styled(Link)`
   text-align: center;
   color: red;
-  
+
 `
 
 const Smalltext = styled.p`
@@ -239,13 +239,14 @@ const OffersHeader = styled.h2`
 const OffersContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
-margin: 0 auto;
+margin: 0 0.8rem;
 justify-content: center;
   ${Card} {
     flex-basis: 18rem;
     border: 1px solid #eee;
     display: flex;
-    margin-right: 2.5rem;
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
     margin-bottom: 1rem;
     height: 17rem;
     border: 2px #000 dashed;
