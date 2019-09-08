@@ -156,6 +156,12 @@ const IndexPage = () => (
       <Card 
       Image={Oil}
       Titlee="This is another Offer title with more words"/>
+      <Card 
+      Image={Oil}
+      Titlee="This is another Offer title with more words"/>
+      <Card 
+      Image={Oil}
+      Titlee="This is another Offer title with more words"/>
     </OffersContainer>
     <OfferContainer>
       <OffersBtn to="/page-2">View All Offers</OffersBtn>
