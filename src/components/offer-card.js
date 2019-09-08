@@ -115,9 +115,6 @@ const Card = styled.div`
         }
       }
     }
-    @media screen and (max-width: 719px) {
-      word-break: break-all;
-    }
     @media screen and (max-width: 644px) {
       flex-basis: 24rem;
     }
@@ -125,6 +122,9 @@ const Card = styled.div`
       flex-basis: 21rem;
     }
     @media screen and (max-width: 380px) {
+      flex-basis: 18rem;
+    }
+    @media screen and (max-width: 310px) {
       flex-basis: 16rem;
     }
 `
