@@ -128,5 +128,13 @@ const Card = styled.div`
         background-size: contain;
         height: 9rem;
       }
+      ${Right} {
+        ${Title} {
+          margin-bottom: 0.2rem;
+        }
+        ${OfferDetails} {
+          margin-top: 0.2rem;
+        }
+      }
     }
 `
