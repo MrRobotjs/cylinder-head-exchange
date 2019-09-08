@@ -23,8 +23,8 @@ const Header = ({ siteTitle }) => (
         </li>
         <li>
           <Navlink
-          to="/page-2"
-          activeClassName="active">Page 2</Navlink>
+          to="/offers/all"
+          activeClassName="active">Offers</Navlink>
         </li>
         <li>
           <Navlink

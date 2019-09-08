@@ -8,7 +8,8 @@ import * as variable from 'src/config.js'
 import {darken} from 'polished'
 import "react-tabs/style/react-tabs.css";
 import GoogleMapReact from 'google-map-react';
-import windowSize from 'react-window-size';
+import Oil from '../images/oil_change.jpg'
+import Card from '../components/offer-card'
 
 const IndexPage = () => (
   <Layout>
@@ -112,7 +113,7 @@ const IndexPage = () => (
             <Data>7:00am-7:00pm</Data>
           </Row>
           <Row>
-            <Data>SUN</Data>
+            <Data>SUN:</Data>
             <Data style={{color: "red",}}>Closed</Data>
           </Row>
           </TableHours>
@@ -144,29 +145,13 @@ const IndexPage = () => (
     <OffersHeader id="Offers">Featured Coupons and Offers</OffersHeader>
     <Smalltext>Read details for limitations</Smalltext>
     <OffersContainer>
-      <Card>
-        <Left></Left>
-        <Right>
-          <Title>$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change </Title>
-          Test
-        </Right>
-      </Card>
-      <Card>
-        <Left></Left>
-        <Right>
-        <Title>$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change </Title>
-          Test
-        </Right>
-      </Card>
-      <Card>
-       <Left></Left>
-        <Right>
-        <Title>$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change </Title>
-          Test
-        </Right>
-      </Card>
+      <Card Image={Oil}/>
+      <Card Image={Oil}/>
+      <Card Image={Oil}/>
     </OffersContainer>
-    <OffersBtn to="/page-2">View All Offers</OffersBtn>
+    <OfferContainer>
+      <OffersBtn to="/page-2">View All Offers</OffersBtn>
+    </OfferContainer>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta. In iaculis nunc sed augue lacus. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Sagittis purus sit amet volutpat consequat mauris. Maecenas volutpat blandit aliquam etiam. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Quis enim lobortis scelerisque fermentum dui faucibus. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Augue eget arcu dictum varius duis at consectetur.
 
 Odio euismod lacinia at quis risus sed vulputate odio. Diam maecenas ultricies mi eget mauris. Et ultrices neque ornare aenean. Id aliquet risus feugiat in. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Pulvinar pellentesque habitant morbi tristique senectus. Diam vulputate ut pharetra sit amet aliquam id. Ultrices sagittis orci a scelerisque purus. Amet risus nullam eget felis. Et odio pellentesque diam volutpat commodo. Neque aliquam vestibulum morbi blandit cursus risus at ultrices mi. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Aliquet sagittis id consectetur purus ut faucibus pulvinar. Pellentesque pulvinar pellentesque habitant morbi. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Adipiscing tristique risus nec feugiat in. Non odio euismod lacinia at quis risus sed. Rhoncus dolor purus non enim praesent.
@@ -207,14 +192,23 @@ const Data = styled.td``
 const HoursContainer = styled.div``
 const MapContainer = styled.div``
 const HeroText = styled.div``
-const Card = styled.div``
-const Title = styled.div``
-
-
-const OffersBtn = styled(Link)`
-  text-align: center;
-  color: red;
-
+const OffersBtn = styled(Link)``
+const OfferContainer = styled.div`
+display: flex;
+justify-content: center;
+margin-bottom: 0.4rem;
+  ${OffersBtn} {
+    transition: all 285ms linear;
+    color: red;
+    text-decoration: unset;
+    border: 1px solid;
+    padding: 0.3rem 0.7rem;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    &:hover {
+      background-color: ${variable.SiteColor};
+      color: white;
+    }
+  }
 `
 
 const Smalltext = styled.p`
@@ -241,33 +235,6 @@ display: flex;
 flex-wrap: wrap;
 margin: 0 0.8rem;
 justify-content: center;
-  ${Card} {
-    flex-basis: 18rem;
-    border: 1px solid #eee;
-    display: flex;
-    margin-right: 0.8rem;
-    margin-left: 0.8rem;
-    margin-bottom: 1rem;
-    height: 17rem;
-    border: 2px #000 dashed;
-    ${Left} {
-      background-color: red;
-      width: 12rem;
-      height: 100%;
-    }
-    ${Right} {
-      width: 100%;
-      padding: 10px;
-      ${Title} {
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
-    }
-  }
 `
 
 const Navigation = styled.div`
