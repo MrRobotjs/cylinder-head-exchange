@@ -13,19 +13,19 @@ export default props => {
       activeClassName="active">
         Home
       </Link>
-
+      
+      <Link 
+      className="menu-item" 
+      to="/offers" 
+      activeClassName="active">
+        Offers
+      </Link>
+      
       <Link 
       className="menu-item" 
       to="/page-2" 
       activeClassName="active">
         Page 2
-      </Link>
-
-      <Link 
-      className="menu-item" 
-      to="/offers" 
-      activeClassName="active">
-        Coupons
       </Link>
 
       <Link 

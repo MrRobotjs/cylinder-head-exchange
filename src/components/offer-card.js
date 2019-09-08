@@ -4,16 +4,19 @@ import React from "react"
 import styled from 'styled-components'
 import Ripples from 'react-ripples'
 import * as variable from 'src/config' 
-import { darken } from 'polished'
 
-const Header = ({ Image }) => (
+const Header = ({ Image, Titlee }) => (
     <Card>
         <Url to="/page-2"></Url>
         <Left style={{backgroundImage: `url(${Image})`}}>
         </Left>
         <Right>
-        <Title>$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change </Title>
-        Test
+        <Title>{Titlee}</Title>
+        <SubTitle>Includes Oil Filter</SubTitle>
+        <OfferDetails>
+          <OfferBtn>Details</OfferBtn>
+          <Expiration>Exp. 00/00/2019</Expiration>
+        </OfferDetails>
         </Right>
     </Card>
 )
@@ -24,6 +27,10 @@ const Title = styled.div``
 const Url = styled(Link)``
 const Left = styled.div``
 const Right = styled.div``
+const SubTitle = styled.div``
+const OfferDetails = styled.div``
+const OfferBtn = styled(Link)``
+const Expiration = styled.p``
 
 const Card = styled.div`
     flex-basis: 18rem;
@@ -57,6 +64,8 @@ const Card = styled.div`
     ${Right} {
       width: 100%;
       padding: 10px;
+      display: flex;
+      flex-direction: column;
       ${Title} {
         text-align: center;
         font-weight: bold;
@@ -64,6 +73,41 @@ const Card = styled.div`
         text-transform: uppercase;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      }
+      ${SubTitle} {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: ${variable.SiteColor};
+        text-transform: uppercase;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        margin: auto 0;
+      }
+      ${OfferDetails} {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        justify-content: space-evenly;
+        ${OfferBtn} {
+          align-self: center;
+          color: #fff;
+          background-color: ${variable.SiteColor};
+          padding: 0.5rem 1rem;
+          text-decoration: unset;
+          line-height: 100%;
+          margin-bottom: 0.5rem;
+          font-size: 1.2rem;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+        ${Expiration} {
+          align-self: center;
+          margin: unset;
+          font-size: 0.7rem;
+          font-weight: 700;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        }
       }
     }
 `

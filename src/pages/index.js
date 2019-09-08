@@ -145,9 +145,17 @@ const IndexPage = () => (
     <OffersHeader id="Offers">Featured Coupons and Offers</OffersHeader>
     <Smalltext>Read details for limitations</Smalltext>
     <OffersContainer>
-      <Card Image={Oil}/>
-      <Card Image={Oil}/>
-      <Card Image={Oil}/>
+      <Card 
+      Image={Oil}
+      Titlee="This is an Offer Title"
+      />
+      <Card 
+      Image={Oil}
+      Titlee="$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change"
+      />
+      <Card 
+      Image={Oil}
+      Titlee="This is another Offer title with more words"/>
     </OffersContainer>
     <OfferContainer>
       <OffersBtn to="/page-2">View All Offers</OffersBtn>
@@ -193,11 +201,13 @@ const HoursContainer = styled.div``
 const MapContainer = styled.div``
 const HeroText = styled.div``
 const OffersBtn = styled(Link)``
+
 const OfferContainer = styled.div`
 display: flex;
 justify-content: center;
 margin-bottom: 0.4rem;
   ${OffersBtn} {
+    margin-bottom: auto;
     transition: all 285ms linear;
     color: red;
     text-decoration: unset;
