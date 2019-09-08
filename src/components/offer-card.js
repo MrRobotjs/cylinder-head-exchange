@@ -122,9 +122,11 @@ const Card = styled.div`
     @media screen and (max-width: 380px) {
       flex-basis: 16rem;
       flex-direction: column;
+      height: unset;
       ${Left} {
         width: 100%;
         background-size: contain;
+        height: 9rem;
       }
     }
 `
