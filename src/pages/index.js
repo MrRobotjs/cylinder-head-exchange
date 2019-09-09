@@ -168,7 +168,7 @@ const IndexPage = () => (
       Titlee="This is another Offer title with more words"/>
     </OffersContainer>
     <OfferContainer>
-      <OffersBtn to="/page-2">View All Offers</OffersBtn>
+      <OffersBtn to="/offers/">View All Offers</OffersBtn>
     </OfferContainer>
     <EmailContainer>
       <Text>Want more deals? Sign up for exclusive offers</Text>

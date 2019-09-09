@@ -35,7 +35,7 @@ const Header = ({ siteTitle }) => (
           </li>
           <li>
             <Navlink
-            to="/page-3"
+            to="/404"
             activeClassName="active">404</Navlink>
           </li>
         </ul>
