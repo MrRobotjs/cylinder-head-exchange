@@ -9,6 +9,8 @@ import "react-tabs/style/react-tabs.css";
 import GoogleMapReact from 'google-map-react';
 import Oil from '../images/oil_change.jpg'
 import Card from '../components/offer-card'
+import {rgba, darken} from 'polished'
+import MechanicalPart from '../images/background.jpg'
 
 const IndexPage = () => (
   <Layout>
@@ -168,6 +170,11 @@ const IndexPage = () => (
     <OfferContainer>
       <OffersBtn to="/page-2">View All Offers</OffersBtn>
     </OfferContainer>
+    <EmailContainer>
+      <Text>Want more deals? Sign up for exclusive offers</Text>
+      <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
+      <a>Privacy Statement</a>
+    </EmailContainer>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta. In iaculis nunc sed augue lacus. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Sagittis purus sit amet volutpat consequat mauris. Maecenas volutpat blandit aliquam etiam. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Quis enim lobortis scelerisque fermentum dui faucibus. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Augue eget arcu dictum varius duis at consectetur.
 
 Odio euismod lacinia at quis risus sed vulputate odio. Diam maecenas ultricies mi eget mauris. Et ultrices neque ornare aenean. Id aliquet risus feugiat in. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Pulvinar pellentesque habitant morbi tristique senectus. Diam vulputate ut pharetra sit amet aliquam id. Ultrices sagittis orci a scelerisque purus. Amet risus nullam eget felis. Et odio pellentesque diam volutpat commodo. Neque aliquam vestibulum morbi blandit cursus risus at ultrices mi. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Aliquet sagittis id consectetur purus ut faucibus pulvinar. Pellentesque pulvinar pellentesque habitant morbi. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Adipiscing tristique risus nec feugiat in. Non odio euismod lacinia at quis risus sed. Rhoncus dolor purus non enim praesent.
@@ -209,15 +216,57 @@ const HoursContainer = styled.div``
 const MapContainer = styled.div``
 const HeroText = styled.div``
 const OffersBtn = styled(Link)``
+const Text = styled.p``
+const Input = styled.input``
+
+const EmailContainer = styled.div`
+background-color: ${rgba(darken(0.4, variable.SiteColor), 0.8)};
+width: 100%;
+position: relative;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+&::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(${MechanicalPart});
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+${Text} {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 1.5rem 1.5rem 1rem 1.5rem;
+}
+${Input} {
+  margin: 0 auto;
+  display: block;
+  width: 18rem;
+  border: unset;
+  padding: 0.2rem 0.4rem;
+}
+a {
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin: 1rem 1.5rem 1.5rem 1.5rem
+}
+`
 
 const OfferContainer = styled.div`
 display: flex;
 justify-content: center;
-margin-bottom: 0.4rem;
+margin-bottom: 0.8rem;
   ${OffersBtn} {
     margin-bottom: auto;
     transition: all 285ms linear;
-    color: red;
+    color:  ${variable.SiteColor};
     text-decoration: unset;
     border: 1px solid;
     padding: 0.3rem 0.7rem;
@@ -304,6 +353,7 @@ const Hero = styled.div`
     content: ' ';
     background-color: rgba(0,0,0,.5);
     z-index: 1;
+    display: none;
   }
   ${HeroText} {
     position: absolute;
@@ -311,6 +361,7 @@ const Hero = styled.div`
     height: 93%;
     top: 1rem;
     display: flex;
+    display: none !important;
     flex-direction: column;
     padding: 1.5rem 0;
     z-index: 2;
@@ -324,12 +375,14 @@ const Hero = styled.div`
       font-weight: bold;
       align-self: flex-end;
       font-size: 5rem;
+      z-index: 1;
     }
     ${SecondaryText} {
       color: #fff;
       font-weight: bold;
       align-self: flex-end;
       font-size: 3rem;
+      z-index: 1;
     }
   }
   ${QuoteContainer} {
