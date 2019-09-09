@@ -5,49 +5,52 @@ import styled from 'styled-components'
 import Ripples from 'react-ripples'
 import * as variable from 'src/config' 
 import { darken } from 'polished'
+import Headroom from 'react-headroom';
 
 const Header = ({ siteTitle }) => (
-  <NavigatonBar>
-    <LogoContainer
-    to="/">
-        <Logo>
-          {siteTitle}
-        </Logo>
-    </LogoContainer>
-    <Navmenu>
-      <ul>
-        <li>
-          <Navlink
-          to="/"
-          activeClassName="active">Home</Navlink>
-        </li>
-        <li>
-          <Navlink
-          to="/offers/all"
-          activeClassName="active">Offers</Navlink>
-        </li>
-        <li>
-          <Navlink
-          to="/page-2"
-          activeClassName="active">Page 2</Navlink>
-        </li>
-        <li>
-          <Navlink
-          to="/page-3"
-          activeClassName="active">404</Navlink>
-        </li>
-      </ul>
-    </Navmenu>
-    <Actionbtns>
-      <Ripplescontainer
-      color="rgba(255,255,255,0.7)">
-        <Directionsbtn
-        href="https://www.google.com/local/place/getaquote?qe=4298828&g2lb=4297498&hl=en&gl=us&lid=4578751527000397004&gie=true&n=Q3lsaW5kZXIgSGVhZCBFeGNoYW5nZQ%3D%3D&c=gcid:auto_repair_shop&ll=DYqXTBQV2pvauQ%3D%3D&cv=CHECK_PRICING"
-        target="_blank"
-        rel="noreferrer">Get Quote</Directionsbtn>
-      </Ripplescontainer>
-    </Actionbtns>
-  </NavigatonBar>
+  <Headtop>
+    <NavigatonBar>
+      <LogoContainer
+      to="/">
+          <Logo>
+            {siteTitle}
+          </Logo>
+      </LogoContainer>
+      <Navmenu>
+        <ul>
+          <li>
+            <Navlink
+            to="/"
+            activeClassName="active">Home</Navlink>
+          </li>
+          <li>
+            <Navlink
+            to="/offers/all"
+            activeClassName="active">Offers</Navlink>
+          </li>
+          <li>
+            <Navlink
+            to="/page-2"
+            activeClassName="active">Page 2</Navlink>
+          </li>
+          <li>
+            <Navlink
+            to="/page-3"
+            activeClassName="active">404</Navlink>
+          </li>
+        </ul>
+      </Navmenu>
+      <Actionbtns>
+        <Ripplescontainer
+        color="rgba(255,255,255,0.7)">
+          <Directionsbtn
+          href="https://www.google.com/local/place/getaquote?qe=4298828&g2lb=4297498&hl=en&gl=us&lid=4578751527000397004&gie=true&n=Q3lsaW5kZXIgSGVhZCBFeGNoYW5nZQ%3D%3D&c=gcid:auto_repair_shop&ll=DYqXTBQV2pvauQ%3D%3D&cv=CHECK_PRICING"
+          target="_blank"
+          rel="noreferrer">Get Quote</Directionsbtn>
+        </Ripplescontainer>
+      </Actionbtns>
+    </NavigatonBar>
+  </Headtop>
 )
 
 Header.propTypes = {
@@ -74,6 +77,10 @@ const LogoContainer = styled(Link)`
 `
 const Logo = styled.div`
 `
+const Headtop = styled(Headroom)`
+.headroom {
+  z-index: 4 !important;
+}`
 const NavigatonBar = styled.header`
   background-color: #fff;
   position: relative;
