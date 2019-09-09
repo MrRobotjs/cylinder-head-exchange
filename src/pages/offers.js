@@ -2,7 +2,7 @@ import React from "react"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Card from '../components/offer-card'
+import Card from '../components/offer-card-2'
 import Oil from '../images/oil_change.jpg'
 
 const SecondPage = () => (
