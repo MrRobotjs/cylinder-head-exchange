@@ -162,6 +162,9 @@ const IndexPage = () => (
       <Card 
       Image={Oil}
       Titlee="This is another Offer title with more words"/>
+      <Card 
+      Image={Oil}
+      Titlee="This is another Offer title with more words"/>
     </OffersContainer>
     <OfferContainer>
       <OffersBtn to="/page-2">View All Offers</OffersBtn>
@@ -238,6 +241,7 @@ const Smalltext = styled.p`
 const OffersHeader = styled.h2`
   text-align: center;
   font-size: 2rem;
+  margin: 0 1rem;
   margin-top: 1.5rem;
   text-transform: uppercase;
   margin-bottom: 0.3rem;

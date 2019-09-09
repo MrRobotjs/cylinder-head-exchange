@@ -33,15 +33,15 @@ const OfferBtn = styled(Link)``
 const Expiration = styled.p``
 
 const Card = styled.div`
-    flex-basis: 18rem;
+    flex-basis: 20rem;
     border: 1px solid #eee;
-    display: flex;
-    margin-right: 0.8rem;
-    margin-left: 0.8rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     margin-bottom: 1rem;
     border: 2px #000 dashed;
     position: relative;
     flex-direction: column;
+    display: flex;
     ${Url} {
       width: 100%;
       height: 100%;
@@ -115,8 +115,19 @@ const Card = styled.div`
         }
       }
     }
-    @media screen and (max-width: 644px) {
+    @media screen and (max-width: 966px) {
+      &:nth-child(5) {
+        display: none;
+      }
+      &:nth-child(6) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 652px) {
       flex-basis: 24rem;
+      &:nth-child(4) {
+        display: none;
+      }
     }
     @media screen and (max-width: 450px) {
       flex-basis: 21rem;
