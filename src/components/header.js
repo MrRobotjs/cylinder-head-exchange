@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => (
           </li>
           <li>
             <Navlink
-            to="/offers/all"
+            to="/offers/"
             activeClassName="active">Offers</Navlink>
           </li>
           <li>
