@@ -175,21 +175,6 @@ const IndexPage = () => (
       <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
       <a>Privacy Statement</a>
     </EmailContainer>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta. In iaculis nunc sed augue lacus. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Sagittis purus sit amet volutpat consequat mauris. Maecenas volutpat blandit aliquam etiam. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Quis enim lobortis scelerisque fermentum dui faucibus. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Augue eget arcu dictum varius duis at consectetur.
-
-Odio euismod lacinia at quis risus sed vulputate odio. Diam maecenas ultricies mi eget mauris. Et ultrices neque ornare aenean. Id aliquet risus feugiat in. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Pulvinar pellentesque habitant morbi tristique senectus. Diam vulputate ut pharetra sit amet aliquam id. Ultrices sagittis orci a scelerisque purus. Amet risus nullam eget felis. Et odio pellentesque diam volutpat commodo. Neque aliquam vestibulum morbi blandit cursus risus at ultrices mi. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Aliquet sagittis id consectetur purus ut faucibus pulvinar. Pellentesque pulvinar pellentesque habitant morbi. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Adipiscing tristique risus nec feugiat in. Non odio euismod lacinia at quis risus sed. Rhoncus dolor purus non enim praesent.
-
-Vel risus commodo viverra maecenas accumsan lacus. At volutpat diam ut venenatis tellus in. At auctor urna nunc id cursus metus aliquam eleifend. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Placerat duis ultricies lacus sed. Consectetur adipiscing elit duis tristique sollicitudin. Scelerisque fermentum dui faucibus in ornare quam. Pellentesque massa placerat duis ultricies lacus sed turpis. Vitae auctor eu augue ut lectus. Purus in mollis nunc sed id. Dapibus ultrices in iaculis nunc sed augue lacus viverra. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Vel orci porta non pulvinar neque laoreet suspendisse.
-
-Sem nulla pharetra diam sit amet nisl suscipit. Urna porttitor rhoncus dolor purus non enim praesent. Amet risus nullam eget felis. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Sem viverra aliquet eget sit amet tellus. Amet volutpat consequat mauris nunc. Elementum sagittis vitae et leo duis. Imperdiet proin fermentum leo vel orci porta. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Est ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Purus non enim praesent elementum facilisis. Interdum posuere lorem ipsum dolor sit amet. Vitae suscipit tellus mauris a. Est pellentesque elit ullamcorper dignissim cras. Erat nam at lectus urna duis convallis convallis tellus id. Eget sit amet tellus cras adipiscing.
-
-Viverra vitae congue eu consequat ac. Donec pretium vulputate sapien nec sagittis. In hendrerit gravida rutrum quisque. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Varius quam quisque id diam vel quam. Urna nec tincidunt praesent semper feugiat nibh. Urna neque viverra justo nec ultrices dui sapien. Aliquam sem fringilla ut morbi. Scelerisque in dictum non consectetur a erat nam. Scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis. Nunc id cursus metus aliquam eleifend mi in. Lorem donec massa sapien faucibus et molestie ac feugiat. Sit amet purus gravida quis blandit. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Id semper risus in hendrerit. At elementum eu facilisis sed odio morbi quis commodo.</p>
-    <p>Now go build something great.</p>
-    <h2 id="bottom">My Cool Header</h2>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
