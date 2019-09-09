@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import {darken} from 'polished'
 import React from "react"
 import styled from 'styled-components'
 import Ripples from 'react-ripples'
@@ -34,19 +34,26 @@ const Expiration = styled.p``
 
 const Card = styled.div`
     flex-basis: 20rem;
-    border: 1px solid #eee;
     margin-right: 1rem;
     margin-left: 1rem;
     margin-bottom: 1rem;
-    border: 2px #000 dashed;
+    border: solid 1px #dcdcdb;
     position: relative;
     flex-direction: column;
     display: flex;
+    background-color: #fafafa;
+    border-radius: 2px;
+    overflow: hidden;
     ${Url} {
       width: 100%;
       height: 100%;
       z-index: 1;
       position: absolute;
+    }
+    a:hover {
+      ~ ${Top} {
+        transform: scale(1.05);
+      }
     }
     ${Top} {
       background-color: red;
@@ -55,11 +62,7 @@ const Card = styled.div`
       position: relative;
       background-position: center;
       background-size: cover;
-      img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-      }
+      transition: 280ms linear all;
     }
     ${Bottom} {
       width: 100%;
@@ -103,8 +106,12 @@ const Card = styled.div`
           margin-bottom: 0.5rem;
           font-size: 1.2rem;
           z-index: 1;
+          transition: all linear 280ms;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        &:hover {
+          background-color: ${darken( 0.2, variable.SiteColor)}
+        }
         }
         ${Expiration} {
           align-self: center;

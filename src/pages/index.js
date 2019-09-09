@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import * as variable from 'src/config.js'
-import {darken} from 'polished'
 import "react-tabs/style/react-tabs.css";
 import GoogleMapReact from 'google-map-react';
 import Oil from '../images/oil_change.jpg'
