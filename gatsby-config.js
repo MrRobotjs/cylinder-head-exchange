@@ -22,6 +22,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `wrq7kfp3sfuu`,
+        accessToken: `A_-ww2pytdJc7YJg2A9ukPjdXf426Kz0NQyn6EGIvIE`,
+        host: `preview.contentful.com`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         src: path.join(__dirname, 'src'),
