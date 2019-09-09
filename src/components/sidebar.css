@@ -17,15 +17,31 @@
     display: inline-block;
   
     /* Our sidebar item styling */
+    text-align: right;
     text-decoration: none;
     margin-bottom: 10px;
-    color: #d1d1d1;
+    color: #4d4d4d;
     transition: color 0.2s, border-left 280ms linear;
     padding: 1rem 2rem;
     font-size: 1rem;
-    text-align: left;
     text-indent: 10px;
     font-family: "Roboto", sans-serif;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+  }
+
+  .bm-item::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -1.9rem;
+    z-index: -1;
+    bottom: 0;
+    transform: skew(-19deg, 0deg);
   }
 
   .bm-item:focus {
@@ -34,13 +50,20 @@
   
   /* Change color on hover */
   .bm-item:hover {
-    color: white;
+    color: #4d4d4d;
   }
 
   .bm-item.active {
     color: #fff;
-    background-color: rgba(0,0,0,0.35);
-    border-left: 2px solid #fff;
+  }
+  
+  .bm-item.active::before {
+    background-color: rgba(0,0,0,0.2);
+    background-color: red;
+  }
+
+  .bm-item:hover::before {
+    background-color: rgba(0,0,0,0.08);
   }
   
   /* The rest copied directly from react-burger-menu docs */
@@ -84,12 +107,12 @@
   
   /* Color/shape of close button cross */
   .bm-cross {
-    background: #fff;
+    background: #000;
   }
   
   /* General sidebar styles */
   .bm-menu {
-    background: #ff2b3c;
+    background: #fff;
     padding: 3.5em 0 0;
     font-size: 1.15em;
   }
