@@ -59,7 +59,11 @@
   
   .bm-item.active::before {
     background-color: rgba(0,0,0,0.2);
-    background-color: red;
+    background-color: #ff2b3c;
+  }
+
+  .bm-item.active:hover::before {
+    background-color: #ff2b3c;
   }
 
   .bm-item:hover::before {
@@ -115,6 +119,7 @@
     background: #fff;
     padding: 3.5em 0 0;
     font-size: 1.15em;
+    pointer-events: all;
   }
   
   /* Morph shape necessary with bubble or elastic */
@@ -140,7 +145,7 @@
     /* Our sidebar item styling */
     text-decoration: none;
     margin-bottom: 10px;
-    color: #ebebeb;
+    color: #4d4d4d;
     transition: color 0.2s;
     padding: 1rem 2rem;
     font-size: 1rem;
@@ -149,11 +154,15 @@
     font-family: "Roboto", sans-serif;
     position: absolute;
     bottom: 0;
-    background-color: rgba(0,0,0,0.2);
+    background-color: transparent;;
     width: 100%;
     margin: unset;
     transition: all 310ms linear;
+    border-top: 1px solid #c3c3c3;
   }
   .contact:hover {
     background-color: rgba(0,0,0,0.23);
+  }
+  .contact::before {
+    display: none;
   }
