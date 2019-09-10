@@ -7,12 +7,14 @@ import SEO from "../components/seo"
 import * as variable from 'src/config.js'
 import "react-tabs/style/react-tabs.css";
 import GoogleMapReact from 'google-map-react';
-import Oil from '../images/oil_change.jpg'
+import NotFound from '../images/notfound.jpg'
 import Card from '../components/offer-card'
 import {rgba, darken} from 'polished'
 import MechanicalPart from '../images/background.jpg'
+import { graphql } from "gatsby"
 
-const IndexPage = () => (
+
+export default ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Hero>
@@ -65,14 +67,16 @@ const IndexPage = () => (
             <HoursContainer>
               <ShopHeader>Shop Hours:</ShopHeader>
               <TableHours>
-              <Row>
-                <Data>MON-SAT:</Data>
-                <Data>7:00am-7:00pm</Data>
-              </Row>
-              <Row>
-                <Data>SUN</Data>
-                <Data style={{color: "red",}}>Closed</Data>
-              </Row>
+                <tbody>
+                  <Row>
+                    <Data>MON-SAT:</Data>
+                    <Data>7:00am-7:00pm</Data>
+                  </Row>
+                  <Row>
+                    <Data>SUN</Data>
+                    <Data style={{color: "red",}}>Closed</Data>
+                  </Row>
+                </tbody>
               </TableHours>
             </HoursContainer>
           </Left>
@@ -109,14 +113,16 @@ const IndexPage = () => (
         <HoursContainer>
           <ShopHeader>Shop Hours:</ShopHeader>
           <TableHours>
-          <Row>
-            <Data>MON-SAT:</Data>
-            <Data>7:00am-7:00pm</Data>
-          </Row>
-          <Row>
-            <Data>SUN:</Data>
-            <Data style={{color: "red",}}>Closed</Data>
-          </Row>
+            <tbody>
+              <Row>
+                <Data>MON-SAT:</Data>
+                <Data>7:00am-7:00pm</Data>
+              </Row>
+              <Row>
+                <Data>SUN:</Data>
+                <Data style={{color: "red",}}>Closed</Data>
+              </Row>
+            </tbody>
           </TableHours>
         </HoursContainer>
       </QuoteContainer>
@@ -139,33 +145,38 @@ const IndexPage = () => (
         About Us
       </Tabd>
       <Tabd
-      href="">
+      href="/">
         refresh
       </Tabd>
     </Navigation>
     <OffersHeader id="Offers">Featured Coupons and Offers</OffersHeader>
     <Smalltext>Read details for limitations</Smalltext>
     <OffersContainer>
-      <Card 
-      Image={Oil}
-      Titlee="This is an Offer Title"
-      />
-      <Card 
-      Image={Oil}
-      Titlee="$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change"
-      />
-      <Card 
-      Image={Oil}
-      Titlee="This is another Offer title with more words"/>
-      <Card 
-      Image={Oil}
-      Titlee="This is another Offer title with more words"/>
-      <Card 
-      Image={Oil}
-      Titlee="This is another Offer title with more words"/>
-      <Card 
-      Image={Oil}
-      Titlee="This is another Offer title with more words"/>
+      {data.allContentfulOffer.edges.map(({ node }) => (
+        <Card
+        key={node.contentful_id}
+        Image={node.offerCard.thumbnail ?
+          node.offerCard.thumbnail.fixed.src
+        :
+          NotFound
+        }
+        Titlee={node.offerCard ?
+          node.offerCard.title
+        :
+          node.title
+        }
+        SubTitlee={node.offerCard.subTitle ?
+          node.offerCard.subTitle
+        :
+          "Missing Subtitle."
+        }
+        ExpirationDate={node.expirationDate ?
+          node.expirationDate
+        :
+          "Missing Date"
+        }
+        />
+      ))}
     </OffersContainer>
     <OfferContainer>
       <OffersBtn to="/offers/">View All Offers</OffersBtn>
@@ -173,12 +184,36 @@ const IndexPage = () => (
     <EmailContainer>
       <Text>Want more deals? Sign up for exclusive offers</Text>
       <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
-      <a>Privacy Statement</a>
+      <a href="/">Privacy Statement</a>
     </EmailContainer>
   </Layout>
 )
 
-export default IndexPage
+export const query = graphql`
+  query {
+    allContentfulOffer(limit: 6) {
+      totalCount
+      edges {
+        node {
+          title
+          createdAt
+          expirationDate(formatString: "MMMM Do, YYYY")
+          offerCard {
+            title
+            subTitle
+            thumbnail {
+              fixed {
+                src
+              }
+            }
+          }
+          contentful_id
+        }
+      }
+    }
+  }
+`
+
 const SecondaryText =styled.div``
 const PrimaryText = styled.div``
 const Tooltip = styled.span``

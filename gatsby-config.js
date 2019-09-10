@@ -26,7 +26,7 @@ module.exports = {
       options: {
         spaceId: `wrq7kfp3sfuu`,
         accessToken: `A_-ww2pytdJc7YJg2A9ukPjdXf426Kz0NQyn6EGIvIE`,
-        host: `preview.contentful.com`,
+        host: `cdn.contentful.com`,
       },
     },
     {

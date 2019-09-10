@@ -2,20 +2,19 @@ import { Link } from "gatsby"
 import {darken} from 'polished'
 import React from "react"
 import styled from 'styled-components'
-import Ripples from 'react-ripples'
 import * as variable from 'src/config' 
 
-const Header = ({ Image, Titlee }) => (
+const Header = ({ Image, Titlee, SubTitlee, ExpirationDate }) => (
     <Card>
-        <Url to="/page-2"></Url>
+        <Url to="/offers"></Url>
         <Top style={{backgroundImage: `url(${Image})`}}>
         </Top>
         <Bottom>
           <Title>{Titlee}</Title>
-          <SubTitle>Includes Oil Filter</SubTitle>
+          <SubTitle>{SubTitlee}</SubTitle>
           <OfferDetails>
-            <OfferBtn>Details</OfferBtn>
-            <Expiration>Exp. 00/00/2019</Expiration>
+            <OfferBtn to="page-2">Details</OfferBtn>
+            <Expiration>{ExpirationDate}</Expiration>
           </OfferDetails>
         </Bottom>
     </Card>

@@ -3,41 +3,76 @@ import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from '../components/offer-card-2'
-import Oil from '../images/oil_change.jpg'
+import NotFound from '../images/notfound.jpg'
 
-const SecondPage = () => (
+export default ({ data }) => (
   <Layout>
     <SEO title="Page two" />
+    <Header>All Offers ({data.allContentfulOffer.totalCount})</Header>
     <OffersContainer>
-      <Card 
-      Image={Oil}
-      Titlee="This is an Offer Title"
-      />
-      <Card 
-      Image={Oil}
-      Titlee="$10 Off Pennzoil® High Mileage or Synthetic Blend Oil Change"
-      />
-      <Card 
-      Image={Oil}
-      Titlee="This is another Offer title with more words"/>
-      <Card 
-      Image={Oil}
-      Titlee="This is another Offer title with more words"/>
-      <Card 
-      Image={Oil}
-      Titlee="This is another Offer title with more words"/>
-      <Card 
-      Image={Oil}
-      Titlee="This is another Offer title with more words"/>
+      {data.allContentfulOffer.edges.map(({ node }) => (
+        <Card
+        key={node.contentful_id}
+        Image={node.offerCard.thumbnail ?
+          node.offerCard.thumbnail.fixed.src
+        :
+          NotFound
+        }
+        Titlee={node.offerCard ?
+          node.offerCard.title
+        :
+          node.title
+        }
+        SubTitlee={node.offerCard.subTitle ?
+          node.offerCard.subTitle
+        :
+          "Missing Subtitle."
+        }
+        ExpirationDate={node.expirationDate ?
+          node.expirationDate
+        :
+          "Missing Date"
+        }
+        />
+      ))}
     </OffersContainer>
   </Layout>
 )
 
-export default SecondPage
+export const query = graphql`
+  query {
+    allContentfulOffer {
+      totalCount
+      edges {
+        node {
+          title
+          createdAt
+          expirationDate(formatString: "MMMM Do, YYYY")
+          offerCard {
+            title
+            subTitle
+            thumbnail {
+              fixed {
+                src
+              }
+            }
+          }
+          contentful_id
+        }
+      }
+    }
+  }
+`
 
 const OffersContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
 margin: 0 0.8rem;
 justify-content: center;
+`
+
+const Header = styled.h1`
+  display: block;
+  text-align: center;
+  margin: 2rem 1rem;
 `
