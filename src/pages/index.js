@@ -210,6 +210,15 @@ export const query = graphql`
           contentful_id
         }
       }
+    },
+    allContentfulWebsiteInformation {
+      edges {
+        node {
+          shopInformation {
+            nameOfShop
+          }
+        }
+      }
     }
   }
 `

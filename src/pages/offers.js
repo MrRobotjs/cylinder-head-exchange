@@ -1,13 +1,14 @@
 import React from "react"
 import styled from 'styled-components'
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import HELMET from "../components/helmet"
 import Card from '../components/offer-card-2'
 import NotFound from '../images/notfound.jpg'
+import {graphql } from "gatsby"
 
 export default ({ data }) => (
   <Layout>
-    <SEO title="Page two" />
+    <HELMET title="Page two" />
     <Header>All Offers ({data.allContentfulOffer.totalCount})</Header>
     <OffersContainer>
       {data.allContentfulOffer.edges.map(({ node }) => (
