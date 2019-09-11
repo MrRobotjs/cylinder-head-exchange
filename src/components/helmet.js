@@ -41,17 +41,17 @@ const Helmett = ({ theme = {}, title, description }) => (
           <link rel="shortcut icon" href={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
           <meta name="theme-color" content={variable.SiteColor}/>
           <meta name="image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
-          <meta itemProp="name" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
+          <meta itemProp="name" content={title + " | " + data.contentfulWebsiteInformation.websiteName} />
           <meta itemProp="description" content={metaDescription} />
           <meta itemProp="image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
-          <meta name="og:title" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
+          <meta name="og:title" content={title + " | " + data.contentfulWebsiteInformation.websiteName} />
           <meta name="og:description" content={metaDescription} />
           <meta name="og:image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
-          <meta name="og:site_name" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
+          <meta name="og:site_name" content={title + " | " + data.contentfulWebsiteInformation.websiteName} />
           <meta name="og:locale" content="en_US" />
           <meta name="og:type" content="website" />
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:title" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
+          <meta name="twitter:title" content={title + " | " + data.contentfulWebsiteInformation.websiteName} />
           <meta name="twitter:description" content={metaDescription} />
           <meta name="twitter:image" content={Favicon180} />
           <meta
