@@ -16,7 +16,7 @@ import { graphql } from "gatsby"
 
 export default ({ data }) => (
   <Layout>
-    <HELMET title="Home" />
+    <HELMET title="Home" description="Description coming from Index" />
     <Hero>
       <Image />
       <QuoteContainer>

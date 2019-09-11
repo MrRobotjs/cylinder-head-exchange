@@ -3,8 +3,11 @@ import Helmet from "react-helmet"
 import { StaticQuery, graphql } from 'gatsby';
 import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
+import Favicon180 from '../images/Favicon180.png'
+import Favicon32 from '../images/Favicon32.png'
+import * as variable from 'src/config.js'
 
-const Helmett = ({ theme = {}, title }) => (
+const Helmett = ({ theme = {}, title, description }) => (
   <StaticQuery
     query={graphql`
         query {
@@ -19,42 +22,47 @@ const Helmett = ({ theme = {}, title }) => (
         }
     `}
     render={data => {
-
+        const metaDescription = description || metaDescription
       return (
         <Helmet htmlAttributes={{ lang: 'en' }}>
           <meta charSet="utf-8" />
-          <title>{title} | {data.contentfulWebsiteInformation.websiteName}</title>
-          <meta name="description" content={data.contentfulWebsiteInformation.websiteDescription.websiteDescription} />
-          <link rel="shortcut icon" href="" />
-          <meta name="theme-color" content=""/>
-          <meta name="image" content="" />
+          <title>
+          {title?
+            `${title} | ${data.contentfulWebsiteInformation.websiteName}`
+          :
+            `${data.contentfulWebsiteInformation.websiteName}`
+          }</title>
+          <meta name="description" content={metaDescription} />
+          <link rel="shortcut icon" href={Favicon180} />
+          <meta name="theme-color" content={variable.SiteColor}/>
+          <meta name="image" content={Favicon180} />
           <meta itemProp="name" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
-          <meta itemProp="description" content={data.contentfulWebsiteInformation.websiteDescription.websiteDescription} />
-          <meta itemProp="image" content="" />
+          <meta itemProp="description" content={metaDescription} />
+          <meta itemProp="image" content={Favicon180} />
           <meta name="og:title" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
-          <meta name="og:description" content={data.contentfulWebsiteInformation.websiteDescription.websiteDescription} />
-          <meta name="og:image" content="" />
+          <meta name="og:description" content={metaDescription} />
+          <meta name="og:image" content={Favicon180} />
           <meta name="og:site_name" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
           <meta name="og:locale" content="en_US" />
           <meta name="og:type" content="website" />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
-          <meta name="twitter:description" content={data.contentfulWebsiteInformation.websiteDescription.websiteDescription} />
-          <meta name="twitter:image" content="bigicon" />
+          <meta name="twitter:description" content={metaDescription} />
+          <meta name="twitter:image" content={Favicon180} />
           <meta
             name="twitter:image:src"
-            content=""
+            content={Favicon180}
           />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href=""
+            href={Favicon180}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href=""
+            href={Favicon32}
           />
           <link
             rel="icon"
