@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import Image from "../components/image"
-import SEO from "../components/seo"
+import HELMET from "../components/helmet"
 import * as variable from 'src/config.js'
 import "react-tabs/style/react-tabs.css";
 import GoogleMapReact from 'google-map-react';
@@ -16,7 +16,7 @@ import { graphql } from "gatsby"
 
 export default ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <HELMET title="Home" />
     <Hero>
       <Image />
       <QuoteContainer>
