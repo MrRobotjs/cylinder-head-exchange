@@ -18,11 +18,16 @@ const Helmett = ({ theme = {}, title, description }) => (
                     id
                     websiteDescription
                 }
+                favicon180x180 {
+                    fixed {
+                      src
+                    }
+                  }
             }
         }
     `}
     render={data => {
-        const metaDescription = description || metaDescription
+        const metaDescription = description || data.contentfulWebsiteInformation.websiteDescription.websiteDescription
       return (
         <Helmet htmlAttributes={{ lang: 'en' }}>
           <meta charSet="utf-8" />
@@ -33,15 +38,15 @@ const Helmett = ({ theme = {}, title, description }) => (
             `${data.contentfulWebsiteInformation.websiteName}`
           }</title>
           <meta name="description" content={metaDescription} />
-          <link rel="shortcut icon" href={Favicon180} />
+          <link rel="shortcut icon" href={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
           <meta name="theme-color" content={variable.SiteColor}/>
-          <meta name="image" content={Favicon180} />
+          <meta name="image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
           <meta itemProp="name" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
           <meta itemProp="description" content={metaDescription} />
-          <meta itemProp="image" content={Favicon180} />
+          <meta itemProp="image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
           <meta name="og:title" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
           <meta name="og:description" content={metaDescription} />
-          <meta name="og:image" content={Favicon180} />
+          <meta name="og:image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
           <meta name="og:site_name" content={title + "|" + data.contentfulWebsiteInformation.websiteName} />
           <meta name="og:locale" content="en_US" />
           <meta name="og:type" content="website" />
@@ -56,7 +61,7 @@ const Helmett = ({ theme = {}, title, description }) => (
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href={Favicon180}
+            href={data.contentfulWebsiteInformation.favicon180x180.fixed.src}
           />
           <link
             rel="icon"
