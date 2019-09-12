@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
+    "detect-browser-language": "0.0.2",
     "gatsby": "^2.13.39",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -29,7 +30,8 @@
     "react-tabs": "^3.0.0",
     "react-window-size": "^1.2.2",
     "smooth-scroll": "^16.1.0",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "typescript": "^3.6.3"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.5",
