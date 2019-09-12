@@ -6,7 +6,7 @@ import * as variable from 'src/config'
 
 const Header = ({ Image, Titlee, SubTitlee, ExpirationDate }) => (
     <Card>
-        <Url to="/offers"></Url>
+        <Url to="/offers">{title}</Url>
         <Top style={{backgroundImage: `url(${Image})`}}>
         </Top>
         <Bottom>
@@ -45,6 +45,9 @@ const Card = styled.div`
     overflow: hidden;
     ${Url} {
       width: 100%;
+      font-size: 0;
+      color: transparent;
+      visibility: hidden;
       height: 100%;
       z-index: 1;
       position: absolute;
