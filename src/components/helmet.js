@@ -43,6 +43,7 @@ const Helmett = ({ theme = {}, title, description }) => (
 
           <meta name="msapplication-TileColor" content="#2b5797"/>
           <meta name="msapplication-TileImage" content={Tile}/>
+          <meta name="msapplication-config" content="/browserconfig.xml"/>
 
           <meta name="og:title" content={title} />
           <meta name="og:description" content={metaDescription} />
