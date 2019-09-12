@@ -6,7 +6,7 @@ import * as variable from 'src/config'
 
 const Header = ({ Image, Titlee, SubTitlee, ExpirationDate }) => (
     <Card>
-        <Url to="/offers">{title}</Url>
+        <Url to="/offers">{Titlee}</Url>
         <Top style={{backgroundImage: `url(${Image})`}}>
         </Top>
         <Bottom>
