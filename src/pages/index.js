@@ -186,6 +186,9 @@ export default ({ data }) => (
       <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
       <a href="/">Privacy Statement</a>
     </EmailContainer>
+    <Content>
+        <h1>Start of the next section (wip)</h1>
+    </Content>
   </Layout>
 )
 
@@ -247,6 +250,10 @@ const HeroText = styled.div``
 const OffersBtn = styled(Link)``
 const Text = styled.p``
 const Input = styled.input``
+
+const Content = styled.div`
+padding: 10px;
+`
 
 const EmailContainer = styled.div`
 background-color: ${rgba(darken(0.4, variable.SiteColor), 0.8)};
