@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import MobileHeader from "./mobile-header"
 import "./layout.css"
+import Footer from '../components/footer' 
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -33,11 +34,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <MobileHeader />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org" rel="noreferrer">Gatsby</a>
-        </footer>
+        <Footer/>
     </>
   )
 }
