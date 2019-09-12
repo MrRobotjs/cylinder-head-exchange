@@ -14,7 +14,7 @@ const Header = ({ Image, Titlee, SubTitlee, ExpirationDate }) => (
           <SubTitle>{SubTitlee}</SubTitle>
           <OfferDetails>
             <OfferBtn to="page-2">Details</OfferBtn>
-            <Expiration>{ExpirationDate}</Expiration>
+            <Expiration>Exp. {ExpirationDate}</Expiration>
           </OfferDetails>
         </Bottom>
     </Card>
