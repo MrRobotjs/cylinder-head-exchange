@@ -6,7 +6,6 @@ import Ripples from 'react-ripples'
 import * as variable from 'src/config' 
 import { darken } from 'polished'
 import Headroom from 'react-headroom';
-import detectBrowserLanguage from 'detect-browser-language'
 
 const Header = ({ siteTitle }) => (
   <Headtop>
@@ -44,7 +43,6 @@ const Header = ({ siteTitle }) => (
       <Actionbtns>
         <Ripplescontainer
         color="rgba(255,255,255,0.7)">
-          <Directionsbtn display={ detectBrowserLanguage().includes("es") ? "Espanol" : "false" }>{ detectBrowserLanguage().includes("es") ? "Hablamos Espanol" : false }</Directionsbtn>
         </Ripplescontainer>
         <Ripplescontainer
         color="rgba(255,255,255,0.7)">
