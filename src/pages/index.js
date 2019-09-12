@@ -419,6 +419,7 @@ const Hero = styled.div`
     position: absolute;
     left: 1rem;
     height: 93%;
+    height: unset;
     top: 1rem;
     display: flex;
     flex-direction: column;
