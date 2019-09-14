@@ -155,6 +155,8 @@ export default ({ data }) => (
       {data.allContentfulOffer.edges.map(({ node }) => (
         <Card
         key={node.contentful_id}
+        offerTitle={node.title}
+        Id={node.contentful_id}
         Image={node.offerCard.thumbnail ?
           node.offerCard.thumbnail.fixed.src
         :

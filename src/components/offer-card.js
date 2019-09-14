@@ -3,17 +3,18 @@ import {darken} from 'polished'
 import React from "react"
 import styled from 'styled-components'
 import * as variable from 'src/config' 
+const _ = require("lodash")
 
-const Header = ({ Image, Titlee, SubTitlee, ExpirationDate }) => (
-    <Card>
-        <Url to="/offers">{Titlee}</Url>
+const Header = ({ Image, Titlee, SubTitlee, ExpirationDate, Id, offerTitle, key }) => (
+    <Card key={key}>
+        <Url to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>{Titlee}</Url>
         <Top style={{backgroundImage: `url(${Image})`}}>
         </Top>
         <Bottom>
           <Title>{Titlee}</Title>
           <SubTitle>{SubTitlee}</SubTitle>
           <OfferDetails>
-            <OfferBtn to="page-2">Details</OfferBtn>
+            <OfferBtn to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>Details</OfferBtn>
             <Expiration>Exp. {ExpirationDate}</Expiration>
           </OfferDetails>
         </Bottom>
@@ -50,7 +51,6 @@ const Card = styled.div`
       position: absolute;
       font-size: 0;
       color: transparent;
-      visibility: hidden;
     }
     a:hover {
       ~ ${Top} {

@@ -8,12 +8,14 @@ import {graphql } from "gatsby"
 
 export default ({ data }) => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Offers & Coupons" />
     <Header>All Offers ({data.allContentfulOffer.totalCount})</Header>
     <OffersContainer>
       {data.allContentfulOffer.edges.map(({ node }) => (
         <Card
+        Id={node.contentful_id}
         key={node.contentful_id}
+        offerTitle={node.title}
         Image={node.offerCard.thumbnail ?
           node.offerCard.thumbnail.fixed.src
         :
