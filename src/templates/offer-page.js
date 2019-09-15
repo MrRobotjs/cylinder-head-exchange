@@ -30,6 +30,7 @@ export default ({ data }) => {
             </ExpirationDate>
           </Top>
           <Title>{dataa.title}</Title>
+          <Code>{data.contentfulOffer.contentful_id}</Code>
           <Tos>Participating stores only. Most vehicles. No cash value. Void where prohibited. Not combinable with other offers. Not valid on prior purchase or rain checks. Shop supply fee of 7% of labor cost (up to $25) added to invoices over $35, include cost and profit, and is not charged if prohibited. Other restrictions, fees, and taxes may apply. See or Call store for details.</Tos>
         </Coupon>
       </PrintContent>
@@ -50,6 +51,7 @@ query($id: String!) {
   }
 `
 
+const Code = styled.div``
 const Title = styled.div``
 const Expiration = styled.p``
 const ExpirationDate = styled.div``
@@ -71,6 +73,8 @@ ${Coupon} {
   margin: 0 auto;
   max-width: 40rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   ${Top} {
     display: flex;
     justify-content: space-between;
@@ -132,7 +136,17 @@ ${Coupon} {
     font-size: 1.7rem;
     font-weight: bold;
     margin: 0 1rem;
+    margin-bottom: 0.5rem;
     text-align: center;
+  }
+  ${Code} {
+    align-self: center;
+    display: -webkit-inline-box;
+    background-color: #e2e2e2;
+    color: #5f5f5f;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 3px;
   }
   ${Tos} {
     color: grey;

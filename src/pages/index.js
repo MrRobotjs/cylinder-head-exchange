@@ -171,7 +171,7 @@ export default ({ data }) => (
         SubTitlee={node.offerCard.subTitle ?
           node.offerCard.subTitle
         :
-          "Missing Subtitle."
+          ""
         }
         ExpirationDate={node.expirationDate ?
           node.expirationDate
@@ -190,7 +190,7 @@ export default ({ data }) => (
       <a href="/">Privacy Statement</a>
     </EmailContainer>
     <Content id="Services">
-        <h1>Our Services</h1>
+        <ServicesHeader>Services</ServicesHeader>
     </Content>
   </Layout>
 )
@@ -230,7 +230,7 @@ export const query = graphql`
     }
   }
 `
-
+const ServicesHeader = styled.div``
 const MapBtn = styled.a``
 const SecondaryText =styled.div``
 const PrimaryText = styled.div``
@@ -259,7 +259,11 @@ const Input = styled.input``
 
 const Content = styled.div`
 padding: 10px;
-
+  ${ServicesHeader} {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+  }
 `
 
 const EmailContainer = styled.div`

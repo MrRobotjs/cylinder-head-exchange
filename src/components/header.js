@@ -95,7 +95,7 @@ const NavigatonBar = styled.header`
   background-color: #fff;
   position: relative;
   display: flex;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
+  box-shadow: 2px 4px 10px rgba(0,0,0,.2);
   ${LogoContainer} {
     max-width: 960px;
     margin-right: 2rem;
