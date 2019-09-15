@@ -7,7 +7,7 @@ import NotFound from '../images/notfound.jpg'
 import {graphql } from "gatsby"
 
 export default ({ data }) => (
-  <Layout>
+  <Layout BackgroundColor="#f3f3f3">
     <SEO title="Offers & Coupons" />
     <Header>All Offers ({data.allContentfulOffer.totalCount})</Header>
     <OffersContainer>
@@ -78,4 +78,6 @@ const Header = styled.h1`
   display: block;
   text-align: center;
   margin: 2rem 1rem;
+  margin-top: unset;
+  padding-top: 1rem;
 `

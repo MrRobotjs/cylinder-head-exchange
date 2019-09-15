@@ -24,17 +24,18 @@ export default ({ data }) => (
         <DetailsContainer>
           <Left>
             <LocationHeader>Our Location:</LocationHeader>
-            <Directions>5498 W Mission Blvd A, Ontario, CA 91762</Directions>
-            <MapContainer style={{height: '8rem', width: '100%'}}> 
-              <GoogleMapReact
-              bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
-              defaultCenter={{lat: 34.05, lng: -117.68}}
-              defaultZoom={11}>
-                <Tooltip data-tooltip="Cylinder Head Exchange" data-tooltip-position="top"
-                lat={34.056489}
-                lng={-117.685391}></Tooltip>
-              </GoogleMapReact>
-            </MapContainer>
+            <Directions>{data.Site.shopInformation.address}</Directions>
+              <MapContainer style={{height: '8rem', width: '100%'}}>
+              <a href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385">Directions</a>
+                <GoogleMapReact
+                bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
+                defaultCenter={{lat: 34.05, lng: -117.68}}
+                defaultZoom={11}>
+                  <Tooltip data-tooltip={data.Site.websiteName} data-tooltip-position="top"
+                  lat={34.056489}
+                  lng={-117.685391}></Tooltip>
+                </GoogleMapReact>
+              </MapContainer>
             <Center>
               <Call href="tel:909-282-5198">
                 <svg
@@ -47,7 +48,7 @@ export default ({ data }) => (
                 xmlSpace="preserve"
               >
                 <path d="M365.354 317.9c-15.7-15.5-35.3-15.5-50.9 0-11.9 11.8-23.8 23.6-35.5 35.6-3.2 3.3-5.9 4-9.8 1.8-7.7-4.2-15.9-7.6-23.3-12.2-34.5-21.7-63.4-49.6-89-81-12.7-15.6-24-32.3-31.9-51.1-1.6-3.8-1.3-6.3 1.8-9.4 11.9-11.5 23.5-23.3 35.2-35.1 16.3-16.4 16.3-35.6-.1-52.1-9.3-9.4-18.6-18.6-27.9-28-9.6-9.6-19.1-19.3-28.8-28.8-15.7-15.3-35.3-15.3-50.9.1-12 11.8-23.5 23.9-35.7 35.5-11.3 10.7-17 23.8-18.2 39.1-1.9 24.9 4.2 48.4 12.8 71.3 17.6 47.4 44.4 89.5 76.9 128.1 43.9 52.2 96.3 93.5 157.6 123.3 27.6 13.4 56.2 23.7 87.3 25.4 21.4 1.2 40-4.2 54.9-20.9 10.2-11.4 21.7-21.8 32.5-32.7 16-16.2 16.1-35.8.2-51.8-19-19.1-38.1-38.1-57.2-57.1zM346.254 238.2l36.9-6.3c-5.8-33.9-21.8-64.6-46.1-89-25.7-25.7-58.2-41.9-94-46.9l-5.2 37.1c27.7 3.9 52.9 16.4 72.8 36.3 18.8 18.8 31.1 42.6 35.6 68.8zM403.954 77.8c-42.6-42.6-96.5-69.5-156-77.8l-5.2 37.1c51.4 7.2 98 30.5 134.8 67.2 34.9 34.9 57.8 79 66.1 127.5l36.9-6.3c-9.7-56.2-36.2-107.2-76.6-147.7z" />
-              </svg> 909.282.5198</Call>
+              </svg> {data.Site.shopInformation.phoneNumber}</Call>
               <DirectionsBtn
               href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385"
               target="_blank"
@@ -70,23 +71,23 @@ export default ({ data }) => (
                 <tbody>
                   <Row>
                     <Data>MON-SAT:</Data>
-                    <Data>7:00am-7:00pm</Data>
+                    <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
                   </Row>
                   <Row>
                     <Data>SUN</Data>
-                    <Data style={{color: "red",}}>Closed</Data>
+                    <Data style={{color: `${data.Site.shopInformation.shopHours.sunday === "Closed" ? "red" : "unset"}`,}}>{data.Site.shopInformation.shopHours.sunday}</Data>
                   </Row>
                 </tbody>
               </TableHours>
             </HoursContainer>
           </Left>
           <Right>
-            <MapContainer style={{height: '8rem', width: '100%'}}> 
+            <MapContainer style={{height: '8rem', width: '100%'}}>
               <GoogleMapReact
               bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
               defaultCenter={{lat: 34.05, lng: -117.68}}
               defaultZoom={11}>
-                <Tooltip data-tooltip="Cylinder Head Exchange" data-tooltip-position="top"
+                <Tooltip data-tooltip={data.Site.websiteName} data-tooltip-position="top"
                 lat={34.056489}
                 lng={-117.685391}></Tooltip>
               </GoogleMapReact>
@@ -116,11 +117,11 @@ export default ({ data }) => (
             <tbody>
               <Row>
                 <Data>MON-SAT:</Data>
-                <Data>7:00am-7:00pm</Data>
+                <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
               </Row>
               <Row>
                 <Data>SUN:</Data>
-                <Data style={{color: "red",}}>Closed</Data>
+                <Data style={{color: `${data.Site.shopInformation.shopHours.sunday === "Closed" ? "red" : "unset"}`,}}>{data.Site.shopInformation.shopHours.sunday}</Data>
               </Row>
             </tbody>
           </TableHours>
@@ -150,9 +151,9 @@ export default ({ data }) => (
       </Tabd>
     </Navigation>
     <OffersHeader id="Offers">Featured Coupons and Offers</OffersHeader>
-    <Smalltext>Read details for limitations</Smalltext>
+    <Smalltext>TERMS AND CONDITIONS APPLY</Smalltext>
     <OffersContainer>
-      {data.allContentfulOffer.edges.map(({ node }) => (
+      {data.All.edges.map(({ node }) => (
         <Card
         key={node.contentful_id}
         offerTitle={node.title}
@@ -196,7 +197,18 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    allContentfulOffer(limit: 6) {
+    Site: contentfulWebsiteInformation {
+      websiteName
+      shopInformation {
+        address
+        phoneNumber
+        shopHours {
+          sunday
+          mondaySaturday
+        }
+      }
+    },
+    All: allContentfulOffer(limit: 6) {
       totalCount
       edges {
         node {
@@ -215,19 +227,11 @@ export const query = graphql`
           contentful_id
         }
       }
-    },
-    allContentfulWebsiteInformation {
-      edges {
-        node {
-          shopInformation {
-            nameOfShop
-          }
-        }
-      }
     }
   }
 `
 
+const MapBtn = styled.a``
 const SecondaryText =styled.div``
 const PrimaryText = styled.div``
 const Tooltip = styled.span``
@@ -308,7 +312,6 @@ margin-bottom: 0.8rem;
     text-decoration: unset;
     border: 1px solid;
     padding: 0.3rem 0.7rem;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     &:hover {
       background-color: ${variable.SiteColor};
       color: white;
@@ -321,7 +324,6 @@ const Smalltext = styled.p`
   color: #a2a2a2;
   font-size: 0.6rem;
   text-transform: lowercase;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 `
 
 const OffersHeader = styled.h2`
@@ -333,7 +335,6 @@ const OffersHeader = styled.h2`
   margin-bottom: 0.3rem;
   transform: scale(1,1.18);
   letter-spacing: -1px;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 `
 
 const OffersContainer = styled.div`
@@ -358,7 +359,6 @@ const Navigation = styled.div`
     color: #fff;
     text-decoration: unset;
     padding: 14px 28px;
-    font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
     font-size: 1rem;
     transition: all 250ms ease-in-out;
     white-space: nowrap;
@@ -406,7 +406,6 @@ const Hero = styled.div`
     overflow: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     justify-content: center;
     ${PrimaryText} {
       color: #fff;
@@ -437,7 +436,6 @@ const Hero = styled.div`
     overflow: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     ${ScheduleHeader} {
       color: ${variable.SiteColor};
       font-size: 1.3rem;
@@ -460,6 +458,52 @@ const Hero = styled.div`
         padding-right: 0.2rem;
         ${MapContainer} {
           display: none;
+          ${Tooltip} {
+            display: inline-block;
+            position: relative;
+            cursor: help;
+            padding: 4px;
+            height: 0.5rem;
+            width: 0.5rem;
+            background-color: red;
+            border-radius: 50%;
+            &::before {
+              content: attr(data-tooltip);
+              position: absolute;
+              background: #000;
+              color: #fff;
+              padding: 4px 8px;
+              font-size: 14px;
+              line-height: 1.4;
+              min-width: 107px;
+              text-align: center;
+              border-radius: 4px;
+              font-family: "Racing Sans One";
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 0;
+              border-color: transparent;
+              border-style: solid;
+              z-index: 50;
+            }
+            &[data-tooltip-position="top"] {
+              &::before {
+                left: -500%;
+                bottom: 100%;
+                margin-bottom: 6px;
+              }
+              &::after {
+                left: 50%;
+                margin-left: -6px;
+                bottom: 100%;
+                border-width: 6px 6px 0;
+                border-top-color: #000;
+              }
+            }
+          }
         }
         ${HoursContainer} {
           display: none;
@@ -514,98 +558,71 @@ const Hero = styled.div`
             display: none;
           }
         }
-       ${Tooltip} {
-          display: inline-block;
-          position: relative;
-          cursor: help;
-          padding: 4px;
-          height: 0.5rem;
-          width: 0.5rem;
-          background-color: red;
-          border-radius: 50%;
-          &::before {
-            content: attr(data-tooltip);
-            position: absolute;
-            background: #000;
-            color: #fff;
-            padding: 4px 8px;
-            font-size: 14px;
-            line-height: 1.4;
-            min-width: 107px;
-            text-align: center;
-            border-radius: 4px;
-            font-family: "Racing Sans One";
-          }
-          &::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-color: transparent;
-            border-style: solid;
-            z-index: 50;
-          }
-          &[data-tooltip-position="top"] {
-            &::before {
-              left: -500%;
-              bottom: 100%;
-              margin-bottom: 6px;
-            }
-            &::after {
-              left: 50%;
-              margin-left: -6px;
-              bottom: 100%;
-              border-width: 6px 6px 0;
-              border-top-color: #000;
-            }
-          }
-        }
       }
       ${Right} {
         flex: 1;
-        ${Tooltip} {
-          display: inline-block;
+        ${MapContainer} {
           position: relative;
-          cursor: help;
-          padding: 4px;
-          height: 0.5rem;
-          width: 0.5rem;
-          background-color: red;
-          border-radius: 50%;
-          &::before {
-            content: attr(data-tooltip);
+          ${MapBtn} {
             position: absolute;
-            background: #000;
+            background-color: ${darken(0.16, variable.SiteColor)};
             color: #fff;
-            padding: 4px 8px;
-            font-size: 14px;
-            line-height: 1.4;
-            min-width: 107px;
-            text-align: center;
-            border-radius: 4px;
-            font-family: "Racing Sans One";
+            padding: 3px 8px;
+            bottom: 3px;
+            border-radius: 3px;
+            opacity: 0.6;
+            left: 3px;
+            z-index: 1;
+            text-decoration: unset;
+            transition: 280ms linear all;
+            &:hover {
+              opacity: 1;
+            }
           }
-          &::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-color: transparent;
-            border-style: solid;
-            z-index: 50;
-          }
-          &[data-tooltip-position="top"] {
+          ${Tooltip} {
+            display: inline-block;
+            position: relative;
+            cursor: help;
+            padding: 4px;
+            height: 0.5rem;
+            width: 0.5rem;
+            background-color: red;
+            border-radius: 50%;
             &::before {
-              left: -500%;
-              bottom: 100%;
-              margin-bottom: 6px;
+              content: attr(data-tooltip);
+              position: absolute;
+              background: #000;
+              color: #fff;
+              padding: 4px 8px;
+              font-size: 14px;
+              line-height: 1.4;
+              min-width: 107px;
+              text-align: center;
+              border-radius: 4px;
+              font-family: "Racing Sans One";
             }
             &::after {
-              left: 50%;
-              margin-left: -6px;
-              bottom: 100%;
-              border-width: 6px 6px 0;
-              border-top-color: #000;
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 0;
+              border-color: transparent;
+              border-style: solid;
+              z-index: 50;
+            }
+            &[data-tooltip-position="top"] {
+              &::before {
+                left: -500%;
+                bottom: 100%;
+                margin-bottom: 6px;
+              }
+              &::after {
+                left: 50%;
+                margin-left: -6px;
+                bottom: 100%;
+                border-width: 6px 6px 0;
+                border-top-color: #000;
+              }
             }
           }
         }
@@ -703,8 +720,6 @@ const Hero = styled.div`
           font-size: 1.5rem;
       }
     }
-  }
-  @media screen and (max-width: 798px) {
     ${QuoteContainer} {
       width: 92%;
       margin-left: auto;
@@ -713,10 +728,20 @@ const Hero = styled.div`
       right: 0;
     }
   }
-  @media screen and (max-width: 475px) {
+  @media screen and (max-width: 698px) {
     ${QuoteContainer} {
       height: 86%;
       padding-bottom: 0.4rem;
+    }
+  }
+  @media screen and (max-height: 442px) {
+    ${QuoteContainer} {
+      height: 86%;
+      padding-bottom: 0.4rem;
+    }
+  }
+  @media screen and (max-width: 475px) {
+    ${QuoteContainer} {
       ${HoursContainer} {
         display: none;
       }

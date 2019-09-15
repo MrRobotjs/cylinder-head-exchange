@@ -1,5 +1,4 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { Link, graphql, StaticQuery  } from "gatsby"
 import React from "react"
 import styled from 'styled-components'
 import Ripples from 'react-ripples'
@@ -7,61 +6,77 @@ import * as variable from 'src/config'
 import { darken } from 'polished'
 import Headroom from 'react-headroom';
 
-const Header = ({ siteTitle }) => (
-  <Headtop>
-    <NavigatonBar>
-      <LogoContainer
-      to="/">
-          <Logo>
-            {siteTitle}
-          </Logo>
-      </LogoContainer>
-      <Navmenu>
-        <ul>
-          <li>
-            <Navlink
-            to="/"
-            activeClassName="active">Home</Navlink>
-          </li>
-          <li>
-            <Navlink
-            to="/offers/"
-            activeClassName="active">Offers</Navlink>
-          </li>
-          <li>
-            <Navlink
-            to="/page-2"
-            activeClassName="active">Page 2</Navlink>
-          </li>
-          <li>
-            <Navlink
-            to="/404"
-            activeClassName="active">404</Navlink>
-          </li>
-        </ul>
-      </Navmenu>
-      <Actionbtns>
-        <Ripplescontainer
-        color="rgba(255,255,255,0.7)">
-        </Ripplescontainer>
-        <Ripplescontainer
-        color="rgba(255,255,255,0.7)">
-          <Directionsbtn
-          href="https://www.google.com/local/place/getaquote?qe=4298828&g2lb=4297498&hl=en&gl=us&lid=4578751527000397004&gie=true&n=Q3lsaW5kZXIgSGVhZCBFeGNoYW5nZQ%3D%3D&c=gcid:auto_repair_shop&ll=DYqXTBQV2pvauQ%3D%3D&cv=CHECK_PRICING"
-          target="_blank"
-          rel="noreferrer">Get Quote</Directionsbtn>
-        </Ripplescontainer>
-      </Actionbtns>
-    </NavigatonBar>
-  </Headtop>
-)
+class Header extends React.Component {
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  render() {
+    return (
+    <StaticQuery
+    query={graphql`
+      query {
+        contentfulWebsiteInformation {
+          websiteName
+          navigation {
+            tabs {
+              tabs {
+                link
+                title
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Headtop>
+      <NavigatonBar>
+        <LogoContainer
+        to="/">
+            <Logo>
+              {data.contentfulWebsiteInformation.websiteName}
+            </Logo>
+        </LogoContainer>
+        <Navmenu>
+          <ul>
+            <li>
+              <Navlink
+              to="/"
+              activeClassName="active">Home</Navlink>
+            </li>
+            <li>
+              <Navlink
+              to="/offers/"
+              activeClassName="active">Offers</Navlink>
+            </li>
+            <li>
+              <Navlink
+              to="/page-2"
+              activeClassName="active">Page 2</Navlink>
+            </li>
+            <li>
+              <Navlink
+              to="/404"
+              activeClassName="active">404</Navlink>
+            </li>
+          </ul>
+        </Navmenu>
+        <Actionbtns>
+          <Ripplescontainer
+          color="rgba(255,255,255,0.7)">
+          </Ripplescontainer>
+          <Ripplescontainer
+          color="rgba(255,255,255,0.7)">
+            <Directionsbtn
+            href="https://www.google.com/local/place/getaquote?qe=4298828&g2lb=4297498&hl=en&gl=us&lid=4578751527000397004&gie=true&n=Q3lsaW5kZXIgSGVhZCBFeGNoYW5nZQ%3D%3D&c=gcid:auto_repair_shop&ll=DYqXTBQV2pvauQ%3D%3D&cv=CHECK_PRICING"
+            target="_blank"
+            rel="noreferrer">Get Quote</Directionsbtn>
+          </Ripplescontainer>
+        </Actionbtns>
+      </NavigatonBar>
+    </Headtop>
+    )}
+    />
+    );
+  }
 }
 
 export default Header
@@ -142,7 +157,6 @@ const NavigatonBar = styled.header`
           color: #5f6368;
           font-size: 0.9rem;
           font-weight: 400;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
           transition: border-color ease-in-out 230ms;
           position: relative;
@@ -205,6 +219,9 @@ const NavigatonBar = styled.header`
         }
       }
     }
+    @media print {    
+      display: none;
+    }
   }
   ${Actionbtns} {
     display: flex;
@@ -219,7 +236,6 @@ const NavigatonBar = styled.header`
         background-size: 135px 1px;  
         font-size: 0.85rem;
         padding: 8px 17px;
-        font-family: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
         transition: background-color 230ms ease-in-out;
         &:hover {
           background-color: ${darken(0.15, variable.SiteColor)};
@@ -231,6 +247,9 @@ const NavigatonBar = styled.header`
           margin-right: 10px;
         }
       }
+    }
+    @media print {    
+      display: none;
     }
   }
   @media screen and (max-width: 960px) {
@@ -273,6 +292,15 @@ const NavigatonBar = styled.header`
     ${LogoContainer} {
       ${Logo} {
         text-indent: 15px;
+      }
+    }
+  }
+  @media print {    
+    box-shadow: unset;
+    ${LogoContainer} {
+      margin: 0 auto;
+      ${Logo} {
+        font-weight: bold;
       }
     }
   }

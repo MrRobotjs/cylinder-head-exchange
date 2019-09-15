@@ -5,8 +5,8 @@ import styled from 'styled-components'
 import * as variable from 'src/config' 
 const _ = require("lodash")
 
-const Header = ({ Image, Titlee, SubTitlee, ExpirationDate, Id, offerTitle, key }) => (
-    <Card key={key}>
+const Header = ({ Image, Titlee, SubTitlee, ExpirationDate, Id, offerTitle }) => (
+    <Card>
         <Url to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>{Titlee}</Url>
         <Top style={{backgroundImage: `url(${Image})`}}>
         </Top>
@@ -14,7 +14,7 @@ const Header = ({ Image, Titlee, SubTitlee, ExpirationDate, Id, offerTitle, key 
           <Title>{Titlee}</Title>
           <SubTitle>{SubTitlee}</SubTitle>
           <OfferDetails>
-            <OfferBtn to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>Details</OfferBtn>
+            <OfferBtn to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>Claim Offer</OfferBtn>
             <Expiration>Exp. {ExpirationDate}</Expiration>
           </OfferDetails>
         </Bottom>
@@ -77,7 +77,6 @@ const Card = styled.div`
         font-weight: bold;
         font-size: 1.3rem;
         text-transform: uppercase;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         margin: 1rem 0;
         margin-top: 0.3rem;
@@ -88,7 +87,6 @@ const Card = styled.div`
         font-size: 1.1rem;
         color: ${variable.SiteColor};
         text-transform: uppercase;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         margin: auto 0;
         margin-top: unset;
@@ -109,8 +107,6 @@ const Card = styled.div`
           font-size: 1.2rem;
           z-index: 1;
           transition: all linear 280ms;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         &:hover {
           background-color: ${darken( 0.2, variable.SiteColor)}
         }
@@ -120,7 +116,6 @@ const Card = styled.div`
           margin: unset;
           font-size: 0.7rem;
           font-weight: 700;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         }
       }
     }

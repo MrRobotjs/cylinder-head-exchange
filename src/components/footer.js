@@ -22,7 +22,7 @@ const pluginCard = ({author}) => (
     render={data => (
 
     <Footer>
-        <WebsiteName>{data.contentfulWebsiteInformation.websiteName}</WebsiteName>
+        <WebsiteName>Footer</WebsiteName>
     </Footer>
 
 )}

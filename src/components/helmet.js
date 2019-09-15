@@ -1,14 +1,13 @@
 import React from 'react';
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from 'gatsby';
-import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import Favicon180 from '../images/Favicon180.png'
 import Safari from '../images/safari-pinned-tab.svg'
 import Tile from '../images/mstile-144x144.png'
 import * as variable from 'src/config.js'
 
-const Helmett = ({ theme = {}, title, description }) => (
+const Helmett = ({ title, description }) => (
   <StaticQuery
     query={graphql`
         query {
@@ -68,4 +67,4 @@ Helmett.propTypes = {
   theme: PropTypes.object,
 };
 
-export default withTheme(Helmett);
+export default Helmett;

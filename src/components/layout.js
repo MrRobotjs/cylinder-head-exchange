@@ -7,7 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import MobileHeader from "./mobile-header"
 import "./layout.css"
@@ -18,21 +17,14 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]')
 }
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      contentfulWebsiteInformation {
-        websiteName
-      }
-    }
-  `)
+const Layout = ({ children, BackgroundColor }) => {
 
   return (
     <>
-      <Header siteTitle={data.contentfulWebsiteInformation.websiteName} />
+      <Header/>
       <MobileHeader />
-        <main>{children}</main>
-        <Footer/>
+      <main style={{backgroundColor: `${BackgroundColor}`}}>{children}</main>
+      <Footer/>
     </>
   )
 }

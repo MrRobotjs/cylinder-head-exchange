@@ -186,4 +186,7 @@ const MobileNavigationBar = styled.nav`
     bottom: unset;
     display: none;
   }
+    @media print  {    
+        display: none;
+    }   
 `
