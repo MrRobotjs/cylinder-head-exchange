@@ -138,12 +138,12 @@ export default ({ data }) => (
         Offers
       </Tabd>
       <Tabd
-      href="#bottom">
-        Directions
+      href="#Email">
+        Email Subscription
       </Tabd>
       <Tabd
-      href="#bottom">
-        About Us
+      href="#Services">
+        Services
       </Tabd>
       <Tabd
       href="/">
@@ -151,7 +151,7 @@ export default ({ data }) => (
       </Tabd>
     </Navigation>
     <OffersHeader id="Offers">Featured Coupons and Offers</OffersHeader>
-    <Smalltext>TERMS AND CONDITIONS APPLY</Smalltext>
+      <Smalltext>TERMS AND CONDITIONS APPLY</Smalltext>
     <OffersContainer>
       {data.All.edges.map(({ node }) => (
         <Card
@@ -184,13 +184,13 @@ export default ({ data }) => (
     <OfferContainer>
       <OffersBtn to="/offers/">View All Offers</OffersBtn>
     </OfferContainer>
-    <EmailContainer>
+    <EmailContainer id="Email">
       <Text>Want more deals? Sign up for exclusive offers</Text>
       <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
       <a href="/">Privacy Statement</a>
     </EmailContainer>
-    <Content>
-        <h1>Start of the next section (wip)</h1>
+    <Content id="Services">
+        <h1>Our Services</h1>
     </Content>
   </Layout>
 )
@@ -259,6 +259,7 @@ const Input = styled.input``
 
 const Content = styled.div`
 padding: 10px;
+
 `
 
 const EmailContainer = styled.div`

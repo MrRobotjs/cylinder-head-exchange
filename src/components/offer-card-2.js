@@ -44,6 +44,7 @@ const Card = styled.div`
     background-color: #fafafa;
     border-radius: 2px;
     overflow: hidden;
+    box-shadow: 2px 2px 15px 0 rgba(60,60,60,.2);
     ${Url} {
       width: 100%;
       font-size: 0;

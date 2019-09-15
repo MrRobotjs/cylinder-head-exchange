@@ -41,7 +41,7 @@ query($id: String!) {
     contentfulOffer(contentful_id: {eq: $id}) {
       title
       contentful_id
-      createdAt(formatString: "MMMM Do, YYYY")
+      createdAt(formatString: "MMMM Do")
       expirationDate(formatString: "MMMM Do, YYYY")
     }
     contentfulWebsiteInformation {
@@ -137,8 +137,8 @@ ${Coupon} {
   ${Tos} {
     color: grey;
     font-size: 0.5rem;
-    margin: 0 1rem;
-    margin-bottom: 0.8rem;
+    margin: 0 0.6rem;
+    margin-bottom: 0.6rem;
     margin-top: 0.5rem;
   }
 }
