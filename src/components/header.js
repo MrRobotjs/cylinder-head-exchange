@@ -15,14 +15,6 @@ class Header extends React.Component {
       query {
         contentfulWebsiteInformation {
           websiteName
-          navigation {
-            tabs {
-              tabs {
-                link
-                title
-              }
-            }
-          }
         }
       }
     `}
