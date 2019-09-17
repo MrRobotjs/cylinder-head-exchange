@@ -68,7 +68,7 @@ const Card = styled.div`
       height: 100%;
       z-index: 1;
       position: absolute;
-      pointer-event: none;
+      visibility: hidden;
     }
     a:hover {
       ~ ${Top} {
