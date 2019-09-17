@@ -267,7 +267,6 @@ padding: 10px;
 `
 
 const EmailContainer = styled.div`
-background-color: ${rgba(darken(0.4, variable.SiteColor), 0.8)};
 width: 100%;
 position: relative;
 overflow: hidden;
@@ -280,9 +279,15 @@ justify-content: space-evenly;
   width: 100%;
   height: 100%;
   background-image: url(${MechanicalPart});
-  z-index: -1;
   background-size: cover;
   background-repeat: no-repeat;
+}
+&::after {
+  content: "";
+  background-color: ${rgba(darken(0.4, variable.SiteColor), 0.8)};
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 ${Text} {
   text-align: center;
@@ -290,6 +295,7 @@ ${Text} {
   color: #fff;
   font-size: 1.5rem;
   margin: 1.5rem 1.5rem 1rem 1.5rem;
+  z-index: 1;
 }
 ${Input} {
   margin: 0 auto;
@@ -297,12 +303,14 @@ ${Input} {
   width: 18rem;
   border: unset;
   padding: 0.2rem 0.4rem;
+  z-index: 1;
 }
 a {
   color: #fff;
   display: block;
   text-align: center;
-  margin: 1rem 1.5rem 1.5rem 1.5rem
+  margin: 1rem 1.5rem 1.5rem 1.5rem;
+  z-index: 1;
 }
 `
 
