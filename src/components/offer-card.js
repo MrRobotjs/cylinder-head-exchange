@@ -65,6 +65,9 @@ const Card = styled.div`
       ${Url} {
         visibility: visible;
       }
+      ${Top} {
+        transform: scale(1.05);
+      }
     }
     &:active,
     &:focus {
@@ -73,11 +76,6 @@ const Card = styled.div`
     &:focus {
       outline: unset;
       border: 2px solid ${variable.SiteColor};
-    }
-    a:hover {
-      ~ ${Top} {
-        transform: scale(1.05);
-      }
     }
     ${Top} {
       background-color: red;

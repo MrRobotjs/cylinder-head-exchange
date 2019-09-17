@@ -24,13 +24,12 @@ export default ({ data }) => {
             <LogoContainer>
               <Logo>{data.contentfulWebsiteInformation.websiteName}</Logo>
             </LogoContainer>
-            <ExpirationDate>
-             <p> Expiration Date:</p>
-             <Expiration>{data.contentfulOffer.createdAt} - {data.contentfulOffer.expirationDate}</Expiration>
-            </ExpirationDate>
           </Top>
           <Title>{dataa.title}</Title>
           <Code>{data.contentfulOffer.contentful_id}</Code>
+          <Expires>
+            <Expiration>Valid Only {data.contentfulOffer.createdAt} - {data.contentfulOffer.expirationDate}</Expiration>
+          </Expires>
           <Tos>Participating stores only. Most vehicles. No cash value. Void where prohibited. Not combinable with other offers. Not valid on prior purchase or rain checks. Shop supply fee of 7% of labor cost (up to $25) added to invoices over $35, include cost and profit, and is not charged if prohibited. Other restrictions, fees, and taxes may apply. See or Call store for details.</Tos>
         </Coupon>
       </PrintContent>
@@ -44,6 +43,9 @@ query($id: String!) {
       contentful_id
       createdAt(formatString: "MMMM Do")
       expirationDate(formatString: "MMMM Do, YYYY")
+      description {
+        description
+      }
     }
     contentfulWebsiteInformation {
       websiteName
@@ -51,10 +53,10 @@ query($id: String!) {
   }
 `
 
+const Expires = styled.div``
 const Code = styled.div``
 const Title = styled.div``
 const Expiration = styled.p``
-const ExpirationDate = styled.div``
 const LogoContainer = styled.div``
 const Logo = styled.div``
 const Top = styled.div``
@@ -65,25 +67,25 @@ const PrintBtn = styled.button``
 const Coupon = styled.div``
 
 const PrintContent = styled.div`
-margin: 2rem 1rem;
+margin: 2rem 1.5rem;
+margin-top: 1.5rem;
 display: flex;
 justify-content: center;
 ${Coupon} {
   border: 3px dashed #000;
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: 35rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   ${Top} {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
     flex-wrap: wrap;
     margin-bottom: 0.5rem;
     ${LogoContainer} {
       max-width: 960px;
-      margin-right: 0.6rem;
       position: relative;
       text-decoration: none;
       padding: 0.55rem 1.0875rem;
@@ -116,24 +118,9 @@ ${Coupon} {
         white-space: nowrap;
       }
     }
-    ${ExpirationDate} {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-right: 0.7rem;
-      p {
-        margin: unset;
-        text-align: right;
-        font-size: 0.9rem;
-      }
-      ${Expiration} {
-        font-size: 0.7rem;
-        font-weight: bold;
-      }
-    }
   }
   ${Title} {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: bold;
     margin: 0 1rem;
     margin-bottom: 0.5rem;
@@ -148,9 +135,19 @@ ${Coupon} {
     font-size: 0.8rem;
     border-radius: 3px;
   }
+  ${Expires} {
+    ${Expiration} {
+      font-size: 0.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 0.5rem;
+      margin-bottom: unset;
+      color: grey;
+    }
+  }
   ${Tos} {
     color: grey;
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     margin: 0 0.6rem;
     margin-bottom: 0.6rem;
     margin-top: 0.5rem;
@@ -161,12 +158,12 @@ ${Coupon} {
     ${Top} {
       ${LogoContainer} {
         ${Logo} {
-          font-size: 1.4rem;
+          font-size: 1.55rem;
         }
       }
     }
     ${Title} {
-      font-size: 1.45rem;
+      font-size: 1.5rem;
     }
   }
 }
@@ -175,20 +172,12 @@ ${Coupon} {
     ${Top} {
       ${LogoContainer} {
         ${Logo} {
-          font-size: 1.2rem;
-        }
-      }
-      ${ExpirationDate} {
-        p {
-          font-size: 0.8rem;
-        }
-        ${Expiration} {
-          font-size: 0.6rem;
+          font-size: 1.45rem;
         }
       }
     }
     ${Title} {
-      font-size: 1.25rem;
+      font-size: 1.4rem;
     }
   }
 }
@@ -197,20 +186,12 @@ ${Coupon} {
     ${Top} {
       ${LogoContainer} {
         ${Logo} {
-          font-size: 1rem;
-        }
-      }
-      ${ExpirationDate} {
-        p {
-          font-size: 0.7rem;
-        }
-        ${Expiration} {
-          font-size: 0.5rem;
+          font-size: 1.35rem;
         }
       }
     }
     ${Title} {
-      font-size: 1.05rem;
+      font-size: 1.3rem;
     }
   }
 }
@@ -219,17 +200,23 @@ ${Coupon} {
     ${Top} {
       ${LogoContainer} {
         ${Logo} {
-          font-size: 0.8rem;
+          font-size: 1.25rem;
         }
       }
-      ${ExpirationDate} {
-        p {
-          font-size: 0.6rem;
-        }
-        ${Expiration} {
-          font-size: 0.4rem;
-        }
+    }
+    ${Title} {
+      font-size: 1.2rem;
+    }
+    ${Code} {
+      font-size: 0.6rem;
+    }
+    ${Expires} {
+      ${Expiration} {
+        font-size: 0.4rem;
       }
+    }
+    ${Tos} {
+      font-size: 0.3rem
     }
   }
 }
@@ -238,17 +225,12 @@ ${Coupon} {
     ${Top} {
       ${LogoContainer} {
         ${Logo} {
-          font-size: 0.6rem;
+          font-size: 1.15rem;
         }
       }
-      ${ExpirationDate} {
-        p {
-          font-size: 0.5rem;
-        }
-        ${Expiration} {
-          font-size: 0.3rem;
-        }
-      }
+    }
+    ${Title} {
+      font-size: 1.1rem;
     }
   }
 }
@@ -256,15 +238,18 @@ ${Coupon} {
 const OfferContainer = styled.div`
 display: flex;
 margin-top: 1.1rem;
-margin-left: 2rem;
+margin-left: 1.5rem;
+flex-wrap: wrap;
   ${GetOffer} {
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    margin-right: 18px;
   }
   ${PrintContainer} {
-    margin-left: 18px;
     align-self: center;
+    margin-right: 1.5rem;
     ${PrintBtn} {
       color: #fff;
       background-color: ${variable.SiteColor};
