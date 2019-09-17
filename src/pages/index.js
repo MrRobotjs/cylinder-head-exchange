@@ -15,7 +15,7 @@ import { graphql } from "gatsby"
 
 
 export default ({ data }) => (
-  <Layout>
+  <Layout BackgroundColor="#f3f3f3">
     <HELMET title="Home" description="Description coming from Index" />
     <Hero>
       <Image />
