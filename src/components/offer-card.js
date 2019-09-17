@@ -46,21 +46,6 @@ const Card = styled.div`
     border-radius: 2px;
     overflow: hidden;
     transition: all 280ms linear;
-    &:hover,
-    &:active,
-    &:focus {
-      box-shadow: 2px 2px 15px 0 rgba(60,60,60,.2);
-      -webkit-user-select: none;
-      -webkit-touch-callout: none;
-    }
-    &:active,
-    &:focus {
-      background-color: #fff;
-    }
-    &:focus {
-      outline: unset;
-      border: 2px solid ${variable.SiteColor};
-    }
     ${Url} {
       width: 100%;
       height: 100%;
@@ -69,6 +54,24 @@ const Card = styled.div`
       font-size: 0;
       color: transparent;
       visibility: hidden;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 2px 2px 15px 0 rgba(60,60,60,.2);
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      ${Url} {
+        visibility: visible;
+      }
+    }
+    &:active,
+    &:focus {
+      background-color: #fff;
+    }
+    &:focus {
+      outline: unset;
+      border: 2px solid ${variable.SiteColor};
     }
     a:hover {
       ~ ${Top} {
