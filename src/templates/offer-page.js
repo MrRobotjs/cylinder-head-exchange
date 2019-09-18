@@ -255,7 +255,7 @@ flex-wrap: wrap;
       background-color: ${variable.SiteColor};
       border: unset;
       padding: 7px 13px;
-      border-radius: 3px;
+      border-radius: ${variable.BtnBorderRadius};
       display: block;
       &:active,
       &:focus,

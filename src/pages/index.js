@@ -581,7 +581,7 @@ const Hero = styled.div`
             color: #fff;
             padding: 3px 8px;
             bottom: 3px;
-            border-radius: 3px;
+            border-radius: ${variable.BtnBorderRadius};
             opacity: 0.6;
             left: 3px;
             z-index: 1;

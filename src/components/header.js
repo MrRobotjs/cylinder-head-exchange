@@ -54,9 +54,6 @@ class Header extends React.Component {
         <Actionbtns>
           <Ripplescontainer
           color="rgba(255,255,255,0.7)">
-          </Ripplescontainer>
-          <Ripplescontainer
-          color="rgba(255,255,255,0.7)">
             <Directionsbtn
             href="https://www.google.com/local/place/getaquote?qe=4298828&g2lb=4297498&hl=en&gl=us&lid=4578751527000397004&gie=true&n=Q3lsaW5kZXIgSGVhZCBFeGNoYW5nZQ%3D%3D&c=gcid:auto_repair_shop&ll=DYqXTBQV2pvauQ%3D%3D&cv=CHECK_PRICING"
             target="_blank"
@@ -221,11 +218,17 @@ const NavigatonBar = styled.header`
     margin-right: 0.5rem;
     ${Ripplescontainer} {
       align-self: center;
+      transition: box-shadow 250ms ease-in-out;
+      box-shadow: 0px 2px 10px -3px ${variable.SiteColor};
+      &:hover {
+        box-shadow: 0px 2px 10px -1px ${variable.SiteColor};
+      }
       ${Directionsbtn} {
         color: #fff;
         background-color: ${variable.SiteColor};
+        border-radius: ${variable.BtnBorderRadius};
         text-decoration: unset;
-        background-size: 135px 1px;  
+        background-size: 135px 1px;
         font-size: 0.85rem;
         padding: 8px 17px;
         transition: background-color 230ms ease-in-out;
