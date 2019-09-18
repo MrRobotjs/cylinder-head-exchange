@@ -139,7 +139,7 @@ const MobileNavigationBar = styled.nav`
     ${Icon} {
         width: 22px;
         margin: unset;
-        fill: #ff2b3c;
+        fill: ${variable.SiteColor};
         opacity: 0.8;
         transition: .2s linear ease-in-out;
         g, path, circle {
@@ -174,7 +174,7 @@ const MobileNavigationBar = styled.nav`
     }
     &:active, &:focus {
         background-color: #eee;
-        }
+    }
   }
   @media screen and (min-width: 798px) {
     vertical-align: top;
