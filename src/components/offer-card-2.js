@@ -37,7 +37,8 @@ const Card = styled.div`
     margin-right: 1rem;
     margin-left: 1rem;
     margin-bottom: 1rem;
-    border: solid 1px #dcdcdb;
+    /*border: solid 1px #dcdcdb;*/
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(0, 0, 0, 0.137255) 0px 1px 1px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 1px -1px;
     position: relative;
     flex-direction: column;
     display: flex;
