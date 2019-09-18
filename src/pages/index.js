@@ -392,7 +392,7 @@ const Navigation = styled.div`
 `
 
 const Hero = styled.div`
-  max-height: calc(100vh - 3rem);
+  max-height: calc(100vh - 7rem); /* - 3rem to make image full screen of monitor minus the header height */
   display: block;
   width: 100%;
   position: relative;
