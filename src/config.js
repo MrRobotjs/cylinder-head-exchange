@@ -1,5 +1,5 @@
 //Site Color
-export const SiteColor = '#ff2b3c'; //red: ff2b3c blue: 2b80ff
+export const SiteColor = '#DE0E1C'; //red: ff2b3c blue: 2b80ff
 
 export const SiteGradient = 'linear-gradient(110deg, rgba(255,43,60,1) 0%, rgba(247,142,89,1) 100%)';
 
