@@ -56,6 +56,9 @@ const Helmett = ({ title, description }) => (
           <meta name="twitter:description" content={metaDescription} />
           <meta name="twitter:image" content={Favicon180} />
           <meta name="twitter:image:src" content={Favicon180}/>
+
+          <meta name="apple-mobile-web-app-capable" content="yes">
+          <meta name="apple-mobile-web-app-status-bar-style" content={variable.SiteColor}>
         </Helmet>
       );
     }}
