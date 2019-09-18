@@ -38,6 +38,10 @@ const Helmett = ({ title, description }) => (
           <meta itemProp="name" content={title} />
           <meta itemProp="description" content={metaDescription} />
 
+          <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+          <link rel="preconnect" href="https://maps.googleapis.com/" crossorigin />
+          <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
+          <link rel="preconnect" href="https://maps.gstatic.com/" crossorigin />
           <link rel="mask-icon" href={Safari} color={variable.SiteColor}/>
 
           <meta name="msapplication-TileColor" content="#2b5797"/>
