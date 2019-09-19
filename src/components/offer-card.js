@@ -59,7 +59,7 @@ const Card = styled.div`
     &:hover,
     &:active,
     &:focus {
-      box-shadow: 2px 2px 15px 0 rgba(60,60,60,.2);
+      /*box-shadow: 2px 2px 15px 0 rgba(60,60,60,.2);*/
       -webkit-user-select: none;
       -webkit-touch-callout: none;
       background-color: #eaeaea;
