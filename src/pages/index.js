@@ -388,7 +388,7 @@ flex-wrap: wrap;
     }
   }
   ${InformationContainer} {
-    background-color: ${variable.SiteColor};
+    background-color: ${darken(0.08, variable.SiteColor)};
     flex: 1;
     padding: 1rem 1.5rem;
     ${AddressHeader}, ${HoursHeader} {
@@ -591,6 +591,7 @@ const Navigation = styled.div`
     text-decoration: unset;
     padding: 14px 28px;
     font-size: 1rem;
+    font-weight: bold;
     transition: all 250ms ease-in-out;
     white-space: nowrap;
     margin: 0 0.5rem;

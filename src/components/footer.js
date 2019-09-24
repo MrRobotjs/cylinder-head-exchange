@@ -15,6 +15,10 @@ const pluginCard = ({author}) => (
                 id
                 websiteDescription
             }
+            shopInformation {
+                address
+                phoneNumber
+            }
         }
     }
     `}
@@ -64,18 +68,26 @@ const pluginCard = ({author}) => (
                 </a>
             </Social>
         </Website>
-        <Category>
+        <CategoryLinks>
             <Header>Links</Header>
             <ul>
-                <li><Link to="Home">Home</Link></li>
-                <li><Link to="Offers">Offers</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="offers">Offers</Link></li>
                 <li><Link to="Services">Services</Link></li>
                 <li><Link to="404">404</Link></li>
             </ul>
-        </Category>
-        <Category>
+        </CategoryLinks>
+        <CategoryContact>
             <Header>Contact Us</Header>
-        </Category>
+            <ul>
+                <li>
+                    <a href="tel:909-282-5198" target="blank">{data.contentfulWebsiteInformation.shopInformation.phoneNumber}</a>
+                </li>
+                <li>
+                    <a href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" target="blank">{data.contentfulWebsiteInformation.shopInformation.address}</a>
+                </li>
+            </ul>
+        </CategoryContact>
     </Footer>
 
 )}
@@ -86,17 +98,18 @@ export default pluginCard
 
 const WebsiteName = styled.div``
 const Website = styled.div``
-const Category = styled.div``
+const CategoryContact = styled.div``
 const Header = styled.div``
 const Social = styled.div``
 const Icon = styled.div``
+const CategoryLinks = styled.div``
 
 const Footer = styled.footer`
 padding: 1.4rem 4rem;
 margin: unset;
 position: relative;
 display: flex;
-justify-content: center;
+justify-content: space-evenly;
 overflow: hidden;
 background-color: ${variable.SiteColor};
 flex-wrap: wrap;
@@ -109,7 +122,8 @@ flex-wrap: wrap;
     z-index: -1;
     transform: rotate(15deg);
 }
-${Category} {
+${CategoryContact},
+${CategoryLinks} {
     flex: 1;
     ${Header} {
         color: #fff;
@@ -142,8 +156,7 @@ ${Category} {
     }
 }
 ${Website} {
-    flex: 1;
-    margin-right: 0.6rem;
+    flex: 2;
     ${Social} {
         display: flex;
         margin-top: 0.8rem;
@@ -173,7 +186,7 @@ ${Website} {
     ${WebsiteName} {
         color: #fff;
         font-weight: bold;
-        font-size: 1.6rem;
+        font-size: 1.9rem;
         font-family: "Racing Sans One";
         align-self: center;
         margin-bottom: 0.6rem;
@@ -187,10 +200,25 @@ ${Website} {
     flex-direction: column;
     padding: 1.4rem 1.5rem;
     ${Website} {
-        margin-bottom: 0.8rem;
+        order: 2;
+        ${WebsiteName} {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+        p {
+            text-align: center;
+        }
+        ${Social} {
+            justify-content: center;
+        }
     }
-    ${Category} {
-        margin-bottom: 0.8rem;
+    ${CategoryLinks} {
+        display: none;
+    }
+    ${CategoryContact} {
+        margin-bottom: 1.4rem;
+        order: 1;
+        display: none;
     }
   }
 `
