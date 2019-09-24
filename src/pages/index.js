@@ -248,7 +248,7 @@ export default ({ data }) => (
               <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
             </Row>
             <Row>
-              <Data>SUN</Data>
+              <Data>Sunday</Data>
               <Data style={{color: `${data.Site.shopInformation.shopHours.sunday === "Closed" ? "black" : "unset"}`,}}>{data.Site.shopInformation.shopHours.sunday}</Data>
             </Row>
           </tbody>
@@ -424,6 +424,7 @@ flex-wrap: wrap;
           ${Data} {
             padding-top: unset;
             color: #fff;
+            border-bottom: unset;
             &:first-child {
               font-weight: bold;
             }
