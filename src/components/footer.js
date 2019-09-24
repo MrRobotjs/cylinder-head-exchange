@@ -183,4 +183,10 @@ ${Website} {
         margin-bottom: 0.17rem;
     }
 }
+@media screen and (max-width: 798px) {
+    flex-direction: column;
+    ${Website} {
+        margin-bottom: 0.8rem;
+    }
+  }
 `
