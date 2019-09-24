@@ -84,15 +84,11 @@ const LogoContainer = styled(Link)`
 `
 const Logo = styled.div`
 `
-const Headtop = styled(Headroom)`
-.headroom {
-  z-index: 4 !important;
-}`
+
 const NavigatonBar = styled.header`
   background-color: #fff;
   position: relative;
   display: flex;
-  box-shadow: 2px 4px 10px rgba(0,0,0,.2);
   ${LogoContainer} {
     max-width: 960px;
     margin-right: 2rem;
@@ -300,3 +296,14 @@ const NavigatonBar = styled.header`
     }
   }
 `
+
+const Headtop = styled(Headroom)`
+.headroom {
+  z-index: 4 !important;
+  &.headroom--pinned,
+  &.headroom--unpinned {
+    ${NavigatonBar} {
+      box-shadow: 2px 4px 10px rgba(0,0,0,.2);
+    }
+  }
+}`

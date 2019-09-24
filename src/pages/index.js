@@ -12,11 +12,22 @@ import Card from '../components/offer-card'
 import {rgba, darken} from 'polished'
 import MechanicalPart from '../images/background.jpg'
 import { graphql } from "gatsby"
+import TextLoop from "react-text-loop";
 
 
 export default ({ data }) => (
   <Layout BackgroundColor="#f3f3f3">
     <HELMET title="Home" description="Description coming from Index" />
+    <Hero2>
+      <HeroHeader>Need Service? We can provide</HeroHeader>
+      <TextLoop className="Loop" mask={true}>
+        <HeaderLoop>Cylinder Head Exchange</HeaderLoop>
+        <HeaderLoop>Oil Change</HeaderLoop>
+        <HeaderLoop>Tune-Ups</HeaderLoop>
+        <HeaderLoop>Full Check Up</HeaderLoop>
+      </TextLoop>
+      <Phone>{data.Site.shopInformation.phoneNumber}</Phone>
+    </Hero2>
     <Hero>
       <Image />
       <QuoteContainer>
@@ -145,6 +156,10 @@ export default ({ data }) => (
         Services
       </Tabd>
       <Tabd
+      href="#Info">
+        Information
+      </Tabd>
+      <Tabd
       href="/">
         refresh
       </Tabd>
@@ -191,6 +206,54 @@ export default ({ data }) => (
     <Content id="Services">
         <ServicesHeader>Services</ServicesHeader>
     </Content>
+    <DirectionsSection id="Info">
+      <MapContainer style={{height: '25rem', width: '100%'}}>
+        <GoogleMapReact
+        bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
+        defaultCenter={{lat: 34.05, lng: -117.68}}
+        defaultZoom={11}>
+          <Tooltip data-tooltip={data.Site.websiteName} data-tooltip-position="top"
+          lat={34.056489}
+          lng={-117.685391}></Tooltip>
+        </GoogleMapReact>
+      </MapContainer>
+      <InformationContainer>
+        <AddressHeader>Address</AddressHeader> <Address>{data.Site.shopInformation.address}</Address>
+        <HoursHeader>Shop Hours</HoursHeader>
+        <TableHours>
+          <tbody>
+            <Row>
+              <Data>Monday</Data>
+              <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+            </Row>
+            <Row>
+              <Data>Tuesday</Data>
+              <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+            </Row>
+            <Row>
+              <Data>Wednesday</Data>
+              <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+            </Row>
+            <Row>
+              <Data>Thursday</Data>
+              <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+            </Row>
+            <Row>
+              <Data>Friday</Data>
+              <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+            </Row>
+            <Row>
+              <Data>Saturday</Data>
+              <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+            </Row>
+            <Row>
+              <Data>SUN</Data>
+              <Data style={{color: `${data.Site.shopInformation.shopHours.sunday === "Closed" ? "black" : "unset"}`,}}>{data.Site.shopInformation.shopHours.sunday}</Data>
+            </Row>
+          </tbody>
+        </TableHours>
+      </InformationContainer>
+    </DirectionsSection>
   </Layout>
 )
 
@@ -255,6 +318,144 @@ const HeroText = styled.div``
 const OffersBtn = styled(Link)``
 const Text = styled.p``
 const Input = styled.input``
+const HeroHeader = styled.h1``
+const HeaderLoop = styled.h2``
+const Phone = styled.div``
+const InformationContainer = styled.div``
+const Address = styled.p``
+const AddressHeader = styled.p``
+const HoursHeader = styled.p``
+const DirectionsSection = styled.div`
+display: flex;
+flex-wrap: wrap;
+  ${MapContainer} {
+    flex: 1;
+    ${Tooltip} {
+      display: inline-block;
+      position: relative;
+      cursor: help;
+      padding: 4px;
+      height: 0.5rem;
+      width: 0.5rem;
+      background-color: red;
+      border-radius: 50%;
+      &::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        background: #000;
+        color: #fff;
+        padding: 4px 8px;
+        font-size: 14px;
+        line-height: 1.4;
+        min-width: 107px;
+        text-align: center;
+        border-radius: 4px;
+        font-family: "Racing Sans One";
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        z-index: 50;
+      }
+      &[data-tooltip-position="top"] {
+        &::before {
+          left: -500%;
+          bottom: 100%;
+          margin-bottom: 6px;
+        }
+        &::after {
+          left: 50%;
+          margin-left: -6px;
+          bottom: 100%;
+          border-width: 6px 6px 0;
+          border-top-color: #000;
+        }
+      }
+    }
+  }
+  ${InformationContainer} {
+    background-color: ${variable.SiteColor};
+    flex: 1;
+    padding: 1rem 1.5rem;
+    ${AddressHeader}, ${HoursHeader} {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: -webkit-inline-box;
+      position: relative;
+      margin-bottom: 0.8rem;
+      &::after {
+        content: "";
+        width: 30%;
+        height: 0.2rem;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        z-index: 1;
+        background-color: #fff;
+      }
+    }
+    ${Address} {
+      color: #fff;
+    }
+    ${TableHours} {
+      margin: unset;
+      margin-top: 0.4rem;
+      tbody {
+        ${Row} {
+          ${Data} {
+            padding-top: unset;
+            color: #fff;
+            &:first-child {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 798px) {
+    flex-direction: column;
+  }
+`
+
+const Hero2 = styled.div`
+max-height: calc(100vh - 7rem); /* - 3rem to make image full screen of monitor minus the header height */
+display: flex;
+justify-content: center;
+flex-direction: column;
+background-color: #fff;
+padding: 1.6rem 0.8rem;
+display: none;
+${HeroHeader} {
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  font-size: 2.8rem;
+}
+.Loop {
+  margin: 0 auto;
+  padding-bottom: 3px;
+  ${HeaderLoop} {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin: unset;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+${Phone} {
+  text-align: center;
+  font-weight: bold;
+  color: ${variable.SiteColor};
+  margin-top: 0.7rem;
+  font-size: 2.1rem;
+}
+`
 
 const Content = styled.div`
 padding: 10px;
@@ -303,6 +504,13 @@ ${Input} {
   border: unset;
   padding: 0.2rem 0.4rem;
   z-index: 1;
+  border: unset;
+  border-radius: 3px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  &[disabled] {
+    opacity: 0.7;
+  }
 }
 a {
   color: #fff;
@@ -746,7 +954,7 @@ const Hero = styled.div`
       padding-bottom: 0.4rem;
     }
   }
-  @media screen and (max-height: 442px) {
+  @media screen and (max-height: 503px) {
     ${QuoteContainer} {
       height: 86%;
       padding-bottom: 0.4rem;
