@@ -208,6 +208,7 @@ export default ({ data }) => (
     </Content>
     <DirectionsSection id="Info">
       <MapContainer style={{height: '25rem', width: '100%'}}>
+        <MapBtn href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" target="blank">Take me!</MapBtn>
         <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
         defaultCenter={{lat: 34.05, lng: -117.68}}
@@ -330,6 +331,19 @@ display: flex;
 flex-wrap: wrap;
   ${MapContainer} {
     flex: 1;
+    position: relative;
+    ${MapBtn} {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      background-color: ${variable.SiteColor};
+      color: #fff;
+      padding: 0.5rem 0.7rem;
+      z-index: 1;
+      text-decoration: unset;
+      border-radius: 3px;
+      font-size: 1.2rem;
+    }
     ${Tooltip} {
       display: inline-block;
       position: relative;
