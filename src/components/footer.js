@@ -185,7 +185,11 @@ ${Website} {
 }
 @media screen and (max-width: 798px) {
     flex-direction: column;
+    padding: 1.4rem 1.5rem;
     ${Website} {
+        margin-bottom: 0.8rem;
+    }
+    ${Category} {
         margin-bottom: 0.8rem;
     }
   }
