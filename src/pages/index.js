@@ -204,7 +204,18 @@ export default ({ data }) => (
     </Content>
     <DirectionsSection id="Directions">
       <MapContainer style={{height: '25rem', width: '100%'}}>
-        <MapBtn href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" target="blank">Take me!</MapBtn>
+        <MapBtn href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" target="blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0"
+            y="0"
+            enableBackground="new 0 0 51.636 51.636"
+            version="1.1"
+            viewBox="0 0 51.636 51.636"
+            xmlSpace="preserve">
+            <path d="M51.353.914a.999.999 0 00-1.135-.213L.583 23.481a1 1 0 00.252 1.895l22.263 3.731 2.545 21.038a1.002 1.002 0 001.889.324l24-48.415a1 1 0 00-.179-1.14z" />
+          </svg>
+        </MapBtn>
         <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
         defaultCenter={{lat: 34.05, lng: -117.68}}
@@ -334,11 +345,31 @@ flex-wrap: wrap;
       left: 0.5rem;
       background-color: ${variable.SiteColor};
       color: #fff;
-      padding: 0.5rem 0.7rem;
+      height: 60px;
+      width: 60px;
       z-index: 1;
       text-decoration: unset;
-      border-radius: 3px;
+      border-radius: 50%;
       font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      transition: all 250ms ease-in-out;
+      box-shadow: 0px 2px 10px -3px ${variable.SiteColor};
+      &:hover,
+      &:focus,
+      &:active {
+        box-shadow: 0px 2px 10px -1px ${variable.SiteColor};
+        background-color: ${darken(0.12, variable.SiteColor)};
+      }
+      svg {
+        height: 50%;
+        width: 50%;
+        align-self: center;
+        fill: #fff;
+        position: relative;
+        top: 2px;
+        right: 2px;
+      }
     }
     ${Tooltip} {
       display: inline-block;
