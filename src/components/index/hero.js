@@ -25,7 +25,7 @@ const mobileHeader = (AllOffers) => (
       }
     `}
     render={data => (
-    <>
+    <Section>
         <Hero2>
             <HeroHeader>Need Service? We can provide</HeroHeader>
             <TextLoop className="Loop" mask={true}>
@@ -150,13 +150,14 @@ const mobileHeader = (AllOffers) => (
                 <SecondaryText>We can repair </SecondaryText>
             </HeroText>
         </Hero>
-    </>
+    </Section>
 )}
 />
 );
 
 export default mobileHeader
 
+const Section = styled.section``
 const LocationHeader = styled.div``
 const QuoteContainer = styled.div``
 const SecondaryText =styled.div``

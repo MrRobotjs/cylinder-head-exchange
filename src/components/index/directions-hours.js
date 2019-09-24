@@ -1,29 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
 import * as variable from 'src/config'
-import { StaticQuery, graphql } from "gatsby"
 import GoogleMapReact from 'google-map-react';
 import {darken} from 'polished'
 
-const mobileHeader = () => (
-    <StaticQuery
-    query={graphql`
-      query {
-        Site: contentfulWebsiteInformation {
-            websiteName
-            shopInformation {
-              address
-              phoneNumber
-              shopHours {
-                sunday
-                mondaySaturday
-              }
-            }
-          }
-      }
-    `}
-    render={data => (
-    <>
+const DirectionsHours = ({WebsiteName, ShopAddress, MonSat, Sun}) => {
+    return (
         <Section id="Directions">
             <MapContainer style={{height: '25rem', width: '100%'}}>
                 <MapBtn href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" target="blank">
@@ -42,54 +24,52 @@ const mobileHeader = () => (
                 bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
                 defaultCenter={{lat: 34.05, lng: -117.68}}
                 defaultZoom={11}>
-                <Tooltip data-tooltip={data.Site.websiteName} data-tooltip-position="top"
+                <Tooltip data-tooltip={WebsiteName} data-tooltip-position="top"
                 lat={34.056489}
                 lng={-117.685391}></Tooltip>
                 </GoogleMapReact>
             </MapContainer>
             <InformationContainer>
-                <AddressHeader>Address</AddressHeader> <Address>{data.Site.shopInformation.address}</Address>
+                <AddressHeader>Address</AddressHeader> <Address>{ShopAddress}</Address>
                 <HoursHeader>Shop Hours</HoursHeader>
                 <TableHours>
                 <tbody>
                     <Row>
                     <Data>Monday</Data>
-                    <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+                    <Data>{MonSat}</Data>
                     </Row>
                     <Row>
                     <Data>Tuesday</Data>
-                    <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+                    <Data>{MonSat}</Data>
                     </Row>
                     <Row>
                     <Data>Wednesday</Data>
-                    <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+                    <Data>{MonSat}</Data>
                     </Row>
                     <Row>
                     <Data>Thursday</Data>
-                    <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+                    <Data>{MonSat}</Data>
                     </Row>
                     <Row>
                     <Data>Friday</Data>
-                    <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+                    <Data>{MonSat}</Data>
                     </Row>
                     <Row>
                     <Data>Saturday</Data>
-                    <Data>{data.Site.shopInformation.shopHours.mondaySaturday}</Data>
+                    <Data>{MonSat}</Data>
                     </Row>
                     <Row>
                     <Data>Sunday</Data>
-                    <Data style={{color: `${data.Site.shopInformation.shopHours.sunday === "Closed" ? "black" : "unset"}`,}}>{data.Site.shopInformation.shopHours.sunday}</Data>
+                    <Data style={{color: `${Sun === "Closed" ? "black" : "unset"}`,}}>{Sun}</Data>
                     </Row>
                 </tbody>
                 </TableHours>
             </InformationContainer>
         </Section>
-    </>
-)}
-/>
-);
+    )
+}
 
-export default mobileHeader
+export default DirectionsHours
 
 const TableHours = styled.table``
 const Row = styled.tr``

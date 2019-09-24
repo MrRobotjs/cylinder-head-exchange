@@ -3,40 +3,15 @@ import styled from 'styled-components';
 import * as variable from 'src/config'
 import NotFound from 'src/images/notfound.jpg'
 import Card from 'src/components/offer-card'
-import { StaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 
-const mobileHeader = (AllOffers) => (
-    <StaticQuery
-    query={graphql`
-      query {
-        All: allContentfulOffer(limit: 6) {
-            totalCount
-            edges {
-              node {
-                title
-                createdAt
-                expirationDate(formatString: "MMMM Do, YYYY")
-                offerCard {
-                  title
-                  subTitle
-                  thumbnail {
-                    fixed {
-                      src
-                    }
-                  }
-                }
-                contentful_id
-              }
-            }
-        }
-      }
-    `}
-    render={data => (
-    <>
+const Offers = ({AllOffers}) => {
+  return (
+    <Section>
         <Header id="Offers">Featured Coupons and Offers</Header>
-        <Smalltext>TERMS AND CONDITIONS APPLY</Smalltext>
+        <Smalltext>Terms and conditions apply</Smalltext>
         <Container>
-        {data.All.edges.map(({ node }) => (
+        {AllOffers.edges.map(({ node }) => (
             <Card
             key={node.contentful_id}
             offerTitle={node.title}
@@ -67,13 +42,13 @@ const mobileHeader = (AllOffers) => (
         <OfferContainer>
           <OffersBtn to="/offers/">View All Offers</OffersBtn>
         </OfferContainer>
-    </>
-)}
-/>
-);
+    </Section>
+  )
+}
 
-export default mobileHeader
+export default Offers
 
+const Section = styled.section``
 const OffersBtn = styled(Link)``
 
 const Smalltext = styled.p`

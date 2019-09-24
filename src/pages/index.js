@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import HELMET from "../components/helmet"
@@ -15,7 +14,9 @@ import DirectionsHours from '../components/index/directions-hours'
 export default ({ data }) => (
   <Layout BackgroundColor="#f3f3f3">
     <HELMET title="Home" description="Description coming from Index" />
+
     <Hero/>
+
     <Navigation>
       <Tabd
       href="#Offers">
@@ -35,17 +36,24 @@ export default ({ data }) => (
       </Tabd>
     </Navigation>
     
-    <OfferSection/>
+    <OfferSection
+    AllOffers={data.All}/>
 
     <EmailContainer id="Email">
       <Text>Want more deals? Sign up for exclusive offers</Text>
       <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
       <a href="/">Privacy Statement</a>
     </EmailContainer>
+    
     <Content id="Services">
         <ServicesHeader>Services</ServicesHeader>
     </Content>
-    <DirectionsHours/>
+
+    <DirectionsHours
+    WebsiteName={data.Site.websiteName}
+    ShopAddress={data.Site.shopInformation.address}
+    MonSat={data.Site.shopInformation.shopHours.mondaySaturday}
+    Sun={data.Site.shopInformation.shopHours.sunday}/>
   </Layout>
 )
 
