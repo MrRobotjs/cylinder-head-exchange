@@ -37,9 +37,6 @@ export default ({ data }) => (
     
     <OfferSection/>
 
-    <OfferContainer>
-      <OffersBtn to="/offers/">View All Offers</OffersBtn>
-    </OfferContainer>
     <EmailContainer id="Email">
       <Text>Want more deals? Sign up for exclusive offers</Text>
       <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
@@ -154,7 +151,6 @@ const TableHours = styled.table``
 const Row = styled.tr``
 const Data = styled.td``
 const MapContainer = styled.div``
-const OffersBtn = styled(Link)``
 const Text = styled.p``
 const Input = styled.input``
 const AddressHeader = styled.p``
@@ -174,8 +170,8 @@ flex-wrap: wrap;
       left: 0.5rem;
       background-color: ${variable.SiteColor};
       color: #fff;
-      height: 60px;
-      width: 60px;
+      height: 55px;
+      width: 55px;
       z-index: 1;
       text-decoration: unset;
       border-radius: 50%;
@@ -191,8 +187,8 @@ flex-wrap: wrap;
         background-color: ${darken(0.12, variable.SiteColor)};
       }
       svg {
-        height: 50%;
-        width: 50%;
+        height: 45%;
+        width: 45%;
         align-self: center;
         fill: #fff;
         position: relative;
@@ -254,7 +250,7 @@ flex-wrap: wrap;
     ${AddressHeader}, ${HoursHeader} {
       color: #fff;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       display: -webkit-inline-box;
       position: relative;
       margin-bottom: 0.8rem;
@@ -356,24 +352,6 @@ a {
   margin: 1rem 1.5rem 1.5rem 1.5rem;
   z-index: 1;
 }
-`
-
-const OfferContainer = styled.div`
-display: flex;
-justify-content: center;
-margin-bottom: 0.8rem;
-  ${OffersBtn} {
-    margin-bottom: auto;
-    transition: all 285ms linear;
-    color:  ${variable.SiteColor};
-    text-decoration: unset;
-    border: 1px solid;
-    padding: 0.3rem 0.7rem;
-    &:hover {
-      background-color: ${variable.SiteColor};
-      color: white;
-    }
-  }
 `
 
 const Navigation = styled.div`

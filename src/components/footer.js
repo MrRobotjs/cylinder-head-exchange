@@ -28,7 +28,7 @@ const pluginCard = ({author}) => (
     <Footer>
         <Website>
             <WebsiteName>{data.contentfulWebsiteInformation.websiteName}</WebsiteName>
-            <p>Copyright 2019 - 2020</p>
+            <p>Copyright {new Date().getFullYear()},</p>
             <p>All Rights Reserved</p>
             <Social>
                 <a href="https://www.facebook.com/CylinderHeadExchangeShop/" target="blank">

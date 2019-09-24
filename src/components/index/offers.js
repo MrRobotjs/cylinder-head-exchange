@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as variable from 'src/config'
 import NotFound from 'src/images/notfound.jpg'
 import Card from 'src/components/offer-card'
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 const mobileHeader = (AllOffers) => (
     <StaticQuery
@@ -64,12 +64,17 @@ const mobileHeader = (AllOffers) => (
             />
         ))}
         </Container>
+        <OfferContainer>
+          <OffersBtn to="/offers/">View All Offers</OffersBtn>
+        </OfferContainer>
     </>
 )}
 />
 );
 
 export default mobileHeader
+
+const OffersBtn = styled(Link)``
 
 const Smalltext = styled.p`
     text-align: center;
@@ -94,4 +99,22 @@ const Container = styled.div`
     flex-wrap: wrap;
     margin: 0 0.8rem;
     justify-content: center;
+`
+
+const OfferContainer = styled.div`
+display: flex;
+justify-content: center;
+margin-bottom: 0.8rem;
+  ${OffersBtn} {
+    margin-bottom: auto;
+    transition: all 285ms linear;
+    color:  ${variable.SiteColor};
+    text-decoration: unset;
+    border: 1px solid;
+    padding: 0.3rem 0.7rem;
+    &:hover {
+      background-color: ${variable.SiteColor};
+      color: white;
+    }
+  }
 `
