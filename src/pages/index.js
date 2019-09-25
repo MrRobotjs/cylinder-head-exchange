@@ -10,6 +10,7 @@ import { graphql } from "gatsby"
 import OfferSection from '../components/index/offers.js'
 import Hero from '../components/index/hero.js'
 import DirectionsHours from '../components/index/directions-hours'
+import WhyUs from '../components/index/why-us'
 
 export default ({ data }) => (
   <Layout BackgroundColor="#f3f3f3">
@@ -54,6 +55,9 @@ export default ({ data }) => (
     ShopAddress={data.Site.shopInformation.address}
     MonSat={data.Site.shopInformation.shopHours.mondaySaturday}
     Sun={data.Site.shopInformation.shopHours.sunday}/>
+
+    <WhyUs />
+    
   </Layout>
 )
 

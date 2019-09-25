@@ -72,9 +72,9 @@ const pluginCard = ({author}) => (
             <Header>Links</Header>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="offers">Offers</Link></li>
-                <li><Link to="Services">Services</Link></li>
-                <li><Link to="404">404</Link></li>
+                <li><Link to="/offers">Offers</Link></li>
+                <li><Link to="/services">Services</Link></li>
+                <li><Link to="/404">404</Link></li>
             </ul>
         </CategoryLinks>
         <CategoryContact>
@@ -157,6 +157,7 @@ ${CategoryLinks} {
 }
 ${Website} {
     flex: 2;
+    margin-right: 3.2rem;
     ${Social} {
         display: flex;
         margin-top: 0.8rem;
