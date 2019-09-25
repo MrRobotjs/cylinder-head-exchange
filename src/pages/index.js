@@ -11,9 +11,9 @@ import OfferSection from '../components/index/offers.js'
 import Hero from '../components/index/hero.js'
 import DirectionsHours from '../components/index/directions-hours'
 import WhyUs from '../components/index/why-us'
-
+/*#f3f3f3*/
 export default ({ data }) => (
-  <Layout BackgroundColor="#f3f3f3">
+  <Layout BackgroundColor="#fff">
     <HELMET title="Home" description="Description coming from Index" />
 
     <Hero/>
@@ -32,8 +32,8 @@ export default ({ data }) => (
         Services
       </Tabd>
       <Tabd
-      href="#Directions">
-        Directions / Map
+      href="#Map">
+        Map / Info
       </Tabd>
     </Navigation>
     
@@ -81,6 +81,7 @@ export const query = graphql`
           title
           createdAt
           expirationDate(formatString: "MMMM Do, YYYY")
+          type
           offerCard {
             title
             subTitle

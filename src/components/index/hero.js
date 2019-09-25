@@ -54,8 +54,8 @@ const IndexHero = () => (
                   <MapContainer style={{height: '8rem', width: '100%'}}>
                       <GoogleMapReact
                       bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
-                      defaultCenter={{lat: 34.05, lng: -117.68}}
-                      defaultZoom={11}>
+                      defaultCenter={{lat: 34.056489, lng: -117.685391}}
+                      defaultZoom={14}>
                       <Tooltip data-tooltip={data.Site.websiteName} data-tooltip-position="top"
                       lat={34.056489}
                       lng={-117.685391}></Tooltip>
@@ -110,8 +110,8 @@ const IndexHero = () => (
                   <MapContainer style={{height: '8rem', width: '100%'}}>
                   <GoogleMapReact
                   bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
-                  defaultCenter={{lat: 34.05, lng: -117.68}}
-                  defaultZoom={11}>
+                  defaultCenter={{lat: 34.056489, lng: -117.685391}}
+                  defaultZoom={14}>
                       <Tooltip data-tooltip={data.Site.websiteName} data-tooltip-position="top"
                       lat={34.056489}
                       lng={-117.685391}></Tooltip>

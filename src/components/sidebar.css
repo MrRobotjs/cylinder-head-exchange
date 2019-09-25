@@ -59,11 +59,11 @@
   
   .bm-item.active::before {
     background-color: rgba(0,0,0,0.2);
-    background-color: #ff2b3c;
+    background-color: #DE0E1C;
   }
 
   .bm-item.active:hover::before {
-    background-color: #ff2b3c;
+    background-color: #DE0E1C;
   }
 
   .bm-item:hover::before {

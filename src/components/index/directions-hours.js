@@ -6,7 +6,7 @@ import {darken} from 'polished'
 
 const DirectionsHours = ({WebsiteName, ShopAddress, MonSat, Sun}) => {
     return (
-        <Section id="Directions">
+        <Section id="Map">
             <MapContainer>
                 <MapBtn href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" target="blank">
                 <svg
@@ -22,15 +22,17 @@ const DirectionsHours = ({WebsiteName, ShopAddress, MonSat, Sun}) => {
                 </MapBtn>
                 <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyDkZGepwL2AwWxaoTjgadJWRBKWhqIihoQ' }}
-                defaultCenter={{lat: 34.05, lng: -117.68}}
-                defaultZoom={11}>
+                defaultCenter={{lat: 34.056489, lng: -117.685391}}
+                defaultZoom={15}>
                 <Tooltip data-tooltip={WebsiteName} data-tooltip-position="top"
                 lat={34.056489}
                 lng={-117.685391}></Tooltip>
                 </GoogleMapReact>
             </MapContainer>
             <InformationContainer>
+              <div>
                 <AddressHeader>Address</AddressHeader> <Address>{ShopAddress}</Address>
+              </div>
                 <HoursHeader>Shop Hours</HoursHeader>
                 <TableHours>
                 <tbody>
