@@ -57,7 +57,7 @@ export default ({ data }) => (
     Sun={data.Site.shopInformation.shopHours.sunday}/>
 
     <WhyUs />
-    
+
   </Layout>
 )
 
@@ -153,7 +153,7 @@ ${Input} {
   padding: 0.3rem 0.6rem;
   font-size: 0.8rem;
   &[disabled] {
-    opacity: 0.7;
+    opacity: 0.4;
   }
 }
 a {
