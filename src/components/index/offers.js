@@ -15,7 +15,7 @@ const Offers = ({AllOffers}) => {
         <Container>
         {AllOffers.edges.map(({ node }) => (
           <Card2 type={node.type} key={node.contentful_id}>
-            <Url to={"/offers/offer/" + _.kebabCase(node.title) + "-" + node.contentful_id}>{node.title}</Url>
+            <Url to={"/offers/offer/" + _.kebabCase(node.title) + "-" + node.contentful_id}>{node.offerCard.title}</Url>
             <Top>
               <IconContainer title={node.type}>
                 <Icon>
@@ -47,7 +47,7 @@ const Offers = ({AllOffers}) => {
               </IconContainer>
             </Top>
             <Bottom>
-              <Title>{node.title}</Title>
+              <Title>{node.offerCard.title}</Title>
               <Claim to={"/offers/offer/" + _.kebabCase(node.title) + "-" + node.contentful_id}>Claim {node.type}</Claim>
             </Bottom>
           </Card2>
