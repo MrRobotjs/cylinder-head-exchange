@@ -6,7 +6,7 @@ import Card from '../components/offer-card-2'
 import {graphql } from "gatsby"
 
 export default ({ data }) => (
-  <Layout BackgroundColor="#f3f3f3">
+  <Layout BackgroundColor="#fff">
     <HELMET title="Offers & Coupons" />
     <Header>All Offers ({data.allContentfulOffer.totalCount})</Header>
     <OffersContainer>
