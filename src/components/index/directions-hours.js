@@ -219,6 +219,10 @@ flex-wrap: wrap;
       border-top-right-radius: 2rem;
       overflow: hidden;
       height: 20rem;
+      div:first-child {
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+      }
     }
     ${InformationContainer} {
       border-bottom-left-radius: 2rem;
