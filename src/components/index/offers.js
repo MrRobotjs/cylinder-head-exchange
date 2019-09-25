@@ -14,7 +14,7 @@ const Offers = ({AllOffers}) => {
         <Smalltext>Terms and conditions apply</Smalltext>
         <Container>
         {AllOffers.edges.map(({ node }) => (
-          <Card2 type={node.type}>
+          <Card2 type={node.type} key={node.contentful_id}>
             <Url href={"/offers/offer/" + _.kebabCase(node.title) + "-" + node.contentful_id}>{node.title}</Url>
             <Top>
               <IconContainer title={node.type}>
@@ -48,6 +48,7 @@ const Offers = ({AllOffers}) => {
             </Top>
             <Bottom>
               <Title>{node.title}</Title>
+              <Claim>Claim {node.type}</Claim>
             </Bottom>
           </Card2>
         ))}
@@ -98,16 +99,19 @@ const Icon = styled.div``
 const IconContainer = styled.div``
 const Title = styled.p``
 const Url = styled.a``
+const Claim = styled(Link)``
 
 const Card2 = styled.div`
 background-color: #fff;
 box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.2);
 flex-basis: 13.3rem;
 border-radius: 0.4rem;
-margin-right: 3rem;
+margin: 0 1rem;
 margin-bottom: 2rem;
 position: relative;
 transition: all linear 260ms;
+display: flex;
+flex-direction: column;
   ${Url} {
     font-size: 0;
     position: absolute;
@@ -153,10 +157,26 @@ transition: all linear 260ms;
   ${Bottom} {
     padding: 1rem 1.5rem;
     padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
     ${Title} {
       text-align: center;
       font-weight: bold;
       margin: unset;
+    }
+    ${Claim} {
+      align-self: center;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 3px;
+      margin-top: auto;
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+      z-index: 1;
+      transition: all linear 260ms;
     }
   }
   &:hover {
@@ -184,6 +204,16 @@ transition: all linear 260ms;
         }
       }
     }
+    ${Bottom} {
+      ${Claim} {
+        color: #00c99d;
+        background-color: ${rgba("#00c99d", 0.1)};
+        &:hover {
+          background-color: #00c99d;
+          color: #fff;
+        }
+      }
+    }
   }
   &[type="Deal"] {
     ${Top} {
@@ -191,6 +221,16 @@ transition: all linear 260ms;
         ${Icon} {
           background-color: #ff477d;
           box-shadow: 0px 6px 15px -2px ${rgba("#ff477d", 0.25)};
+        }
+      }
+    }
+    ${Bottom} {
+      ${Claim} {
+        color: #ff477d;
+        background-color: ${rgba("#ff477d", 0.1)};
+        &:hover {
+          background-color: #ff477d;
+          color: #fff;
         }
       }
     }
