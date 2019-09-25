@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Layout from "../components/layout"
 import HELMET from "../components/helmet"
 import Card from '../components/offer-card-2'
-import NotFound from '../images/notfound.jpg'
 import {graphql } from "gatsby"
 
 export default ({ data }) => (
@@ -13,24 +12,15 @@ export default ({ data }) => (
     <OffersContainer>
       {data.allContentfulOffer.edges.map(({ node }) => (
         <Card
-        Id={node.contentful_id}
         key={node.contentful_id}
-        offerTitle={node.title}
-        Image={node.offerCard.thumbnail ?
-          node.offerCard.thumbnail.fixed.src
+        id={node.contentful_id}
+        cardTitle={node.offerCard ?
+        node.offerCard.title
         :
-          NotFound
+        node.title
         }
-        Titlee={node.offerCard ?
-          node.offerCard.title
-        :
-          node.title
-        }
-        ExpirationDate={node.expirationDate ?
-          node.expirationDate
-        :
-          "Missing Date"
-        }
+        titlee={node.title}
+        type={node.type}
         />
       ))}
     </OffersContainer>
@@ -46,6 +36,7 @@ export const query = graphql`
           title
           createdAt
           expirationDate(formatString: "MMMM Do, YYYY")
+          type
           offerCard {
             title
           }

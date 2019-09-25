@@ -4,7 +4,7 @@ import React from "react"
 import styled from 'styled-components'
 const _ = require("lodash")
 
-const Header = ({ id, titlee, type, cardTitle }) => (
+const OfferCard = ({ id, titlee, type, cardTitle }) => (
   <Card type={type} key={id}>
     <Url to={"/offers/offer/" + _.kebabCase(titlee) + "-" + id}>{titlee}</Url>
     <Top>
@@ -44,7 +44,7 @@ const Header = ({ id, titlee, type, cardTitle }) => (
   </Card>
 )
 
-export default Header
+export default OfferCard
 
 const Top = styled.div``
 const Bottom = styled.div``
@@ -189,5 +189,28 @@ flex-direction: column;
         }
       }
     }
+  }
+  @media screen and (max-width: 1081px) {
+    &:nth-child(5) {
+      display: none;
+    }
+    &:nth-child(6) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 729px) {
+    flex-basis: 24rem;
+    &:nth-child(4) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    flex-basis: 21rem;
+  }
+  @media screen and (max-width: 380px) {
+    flex-basis: 18rem;
+  }
+  @media screen and (max-width: 310px) {
+    flex-basis: 16rem;
   }
 `

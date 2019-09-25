@@ -1,145 +1,205 @@
 import { Link } from "gatsby"
-import {darken} from 'polished'
+import {rgba} from 'polished'
 import React from "react"
 import styled from 'styled-components'
-import * as variable from 'src/config' 
 const _ = require("lodash")
 
-const Header = ({ Image, Titlee, ExpirationDate, Id, offerTitle }) => (
-    <Card>
-        <Url to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>{Titlee}</Url>
-        <Top style={{backgroundImage: `url(${Image})`}}>
-        </Top>
-        <Bottom>
-          <Title>{Titlee}</Title>
-          <OfferDetails>
-            <OfferBtn to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>Claim Offer</OfferBtn>
-            <Expiration>Exp. {ExpirationDate}</Expiration>
-          </OfferDetails>
-        </Bottom>
-    </Card>
+const OfferCard = ({ id, titlee, type, cardTitle }) => (
+  <Card type={type} key={id}>
+    <Url to={"/offers/offer/" + _.kebabCase(titlee) + "-" + id}>{titlee}</Url>
+    <Top>
+      <IconContainer title={type}>
+        <Icon>
+          {type === "Discount" ?
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="512pt"
+          height="512pt"
+          viewBox="0 -27 512 512">
+            <path d="M478 79.473h-20.02l.02-35.79C458.012 19.657 438.477.099 414.445.087L262.508 0h-.02c-8.648 0-16.781 3.367-22.898 9.484L12.762 236.312C4.532 244.543 0 255.484 0 267.125s4.531 22.582 12.762 30.813L159.965 445.14c8.496 8.496 19.656 12.742 30.812 12.742 11.16 0 22.32-4.246 30.817-12.742l142.812-142.813c3.906-3.906 3.906-10.238 0-14.14-3.906-3.907-10.238-3.907-14.144 0L207.449 431c-9.191 9.191-24.148 9.191-33.34 0L26.906 283.797C22.453 279.344 20 273.422 20 267.125s2.453-12.219 6.906-16.672L253.73 23.63A12.304 12.304 0 01262.488 20h.008l151.938.086c13 .004 23.574 10.59 23.566 23.59l-.047 83.797H392.91c-3.879 0-7.39-1.586-9.93-4.141a36.678 36.678 0 0011.516-7.793c14.371-14.375 14.371-37.758 0-52.129-14.375-14.375-37.758-14.375-52.133 0-14.37 14.371-14.37 37.754 0 52.13a36.663 36.663 0 0018.785 10.054c4.895 12.777 17.282 21.879 31.762 21.879h45.031l-.027 47.937c0 3.309-1.289 6.414-3.629 8.75l-27.453 27.457c-3.906 3.906-3.906 10.238 0 14.145 3.902 3.902 10.234 3.902 14.14 0l27.458-27.457c6.11-6.114 9.48-14.239 9.484-22.883l.027-47.95H478c18.746 0 34-15.25 34-34 0-18.745-15.254-34-34-34zM356.508 77.55a16.806 16.806 0 0111.926-4.93 16.82 16.82 0 0111.921 4.93 16.903 16.903 0 012.61 3.41c-10.977 3.363-19.602 12.148-22.754 23.219a16.75 16.75 0 01-3.703-2.782c-6.574-6.578-6.574-17.273 0-23.847zM478 127.473h-20.047l.016-28H478c7.719 0 14 6.28 14 14s-6.281 14-14 14zm0 0" />
+            <path d="M161.414 252.305c1.23 4.425 5.25 7.32 9.625 7.32.89 0 1.793-.117 2.688-.367l102.656-28.574c5.32-1.48 8.433-6.996 6.953-12.317-1.48-5.316-6.992-8.43-12.316-6.949l-102.657 28.57c-5.316 1.485-8.43 6.996-6.949 12.317zm0 0M206.602 265.5c-5.57 5.57-8.637 12.973-8.637 20.852 0 7.875 3.066 15.277 8.637 20.847 5.75 5.746 13.296 8.621 20.847 8.621s15.102-2.875 20.852-8.62c11.496-11.497 11.496-30.204 0-41.7-11.496-11.496-30.203-11.496-41.7 0zm27.554 27.555c-3.699 3.699-9.715 3.699-13.414 0a9.41 9.41 0 01-2.777-6.707c0-2.532.988-4.914 2.777-6.707a9.471 9.471 0 016.707-2.774c2.43 0 4.86.926 6.707 2.774 3.7 3.699 3.7 9.718 0 13.414zm0 0M253.254 205.96c11.496-11.5 11.496-30.202 0-41.698-5.57-5.57-12.977-8.637-20.852-8.637s-15.28 3.066-20.847 8.637c-11.496 11.496-11.496 30.199 0 41.699 5.75 5.746 13.297 8.621 20.847 8.621 7.551 0 15.102-2.875 20.852-8.621zm-27.559-27.558a9.423 9.423 0 016.707-2.777 9.41 9.41 0 016.707 2.777c3.7 3.7 3.7 9.715 0 13.414-3.695 3.7-9.714 3.7-13.414 0-3.695-3.699-3.695-9.714 0-13.414zm0 0" />
+            <path d="M99.46 231.64c-3.905-3.906-10.237-3.906-14.144 0l-28.414 28.415a10 10 0 000 14.14l126.809 126.809c1.95 1.95 4.512 2.926 7.07 2.926s5.117-.977 7.07-2.926l189.594-189.598c3.907-3.906 3.907-10.238 0-14.144L260.641 70.457a10 10 0 00-14.141 0L141.887 175.07c-3.907 3.907-3.907 10.239 0 14.145 3.902 3.902 10.234 3.902 14.14 0l97.543-97.543 112.664 112.664-175.453 175.453L78.117 267.125l21.344-21.344c3.902-3.906 3.906-10.234 0-14.14zm0 0M385.621 256.973c-2.633 0-5.21 1.07-7.07 2.93s-2.93 4.44-2.93 7.07 1.07 5.21 2.93 7.07 4.437 2.93 7.07 2.93c2.629 0 5.207-1.07 7.07-2.93 1.86-1.86 2.93-4.441 2.93-7.07s-1.07-5.211-2.93-7.07a10.087 10.087 0 00-7.07-2.93zm0 0" />
+            <path d="M127.738 217.492a10.013 10.013 0 002.934-7.07c0-2.629-1.063-5.2-2.934-7.07a10.057 10.057 0 00-7.066-2.93c-2.633 0-5.211 1.07-7.07 2.93a10.063 10.063 0 00-2.93 7.07c0 2.64 1.066 5.21 2.93 7.07a10.037 10.037 0 007.07 2.93c2.637 0 5.207-1.059 7.066-2.93zm0 0" />
+          </svg>
+          :
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0"
+          y="0"
+          enableBackground="new 0 0 512 512"
+          version="1.1"
+          viewBox="0 0 512 512"
+          xmlSpace="preserve">
+              <path d="M467.76 88.1a10.052 10.052 0 00-7.071-2.931c-2.64 0-5.21 1.061-7.081 2.931a10.05 10.05 0 00-2.92 7.07c0 2.63 1.061 5.211 2.92 7.071a10.1 10.1 0 007.081 2.93c2.63 0 5.201-1.069 7.071-2.93 1.86-1.86 2.92-4.44 2.92-7.071 0-2.64-1.06-5.211-2.92-7.07zM238.071 323.626a10.05 10.05 0 00-7.071-2.931 10.06 10.06 0 00-7.081 2.931 10.05 10.05 0 00-2.92 7.07c0 2.63 1.061 5.21 2.92 7.071a10.1 10.1 0 007.081 2.93c2.63 0 5.201-1.069 7.071-2.93 1.86-1.86 2.92-4.44 2.92-7.071a10.038 10.038 0 00-2.92-7.07z" />
+              <path d="M491.983 121.313c-2.73-4.802-8.838-6.48-13.637-3.75-4.801 2.73-6.48 8.836-3.749 13.637 29.706 52.238 20.738 118.438-21.81 160.985l-7.583 7.583a37.448 37.448 0 00-8.537-13.182L333.911 183.831a69.099 69.099 0 0018.38-13.168l19.708-19.709c3.905-3.905 3.905-10.238 0-14.143-3.906-3.905-10.237-3.905-14.144 0l-19.708 19.709c-9.259 9.258-21.568 14.357-34.661 14.357h-39.397a10.007 10.007 0 00-7.072 2.929l-30.16 30.16c-8.956 8.957-23.529 8.957-32.485 0-8.957-8.956-8.957-23.529 0-32.485l68.856-68.855C305.307 60.546 371 51.292 422.975 80.122c4.83 2.677 10.918.936 13.597-3.895 2.679-4.83.935-10.918-3.895-13.597-28.668-15.899-62.444-22.262-95.112-17.911-30.572 4.071-58.555 16.872-81.493 37.184-28.179-24.981-64.052-38.642-102.032-38.642-41.146 0-79.828 16.023-108.923 45.117S0 156.157 0 197.302c0 41.146 16.023 79.828 45.117 108.923l3.769 3.769a10.003 10.003 0 002.153 1.626c.669 8.652 4.294 17.116 10.897 23.718 7.349 7.348 16.997 11.02 26.648 11.02.501 0 1.003-.016 1.504-.036-.02.506-.037 1.012-.037 1.521 0 10.066 3.92 19.53 11.038 26.648 7.349 7.348 16.997 11.021 26.648 11.02.501 0 1.003-.016 1.504-.036-.02.506-.037 1.012-.037 1.521 0 10.066 3.92 19.53 11.039 26.648 7.348 7.347 16.998 11.02 26.648 11.02.507 0 1.014-.016 1.521-.036-.406 10.151 3.251 20.437 10.984 28.171 7.119 7.118 16.583 11.038 26.648 11.038 10.067 0 19.531-3.92 26.648-11.038l13.977-13.978 18.879 18.877c7.118 7.119 16.582 11.039 26.648 11.039 10.066 0 19.53-3.92 26.648-11.038 7.826-7.826 11.482-18.267 10.972-28.537a38.3 38.3 0 001.887.049c9.651 0 19.303-3.673 26.65-11.021 7.729-7.729 11.386-18.007 10.984-28.153.506.02 1.012.037 1.521.037 10.066 0 19.53-3.92 26.648-11.038 7.729-7.729 11.386-18.007 10.984-28.153.506.02 1.012.037 1.521.037 10.066 0 19.53-3.92 26.648-11.038a37.473 37.473 0 008.173-12.248 9.99 9.99 0 002.697-1.913l19.394-19.394c48.901-48.891 59.203-124.973 25.06-185.014zM88.585 326.374a17.57 17.57 0 01-12.506-5.18 17.57 17.57 0 01-5.18-12.505c0-4.723 1.839-9.165 5.18-12.505l17.234-17.234a17.567 17.567 0 0112.506-5.18c4.723 0 9.165 1.839 12.505 5.18 6.896 6.896 6.896 18.115 0 25.01l-17.234 17.235a17.57 17.57 0 01-12.505 5.179zm26.65 33.975a17.567 17.567 0 01-5.18-12.505c0-4.724 1.839-9.165 5.18-12.505l17.235-17.235v-.001a17.57 17.57 0 0112.505-5.18c4.723 0 9.165 1.839 12.505 5.18 6.896 6.896 6.896 18.115 0 25.01l-17.234 17.235c-6.897 6.895-18.119 6.895-25.011.001zm39.153 39.153a17.567 17.567 0 01-5.18-12.505c0-4.724 1.839-9.165 5.18-12.505l17.235-17.235v-.001a17.57 17.57 0 0112.505-5.18c4.724 0 9.165 1.839 12.505 5.18 6.896 6.897 6.896 18.116 0 25.011l-17.235 17.235c-6.895 6.896-18.114 6.896-25.01 0zm81.399 21.92l-17.235 17.236a17.57 17.57 0 01-12.505 5.18 17.567 17.567 0 01-12.505-5.18c-6.896-6.897-6.896-18.116 0-25.011l17.235-17.235v-.001a17.57 17.57 0 0112.505-5.18c4.723 0 9.165 1.839 12.505 5.18a17.567 17.567 0 015.18 12.505 17.56 17.56 0 01-5.18 12.506zm186.736-95.683a17.567 17.567 0 01-12.505 5.18 17.565 17.565 0 01-12.505-5.18l-41.627-41.627-.005-.005-39.15-39.15c-3.906-3.905-10.237-3.905-14.144 0-3.905 3.905-3.905 10.238 0 14.143l80.782 80.78c6.896 6.897 6.896 18.116 0 25.011a17.567 17.567 0 01-12.505 5.18 17.565 17.565 0 01-12.505-5.18l-80.782-80.781c-3.906-3.904-10.237-3.904-14.144 0-3.905 3.905-3.905 10.238 0 14.144l39.146 39.145.009.01 41.628 41.626c6.896 6.897 6.896 18.117.001 25.012-6.897 6.896-18.118 6.896-25.011 0l-41.628-41.628a9.985 9.985 0 00-2.556-1.847l-11.873-11.873c-3.906-3.904-10.237-3.904-14.144 0-3.905 3.905-3.905 10.238 0 14.144l55.702 55.7c6.896 6.897 6.896 18.116 0 25.011a17.567 17.567 0 01-12.505 5.18 17.565 17.565 0 01-12.505-5.18l-21.196-21.195a37.678 37.678 0 002.469-13.444c0-10.066-3.92-19.53-11.038-26.648-7.119-7.118-16.583-11.038-26.648-11.038-.509 0-1.015.017-1.521.037.401-10.146-3.255-20.424-10.984-28.153-7.119-7.118-16.583-11.038-26.648-11.038-.509 0-1.015.017-1.521.037.402-10.146-3.255-20.424-10.984-28.153-7.119-7.118-16.583-11.038-26.648-11.038-.509 0-1.015.017-1.521.037.402-10.146-3.255-20.424-10.984-28.153-14.694-14.694-38.605-14.693-53.299 0L61.94 282.039a37.668 37.668 0 00-5.549 7.071C32.9 264.159 20.006 231.722 20.006 197.3c0-35.803 13.942-69.464 39.26-94.78 25.316-25.316 58.978-39.259 94.78-39.259 32.536 0 63.302 11.516 87.644 32.618l-61.457 61.457c-8.116 8.117-12.586 18.908-12.586 30.386 0 11.479 4.47 22.27 12.586 30.387 8.378 8.377 19.383 12.566 30.387 12.566s22.009-4.188 30.387-12.566l27.232-27.232h35.253c2.911 0 5.79-.199 8.634-.552l110.403 110.401c6.889 6.899 6.889 18.119-.006 25.013z" />
+          </svg>
+          }
+        </Icon>
+      </IconContainer>
+    </Top>
+    <Bottom>
+      <Title>{cardTitle}</Title>
+      <Claim to={"/offers/offer/" + _.kebabCase(titlee) + "-" + id}>Claim {type}</Claim>
+    </Bottom>
+  </Card>
 )
 
-export default Header
+export default OfferCard
 
-const Title = styled.div``
-const Url = styled(Link)``
 const Top = styled.div``
 const Bottom = styled.div``
-const OfferDetails = styled.div``
-const OfferBtn = styled(Link)``
-const Expiration = styled.p``
+const Icon = styled.div``
+const IconContainer = styled.div``
+const Title = styled.p``
+const Url = styled(Link)``
+const Claim = styled(Link)``
 
 const Card = styled.div`
-    flex-basis: 20rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    /*border: solid 1px #dcdcdb;*/
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(0, 0, 0, 0.137255) 0px 1px 1px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 1px -1px;
-    position: relative;
-    flex-direction: column;
+background-color: #fff;
+box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.2);
+flex-basis: 15.3rem;
+border-radius: 0.4rem;
+margin: 0 1.5rem;
+margin-bottom: 2rem;
+position: relative;
+transition: all linear 260ms;
+display: flex;
+flex-direction: column;
+  ${Url} {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    color: transparent;
+  }
+  ${Top} {
+    height: 9rem;
     display: flex;
-    background-color: #fafafa;
-    background-color: #fff;
-    border-radius: 2px;
-    overflow: hidden;
-    transition: all 280ms linear;
-    ${Url} {
-      width: 100%;
-      font-size: 0;
-      color: transparent;
-      height: 100%;
-      z-index: 1;
-      position: absolute;
-      visibility: hidden;
-    }
-    &:hover,
-    &:active,
-    &:focus {
-      /*box-shadow: 2px 2px 15px 0 rgba(60,60,60,.2);*/
-      -webkit-user-select: none;
-      -webkit-touch-callout: none;
-      background-color: #eaeaea;
-      ${Url} {
-        visibility: visible;
-      }
-    }
-    &:active,
-    &:focus {
-      background-color: #fff;
-    }
-    &:focus {
-      outline: unset;
-      border: 2px solid ${variable.SiteColor};
-    }
-    a:hover {
-      ~ ${Top} {
-        transform: scale(1.05);
-      }
-    }
-    ${Top} {
-      background-color: red;
-      width: 100%;;
-      height: 10rem;;
-      position: relative;
-      background-position: center;
-      background-size: cover;
-      transition: 280ms linear all;
-    }
-    ${Bottom} {
-      width: 100%;
-      padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    ${IconContainer} {
+      align-self: center;
+      border-radius: 50%;
+      height: 85px;
+      width: 85px;
+      box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.2);
       display: flex;
-      flex-grow: 1;
       flex-direction: column;
-      ${Title} {
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        margin: 1rem 0;
-        margin-top: 0.3rem;
-      }
-      ${OfferDetails} {
+      justify-content: center;
+      transition: all linear 260ms;
+      ${Icon} {
+        align-self: center;
+        border-radius: 50%;
+        height: 65px;
+        width: 65px;
+        position: relative;
         display: flex;
         flex-direction: column;
-        margin-top: 1rem;
-        justify-content: space-evenly;
-        ${OfferBtn} {
+        justify-content: center;
+        svg {
+          height: 55%;
+          width: 55%;
           align-self: center;
-          color: #fff;
-          background-color: ${variable.SiteColor};
-          padding: 0.5rem 1rem;
-          text-decoration: unset;
-          line-height: 100%;
-          margin-bottom: 0.5rem;
-          font-size: 1.2rem;
-          z-index: 1;
-          transition: all linear 280ms;
-        &:hover {
-          background-color: ${darken( 0.2, variable.SiteColor)}
-        }
-        }
-        ${Expiration} {
-          align-self: center;
-          margin: unset;
-          font-size: 0.7rem;
-          font-weight: 700;
+          fill: #fff;
         }
       }
     }
-    @media screen and (max-width: 729px) {
-      flex-basis: 24rem;
+  }
+  ${Bottom} {
+    padding: 1rem 1.5rem;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    ${Title} {
+      text-align: center;
+      font-weight: bold;
+      margin: unset;
+      font-size: 1.2rem;
     }
-    @media screen and (max-width: 450px) {
-      flex-basis: 21rem;
+    ${Claim} {
+      align-self: center;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 3px;
+      margin-top: auto;
+      margin-top: 1.2rem;
+      font-weight: bold;
+      font-size: 1rem;
+      z-index: 1;
+      transition: all linear 260ms;
     }
-    @media screen and (max-width: 380px) {
-      flex-basis: 18rem;
+  }
+  &:hover {
+    ${Url} {
+      visibility: visible;
     }
-    @media screen and (max-width: 310px) {
-      flex-basis: 16rem;
+    ${Top} {
+      ${IconContainer} {
+        transform: translateY(-4px);
+      }
     }
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    /*box-shadow: 2px 2px 15px 0 rgba(60,60,60,.2);*/
+    background-color: #f5f5f5;
+  }
+  &[type="Discount"] {
+    ${Top} {
+      ${IconContainer} {
+        ${Icon} {
+          background-color: #00c99d;
+          box-shadow: 0px 6px 15px -2px ${rgba("#00c99d", 0.25)};
+        }
+      }
+    }
+    ${Bottom} {
+      ${Claim} {
+        color: #00c99d;
+        background-color: ${rgba("#00c99d", 0.1)};
+        &:hover {
+          background-color: #00c99d;
+          color: #fff;
+        }
+      }
+    }
+  }
+  &[type="Deal"] {
+    ${Top} {
+      ${IconContainer} {
+        ${Icon} {
+          background-color: #ff477d;
+          box-shadow: 0px 6px 15px -2px ${rgba("#ff477d", 0.25)};
+        }
+      }
+    }
+    ${Bottom} {
+      ${Claim} {
+        color: #ff477d;
+        background-color: ${rgba("#ff477d", 0.1)};
+        &:hover {
+          background-color: #ff477d;
+          color: #fff;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 729px) {
+    flex-basis: 24rem;
+  }
+  @media screen and (max-width: 450px) {
+    flex-basis: 21rem;
+  }
+  @media screen and (max-width: 380px) {
+    flex-basis: 18rem;
+  }
+  @media screen and (max-width: 310px) {
+    flex-basis: 16rem;
+  }
 `
