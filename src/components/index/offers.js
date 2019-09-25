@@ -15,7 +15,7 @@ const Offers = ({AllOffers}) => {
         <Container>
         {AllOffers.edges.map(({ node }) => (
           <Card2 type={node.type} key={node.contentful_id}>
-            <Url href={"/offers/offer/" + _.kebabCase(node.title) + "-" + node.contentful_id}>{node.title}</Url>
+            <Url to={"/offers/offer/" + _.kebabCase(node.title) + "-" + node.contentful_id}>{node.title}</Url>
             <Top>
               <IconContainer title={node.type}>
                 <Icon>
@@ -48,7 +48,7 @@ const Offers = ({AllOffers}) => {
             </Top>
             <Bottom>
               <Title>{node.title}</Title>
-              <Claim>Claim {node.type}</Claim>
+              <Claim to={"/offers/offer/" + _.kebabCase(node.title) + "-" + node.contentful_id}>Claim {node.type}</Claim>
             </Bottom>
           </Card2>
         ))}
@@ -98,15 +98,15 @@ const Bottom = styled.div``
 const Icon = styled.div``
 const IconContainer = styled.div``
 const Title = styled.p``
-const Url = styled.a``
+const Url = styled(Link)``
 const Claim = styled(Link)``
 
 const Card2 = styled.div`
 background-color: #fff;
 box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.2);
-flex-basis: 13.3rem;
+flex-basis: 15.3rem;
 border-radius: 0.4rem;
-margin: 0 1rem;
+margin: 0 1.5rem;
 margin-bottom: 2rem;
 position: relative;
 transition: all linear 260ms;
@@ -123,7 +123,7 @@ flex-direction: column;
     color: transparent;
   }
   ${Top} {
-    height: 8rem;
+    height: 9rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,16 +166,17 @@ flex-direction: column;
       text-align: center;
       font-weight: bold;
       margin: unset;
+      font-size: 1.2rem;
     }
     ${Claim} {
       align-self: center;
       text-decoration: none;
-      padding: 6px 12px;
+      padding: 7px 14px;
       border-radius: 3px;
       margin-top: auto;
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       font-weight: bold;
-      font-size: 0.9rem;
+      font-size: 1rem;
       z-index: 1;
       transition: all linear 260ms;
     }
@@ -259,7 +260,7 @@ const Header = styled.h2`
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0.8rem;
+    margin: 0 0.5rem;
     justify-content: center;
 `
 
