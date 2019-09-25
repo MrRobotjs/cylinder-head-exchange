@@ -219,7 +219,7 @@ flex-wrap: wrap;
       border-top-right-radius: 2rem;
       overflow: hidden;
       height: 20rem;
-      div:first-child {
+      div {
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
       }
@@ -227,6 +227,84 @@ flex-wrap: wrap;
     ${InformationContainer} {
       border-bottom-left-radius: 2rem;
       border-bottom-right-radius: 2rem;
+    }
+  }
+  @media screen and (max-width: 362px) {
+    ${MapContainer} {
+      height: 17rem;
+    }
+    ${InformationContainer} {
+      ${AddressHeader},
+      ${HoursHeader} {
+        font-size: 1.6rem;
+      }
+      ${TableHours} {
+        ${Row} {
+          ${Data} {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 341px) {
+    ${MapContainer} {
+      height: 16rem;
+    }
+    ${InformationContainer} {
+      ${AddressHeader},
+      ${HoursHeader} {
+        font-size: 1.5rem;
+      }
+      ${TableHours} {
+        ${Row} {
+          ${Data} {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 319px) {
+    ${InformationContainer} {
+      ${AddressHeader},
+      ${HoursHeader} {
+        font-size: 1.4rem;
+      }
+      ${TableHours} {
+        ${Row} {
+          ${Data} {
+            font-size: 0.7rem;
+            padding-bottom: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 319px) {
+    ${MapContainer} {
+      height: 14rem;
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      div {
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+      }
+    }
+    ${InformationContainer} {
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+      ${AddressHeader},
+      ${HoursHeader} {
+        font-size: 1.3rem;
+      }
+      ${TableHours} {
+        ${Row} {
+          ${Data} {
+            font-size: 0.6rem;
+          }
+        }
+      }
     }
   }
 `
