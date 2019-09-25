@@ -120,6 +120,7 @@ flex-direction: column;
     width: 100%;
     height: 100%;
     visibility: hidden;
+    color: transparent;
   }
   ${Top} {
     height: 8rem;
