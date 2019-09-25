@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as variable from 'src/config'
 import {rgba, darken} from 'polished'
 
-const WhyUs = ({}) => {
+const WhyUs = () => {
     return (
         <Section id="Directions">
             <Left>

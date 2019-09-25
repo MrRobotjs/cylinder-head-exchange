@@ -202,6 +202,7 @@ ${Website} {
     padding: 1.4rem 1.5rem;
     ${Website} {
         order: 2;
+        margin: unset;
         ${WebsiteName} {
             text-align: center;
             font-size: 2.2rem;
