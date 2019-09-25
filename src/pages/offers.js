@@ -26,11 +26,6 @@ export default ({ data }) => (
         :
           node.title
         }
-        SubTitlee={node.offerCard.subTitle ?
-          node.offerCard.subTitle
-        :
-          "Missing Subtitle."
-        }
         ExpirationDate={node.expirationDate ?
           node.expirationDate
         :
@@ -53,12 +48,6 @@ export const query = graphql`
           expirationDate(formatString: "MMMM Do, YYYY")
           offerCard {
             title
-            subTitle
-            thumbnail {
-              fixed {
-                src
-              }
-            }
           }
           contentful_id
         }

@@ -1,11 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import * as variable from 'src/config'
-import NotFound from 'src/images/notfound.jpg'
 import Card from 'src/components/offer-card'
 import { Link } from "gatsby"
-import {rgba} from 'polished'
-const _ = require("lodash")
 
 const Offers = ({AllOffers}) => {
   return (

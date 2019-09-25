@@ -17,12 +17,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 expirationDate(formatString: "MMMM Do, YYYY")
                 offerCard {
                   title
-                  subTitle
-                  thumbnail {
-                    fixed {
-                      src
-                    }
-                  }
                 }
                 contentful_id
               }

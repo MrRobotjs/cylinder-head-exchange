@@ -84,12 +84,6 @@ export const query = graphql`
           type
           offerCard {
             title
-            subTitle
-            thumbnail {
-              fixed {
-                src
-              }
-            }
           }
           contentful_id
         }

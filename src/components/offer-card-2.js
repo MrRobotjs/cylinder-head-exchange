@@ -5,14 +5,13 @@ import styled from 'styled-components'
 import * as variable from 'src/config' 
 const _ = require("lodash")
 
-const Header = ({ Image, Titlee, SubTitlee, ExpirationDate, Id, offerTitle }) => (
+const Header = ({ Image, Titlee, ExpirationDate, Id, offerTitle }) => (
     <Card>
         <Url to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>{Titlee}</Url>
         <Top style={{backgroundImage: `url(${Image})`}}>
         </Top>
         <Bottom>
           <Title>{Titlee}</Title>
-          <SubTitle>{SubTitlee}</SubTitle>
           <OfferDetails>
             <OfferBtn to={"/offers/offer/" + _.kebabCase(offerTitle) + "-" + Id}>Claim Offer</OfferBtn>
             <Expiration>Exp. {ExpirationDate}</Expiration>
@@ -27,7 +26,6 @@ const Title = styled.div``
 const Url = styled(Link)``
 const Top = styled.div``
 const Bottom = styled.div``
-const SubTitle = styled.div``
 const OfferDetails = styled.div``
 const OfferBtn = styled(Link)``
 const Expiration = styled.p``
@@ -103,16 +101,6 @@ const Card = styled.div`
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         margin: 1rem 0;
         margin-top: 0.3rem;
-      }
-      ${SubTitle} {
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.1rem;
-        color: ${variable.SiteColor};
-        text-transform: uppercase;
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        margin: auto 0;
-        margin-top: unset;
       }
       ${OfferDetails} {
         display: flex;

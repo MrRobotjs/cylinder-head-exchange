@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import {rgba} from 'polished'
 import React from "react"
 import styled from 'styled-components'
-import * as variable from 'src/config' 
 const _ = require("lodash")
 
 const Header = ({ id, titlee, type, cardTitle }) => (
