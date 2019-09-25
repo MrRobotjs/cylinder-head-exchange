@@ -168,7 +168,7 @@ flex-wrap: wrap;
     }
   }
   ${InformationContainer} {
-    background-color: ${darken(0.08, variable.SiteColor)};
+    background-color: ${variable.SiteColor};
     flex: 1;
     padding: 1rem 1.5rem;
     ${AddressHeader}, ${HoursHeader} {
@@ -211,6 +211,14 @@ flex-wrap: wrap;
   }
   @media screen and (max-width: 798px) {
     flex-direction: column;
+    margin: 0 2rem;
+    box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.6);
+    border-radius: 3rem;
+    ${MapContainer} {
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+      overflow: hidden;
+    }
     ${InformationContainer} {
       border-bottom-left-radius: 2rem;
       border-bottom-right-radius: 2rem;
