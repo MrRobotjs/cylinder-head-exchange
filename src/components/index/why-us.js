@@ -411,9 +411,11 @@ padding: 5rem 0;
                 content: "";
                 height: 32rem;
                 width: 32rem;
-                top: -25%;
-                left: 19%;
-                transform: rotate(-378deg);
+                height: 121%;
+                width: 61%;
+                left:50%; 
+                top:50%;
+                transform: translate(-50%, -50%);
                 border-radius: 50%;
                 position: absolute;
                 background-color: ${rgba(variable.SiteColor, 0.1)};
@@ -422,9 +424,11 @@ padding: 5rem 0;
                 content: "";
                 height: 25rem;
                 width: 25rem;
-                top: -10%;
-                left: 28%;
-                transform: rotate(-378deg);
+                height: 95%;
+                width: 48%;
+                left:50%; 
+                top:50%;
+                transform: translate(-50%, -50%);
                 border-radius: 50%;
                 position: absolute;
                 background-color: ${rgba(variable.SiteColor, 0.1)};
@@ -481,6 +485,19 @@ padding: 5rem 0;
                     }
                 }
             }
+        }
+    }
+    @media screen and (max-width: 798px) {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        ${Left} {
+            order: 2;
+            width: 100%;
+            padding: 4rem 0rem;
+            padding-bottom: 3rem;
+        }
+        ${Right} {
+            order: 1;
         }
     }
 `

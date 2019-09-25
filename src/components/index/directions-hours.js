@@ -211,5 +211,9 @@ flex-wrap: wrap;
   }
   @media screen and (max-width: 798px) {
     flex-direction: column;
+    ${InformationContainer} {
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
   }
 `
