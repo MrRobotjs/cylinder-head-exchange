@@ -52,7 +52,7 @@ const Helmett = ({ title, description }) => (
 
           <meta name="og:title" content={title} />
           <meta name="og:description" content={metaDescription} />
-          <meta name="og:image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
+          <meta name="og:image" content={Favicon180} />
           <meta name="og:site_name" content={title} />
           <meta name="og:locale" content="en_US" />
           <meta name="og:type" content="website" />

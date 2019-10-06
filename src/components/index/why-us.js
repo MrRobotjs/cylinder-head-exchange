@@ -320,7 +320,7 @@ const WhyUs = () => {
             </Left>
             <Right>
                 <Header>Why Choose Us?</Header>
-                <Why>We offer our best of the best professional mechanics to service your vehicle needs. Here at Cylinder Head Exchange we offer our best customer support, we speak spanish and we offer a 10% discount on your first Cylinder Head service. There is nothing we cannot handle.</Why>
+                <Why>We offer our best of the best professional mechanics to service your vehicle needs. Here at Cylinder Head Exchange we offer our best customer support, we speak spanish and we offer a 10% discount on your first Cylinder Head service. There is nothing we cannot handle, just send us a text message or give us a call!</Why>
                 <ul>
                     <li>
                         <Icon>
@@ -337,6 +337,25 @@ const WhyUs = () => {
                             </svg>
                         </Icon>
                         <p>Best Customer Support</p>
+                    </li>
+                    <li>
+                        <Icon>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                x="0"
+                                y="0"
+                                enableBackground="new 0 0 490 490"
+                                version="1.1"
+                                viewBox="0 0 490 490"
+                                xmlSpace="preserve"
+                                >
+                                <path d="M383.945 490L230.694 364.254H50.716c-27.924 0-50.63-23.11-50.63-51.527V51.535C.086 23.118 22.792 0 50.716 0h388.568c27.924 0 50.63 23.118 50.63 51.535v261.193c0 28.417-22.707 51.527-50.63 51.527h-55.339V490zM50.716 30.614c-11.032 0-20.016 9.388-20.016 20.92v261.193c0 11.525 8.984 20.913 20.016 20.913h190.921l111.694 91.633V333.64h85.953c11.032 0 20.016-9.388 20.016-20.913V51.535c0-11.533-8.984-20.92-20.016-20.92H50.716z" />
+                                <path d="M87.113 147.723H150.32V210.93H87.113z" />
+                                <path d="M213.396 147.723H276.603V210.93H213.396z" />
+                                <path d="M339.68 147.723H402.887V210.93H339.68z" />
+                            </svg>
+                        </Icon>
+                        <p>Text Messages</p>
                     </li>
                     <li>
                         <Icon>
@@ -363,23 +382,6 @@ const WhyUs = () => {
                             </svg>
                         </Icon>
                         <p>We Speak Spanish</p>
-                    </li>
-                    <li>
-                        <Icon>
-                            <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="475.075"
-                            height="475.075"
-                            x="0"
-                            y="0"
-                            enableBackground="new 0 0 475.075 475.075"
-                            version="1.1"
-                            viewBox="0 0 475.075 475.075"
-                            xmlSpace="preserve">
-                                <path d="M475.075 186.573c0-7.043-5.328-11.42-15.992-13.135L315.766 152.6 251.529 22.694c-3.614-7.804-8.281-11.704-13.99-11.704-5.708 0-10.372 3.9-13.989 11.704L159.31 152.6 15.986 173.438C5.33 175.153 0 179.53 0 186.573c0 3.999 2.38 8.567 7.139 13.706l103.924 101.068L86.51 444.096c-.381 2.666-.57 4.575-.57 5.712 0 3.997.998 7.374 2.996 10.136 1.997 2.766 4.993 4.142 8.992 4.142 3.428 0 7.233-1.137 11.42-3.423l128.188-67.386 128.194 67.379c4 2.286 7.806 3.43 11.416 3.43 7.812 0 11.714-4.75 11.714-14.271 0-2.471-.096-4.374-.287-5.716l-24.551-142.744 103.634-101.069c4.948-4.956 7.419-9.526 7.419-13.713zM324.619 288.5l20.551 120.2-107.634-56.821L129.614 408.7l20.843-120.2-87.365-84.799 120.484-17.7 53.959-109.064 53.957 109.064 120.494 17.7-87.367 84.799z" />
-                            </svg>
-                        </Icon>
-                        <p>5 Star Reviews</p>
                     </li>
                 </ul>
             </Right>

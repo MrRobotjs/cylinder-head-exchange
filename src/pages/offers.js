@@ -14,6 +14,7 @@ export default ({ data }) => (
         <Card
         key={node.contentful_id}
         id={node.contentful_id}
+        expire={node.expirationDate}
         cardTitle={node.offerCard ?
         node.offerCard.title
         :

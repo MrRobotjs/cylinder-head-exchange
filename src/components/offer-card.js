@@ -4,8 +4,8 @@ import React from "react"
 import styled from 'styled-components'
 const _ = require("lodash")
 
-const OfferCard = ({ id, titlee, type, cardTitle }) => (
-  <Card type={type} key={id}>
+const OfferCard = ({ id, titlee, type, cardTitle, expire }) => (
+  <Card type={type} key={id} date={new Date(expire) > new Date() & "Expired"}>
     <Url to={"/offers/offer/" + _.kebabCase(titlee) + "-" + id}>{titlee}</Url>
     <Top>
       <IconContainer title={type}>

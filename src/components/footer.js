@@ -144,7 +144,7 @@ ${CategoryLinks} {
     }
     ul {
         margin: unset;
-        margin-top: 0.7rem;
+        margin-top: 1.1rem;
         li {
             list-style: none;
             margin-bottom: 0.3rem;
