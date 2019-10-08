@@ -19,7 +19,7 @@ class Header extends React.Component {
       }
     `}
     render={data => (
-      <Headtop>
+      <Headtop upTolerance={5} pinStart={50}>
       <NavigatonBar>
         <LogoContainer
         to="/">

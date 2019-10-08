@@ -11,6 +11,7 @@ import Header from "./header"
 import MobileHeader from "./mobile-header"
 import "./layout.css"
 import Footer from '../components/footer' 
+import styled from 'styled-components'
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -21,6 +22,9 @@ const Layout = ({ children, BackgroundColor }) => {
 
   return (
     <>
+      <InfoBar>
+        <Phone>90912345678</Phone>
+      </InfoBar>
       <Header/>
       <MobileHeader />
       <main style={{backgroundColor: `${BackgroundColor}`}}>{children}</main>
@@ -34,3 +38,17 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const Phone = styled.div``
+
+const InfoBar = styled.div`
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  z-index: 5 ;
+  position: relative;
+  justify-content: flex-end;
+  ${Phone} {
+
+  }
+`
