@@ -51,4 +51,7 @@ const InfoBar = styled.div`
   ${Phone} {
 
   }
+  @media screen and (max-width: 798px) {
+    display: none;
+  }
 `
