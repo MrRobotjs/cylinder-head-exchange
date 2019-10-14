@@ -80,6 +80,22 @@ export default ({ data }) => (
             </Top>
             <Bottom>
               <Title>title</Title>
+              <Desc>This a description for the service</Desc>
+              <Claim to={"/offers/offer/"}>Read More</Claim>
+            </Bottom>
+          </Card>
+
+          <Card>
+            <Url to={"/offers/offer/"}>Title</Url>
+            <Top>
+              <IconContainer>
+                <Icon>
+                  
+                </Icon>
+              </IconContainer>
+            </Top>
+            <Bottom>
+              <Title>title</Title>
               <Desc>This a description for the service. This a description for the service</Desc>
               <Claim to={"/offers/offer/"}>Read More</Claim>
             </Bottom>
@@ -139,7 +155,7 @@ const IconContainer = styled.div``
 const Title = styled.p``
 const Url = styled(Link)``
 const Claim = styled(Link)``
-const Card = styled(Link)``
+const Card = styled.div``
 const Container = styled.div``
 const Desc = styled.div``
 const ServicesDescription = styled.div``
@@ -159,8 +175,9 @@ padding: 10px;
   }
   ${Container} {
     display: flex;
+    flex-wrap: wrap;
+    margin: 0 0.5rem;
     justify-content: center;
-    margin-bottom: 0.8rem;
     ${Card} {
       background-color: #fff;
       box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.2);
