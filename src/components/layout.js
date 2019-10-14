@@ -23,6 +23,7 @@ const Layout = ({ children, BackgroundColor }) => {
   return (
     <>
       <InfoBar>
+        <Ad><b>20% OFF $100</b>. This is an <b>AD</b> so buy NOW!</Ad>
         <Right>
           <Phone>90912345678</Phone>
         </Right>
@@ -43,14 +44,20 @@ export default Layout
 
 const Phone = styled.div``
 const Right = styled.div``
+const Ad = styled.div``
 
 const InfoBar = styled.div`
   background-color: #fff;
   display: flex;
   z-index: 5 ;
   position: relative;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: #f2f2f2;
+  ${Ad} {
+    align-self: center;
+    text-indent: 1rem;
+    font-size: 1.2rem;
+  }
   ${Right} {
     position: relative;
     ${Phone} {
