@@ -30,7 +30,7 @@ const Layout = ({ children, BackgroundColor }) => {
       </InfoBar>
       <Header/>
       <MobileHeader />
-      <main style={{backgroundColor: `${BackgroundColor}`}}>{children}</main>
+      <main style={{backgroundColor: `${BackgroundColor}`, minHeight: `70vh`}}>{children}</main>
       <Footer/>
     </>
   )
