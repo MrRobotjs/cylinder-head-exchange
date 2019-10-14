@@ -23,7 +23,9 @@ const Layout = ({ children, BackgroundColor }) => {
   return (
     <>
       <InfoBar>
-        <Phone>90912345678</Phone>
+        <Right>
+          <Phone>90912345678</Phone>
+        </Right>
       </InfoBar>
       <Header/>
       <MobileHeader />
@@ -40,16 +42,32 @@ Layout.propTypes = {
 export default Layout
 
 const Phone = styled.div``
+const Right = styled.div``
 
 const InfoBar = styled.div`
-  padding: 1rem;
   background-color: #fff;
   display: flex;
   z-index: 5 ;
   position: relative;
   justify-content: flex-end;
-  ${Phone} {
-
+  background-color: #f2f2f2;
+  ${Right} {
+    position: relative;
+    ${Phone} {
+      padding: 1rem;
+    }
+    &::before {
+      content: "";
+      transform: skew(-19deg, 0deg);
+      background-color: #e5e5e5;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 2px;
+      transition: background-color 250ms ease-in-out;
+      z-index: -1;
+    }
   }
   @media screen and (max-width: 798px) {
     display: none;

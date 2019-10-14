@@ -65,6 +65,7 @@ position: relative;
 transition: all linear 260ms;
 display: flex;
 flex-direction: column;
+text-decoration: unset;
   ${Url} {
     font-size: 0;
     position: absolute;
