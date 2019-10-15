@@ -6,8 +6,8 @@ import { Link } from "gatsby"
 
 const Offers = ({AllOffers}) => {
   return (
-    <Section>
-        <Header id="Offers">Featured Coupons and Offers</Header>
+    <Section id="Offers">
+        <Header>Featured Coupons and Offers</Header>
         <Smalltext>Terms and conditions apply</Smalltext>
         <Container>
         </Container>
