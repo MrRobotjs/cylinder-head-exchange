@@ -12,6 +12,7 @@ import MobileHeader from "./mobile-header"
 import "./layout.css"
 import Footer from '../components/footer' 
 import styled from 'styled-components'
+import * as variable from 'src/config.js'
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -61,7 +62,9 @@ const InfoBar = styled.div`
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     overflow: auto;
-
+    B {
+      font-size: 1.4rem;
+    }
   }
   ${Right} {
     position: relative;
@@ -84,6 +87,8 @@ const InfoBar = styled.div`
   @media screen and (max-width: 798px) {
     ${Ad} {
       padding: 1rem;
+      background-color: ${variable.SiteColor};
+      color: #fff;
     }
     ${Right} {
       display: none;
