@@ -58,6 +58,10 @@ const InfoBar = styled.div`
     padding-left: 1rem;
     word-break: keep-all;
     font-size: 1.2rem;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+
   }
   ${Right} {
     position: relative;
