@@ -35,7 +35,10 @@ const Offers = ({AllOffers}) => {
 
 export default Offers
 
-const Section = styled.section``
+const Section = styled.section`
+margin-top: 1.5rem;
+margin-bottom: 1rem;
+`
 const OffersBtn = styled(Link)``
 
 const Smalltext = styled.p`
@@ -49,7 +52,7 @@ const Header = styled.h2`
     text-align: center;
     font-size: 2rem;
     margin: 0 1rem;
-    margin-top: 1.5rem;
+    margin-top: unset;
     text-transform: uppercase;
     margin-bottom: 0.3rem;
     transform: scale(1,1.18);
@@ -66,7 +69,6 @@ const Container = styled.div`
 const OfferContainer = styled.div`
 display: flex;
 justify-content: center;
-margin-bottom: 0.8rem;
   ${OffersBtn} {
     margin-bottom: auto;
     transition: all 285ms linear;
