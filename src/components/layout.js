@@ -55,7 +55,8 @@ const InfoBar = styled.div`
   background-color: #f2f2f2;
   ${Ad} {
     align-self: center;
-    text-indent: 1rem;
+    padding-left: 1rem;
+    word-break: keep-all;
     font-size: 1.2rem;
   }
   ${Right} {
