@@ -68,7 +68,7 @@ const InfoBar = styled.div`
       transform: skew(-19deg, 0deg);
       background-color: #e5e5e5;
       display: block;
-      width: 100%;
+      width: 110%;
       height: 100%;
       position: absolute;
       left: 2px;
@@ -77,6 +77,11 @@ const InfoBar = styled.div`
     }
   }
   @media screen and (max-width: 798px) {
-    display: none;
+    ${Ad} {
+      padding: 1rem;
+    }
+    ${Right} {
+      display: none;
+    }
   }
 `
