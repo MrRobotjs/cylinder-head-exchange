@@ -54,7 +54,7 @@ export default ({ data }) => (
         <Container>
 
           <Card>
-            <Url to={"/offers/offer/"}>Title</Url>
+            <Url to={"/"}>Title</Url>
             <Top>
               <IconContainer>
                 <Icon>
@@ -69,7 +69,7 @@ export default ({ data }) => (
           </Card>
 
           <Card>
-            <Url to={"/offers/offer/"}>Title</Url>
+            <Url to={"/"}>Title</Url>
             <Top>
               <IconContainer>
                 <Icon>
@@ -84,7 +84,7 @@ export default ({ data }) => (
           </Card>
 
           <Card>
-            <Url to={"/offers/offer/"}>Title</Url>
+            <Url to={"/"}>Title</Url>
             <Top>
               <IconContainer>
                 <Icon>

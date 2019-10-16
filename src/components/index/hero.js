@@ -36,6 +36,10 @@ const IndexHero = () => (
         <Hero>
           <Slide>
             <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100'}} alt="Hero"/>
+            <Group>
+              <Heading>The best auto shop</Heading>
+              <SubHeading>This is a subheading</SubHeading>
+            </Group>
           </Slide>
         </Hero>
     </Section>
@@ -71,6 +75,9 @@ const MapContainer = styled.div``
 const Tooltip = styled.span``
 const MapBtn = styled.a``
 const Slide = styled.div``
+const Group = styled.div``
+const Heading = styled.div``
+const SubHeading = styled.div``
 
 const Hero2 = styled.div`
 max-height: calc(100vh - 7rem); /* - 3rem to make image full screen of monitor minus the header height */
@@ -117,10 +124,33 @@ const Hero = styled.div`
     top: 0; right: 0; bottom: 0; left: 0;
     content: ' ';
     background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.2);
     z-index: 1;
   }
   ${Slide} {
-
+    ${Group} {
+      position: absolute;
+      bottom: 1rem;
+      z-index: 1;
+      left: 0;
+      ${Heading} {
+        color: #fff;
+        font-weight: bold;
+        background-color: ${variable.SiteColor};
+        padding: 0.7rem 1.4rem;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+      }
+      ${SubHeading} {
+        color: #fff;
+        font-weight: bold;
+        background-color: ${darken(0.12, variable.SiteColor)};
+        padding: 0.7rem 1.4rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        display: inline-block;
+      }
+    }
   }
   
   @media screen and (max-width: 1080px) {
