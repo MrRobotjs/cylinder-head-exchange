@@ -65,7 +65,6 @@ export default ({ data }) => (
             <Bottom>
               <Title>title</Title>
               <Desc>This a description for the service</Desc>
-              <Claim to={"/offers/offer/"}>Read More</Claim>
             </Bottom>
           </Card>
 
@@ -81,7 +80,6 @@ export default ({ data }) => (
             <Bottom>
               <Title>title</Title>
               <Desc>This a description for the service</Desc>
-              <Claim to={"/offers/offer/"}>Read More</Claim>
             </Bottom>
           </Card>
 
@@ -97,7 +95,6 @@ export default ({ data }) => (
             <Bottom>
               <Title>title</Title>
               <Desc>This a description for the service. This a description for the service</Desc>
-              <Claim to={"/offers/offer/"}>Read More</Claim>
             </Bottom>
           </Card>
         </Container>

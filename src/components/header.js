@@ -108,7 +108,7 @@ const NavigatonBar = styled.header`
     }
     &:hover {
       &::before {
-        background-color: ${darken(0.2, variable.SiteColor)};
+        background-color: ${darken(0.14, variable.SiteColor)};
       }
     }
     ${Logo} {

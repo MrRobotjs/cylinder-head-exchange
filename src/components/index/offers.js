@@ -36,7 +36,7 @@ const Offers = ({AllOffers}) => {
 export default Offers
 
 const Section = styled.section`
-margin-top: 1.5rem;
+padding-top: 1.5rem;
 margin-bottom: 1rem;
 `
 const OffersBtn = styled(Link)``

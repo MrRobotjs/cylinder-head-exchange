@@ -13,6 +13,7 @@ import "./layout.css"
 import Footer from '../components/footer' 
 import styled from 'styled-components'
 import * as variable from 'src/config.js'
+import {darken} from 'polished'
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -24,7 +25,7 @@ const Layout = ({ children, BackgroundColor }) => {
   return (
     <>
       <InfoBar>
-        <Ad><b>20% OFF $100</b>. This is an <b>AD</b> so buy NOW!</Ad>
+        <Ad>Get <b>10% OFF</b> your first Cylinder Head service!</Ad>
         <Right>
           <Phone>90912345678</Phone>
         </Right>
@@ -58,12 +59,18 @@ const InfoBar = styled.div`
     align-self: center;
     padding-left: 1rem;
     word-break: keep-all;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     overflow: auto;
+    width: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 87%;
+    overflow-y: hidden;
     B {
-      font-size: 1.4rem;
+      font-size: 1.9rem;
+      color: ${variable.SiteColor};
     }
   }
   ${Right} {
@@ -87,8 +94,12 @@ const InfoBar = styled.div`
   @media screen and (max-width: 798px) {
     ${Ad} {
       padding: 1rem;
-      background-color: ${variable.SiteColor};
+      background-color: ${darken(0.06,variable.SiteColor)};
       color: #fff;
+      text-align: center;
+      b {
+        color: #fff;
+      }
     }
     ${Right} {
       display: none;
