@@ -182,71 +182,265 @@ const Section = styled.section`
   ${Slide} {
     .gatsby-image-wrapper {
       &::before {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        content: ' ';
+        background-color: rgba(0,0,0,.2);
+        z-index: 1;
+      }
+    }
+    ${Group} {
       position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      content: ' ';
-      background-color: rgba(0,0,0,.2);
+      bottom: 2rem;
       z-index: 1;
-    }
-  }
-  ${Group} {
-    position: absolute;
-    bottom: 3rem;
-    z-index: 1;
-    left: 0;
-    /*opacity: 0;
-    transform: translateY(40px);
-    animation: HeroAnim;
-    animation-fill-mode: forwards;
-    animation-duration: 3s;*/
-    ${Top} {
-      ${Heading} {
-        color: #fff;
-        font-weight: bold;
-        background-color: ${variable.SiteColor};
-        padding: 0.7rem 1.4rem;
-        font-size: 1.7rem;
-        text-transform: uppercase;
+      left: 0;
+      margin: 0 2rem;
+      ${Top} {
+        ${Heading} {
+          color: #fff;
+          font-weight: bold;
+          background-color: ${variable.SiteColor};
+          padding: 0.7rem 1.4rem;
+          font-size: 1.7rem;
+          text-transform: uppercase;
+        }
+        ${SubHeading} {
+          color: #fff;
+          font-weight: bold;
+          background-color: ${darken(0.12, variable.SiteColor)};
+          padding: 0.7rem 1.4rem;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          display: inline-block;
+        }
       }
-      ${SubHeading} {
-        color: #fff;
-        font-weight: bold;
-        background-color: ${darken(0.12, variable.SiteColor)};
-        padding: 0.7rem 1.4rem;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        display: inline-block;
-      }
-    }
-    ${Bottom} {
-      display: flex;
-      ${Button} {
-        background-color: #222;
-        border: unset;
-        transition: background-color 0.15s ease-in;
-        padding: 10px 15px;
-        svg {
-          position: relative;
-          width: 11px;
-          height: 11px;
-          fill: currentColor;
-          top: -1px;
-          path {
-            fill: #fff;
+      ${Bottom} {
+        display: flex;
+        ${Button} {
+          background-color: #222;
+          border: unset;
+          transition: background-color 0.15s ease-in;
+          padding: 10px 15px;
+          svg {
+            position: relative;
+            width: 11px;
+            height: 11px;
+            fill: currentColor;
+            top: -1px;
+            path {
+              fill: #fff;
+            }
+          }
+          span {
+            position: absolute !important;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+          }
+          &:hover {
+            background-color: #363636;
           }
         }
-        span {
-          position: absolute !important;
-          overflow: hidden;
-          clip: rect(0 0 0 0);
-          height: 1px;
-          width: 1px;
-          margin: -1px;
-          padding: 0;
-          border: 0;
+      }
+    }
+  }
+}
+@media screen and (max-height: 650px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 2rem;
+      }
+    }
+  }
+}
+@media screen and (max-height: 550px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-height: 450px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1rem;
+      }
+    }
+  }
+}
+@media screen and (max-height: 350px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 0.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 2.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 2rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1rem;
+        ${Top} {
+          ${Heading} {
+            font-size: 1.5rem;
+          }
+          ${SubHeading} {
+            font-size: 1.1rem;
+          }
         }
-        &:hover {
-          background-color: #363636;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1050px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1.5rem;
+        ${Top} {
+          ${Heading} {
+            font-size: 1.4rem;
+            padding: 0.7rem 1rem;
+          }
+          ${SubHeading} {
+            font-size: 1.2rem;
+            padding: 0.7rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1.3rem;
+        margin: 0 1.5rem;
+        ${Top} {
+          ${Heading} {
+            font-size: 1.2rem;
+            padding: 0.7rem 1rem;
+          }
+          ${SubHeading} {
+            font-size: 1rem;
+            padding: 0.7rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 760px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1.1rem;
+        margin: 0 1.3rem;
+        ${Top} {
+          ${Heading} {
+            font-size: 1.2rem;
+            padding: 0.6rem 0.9rem;
+          }
+          ${SubHeading} {
+            font-size: 0.9rem;
+            padding: 0.6rem 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 0.8rem;
+        margin: 0 1rem;
+        ${Top} {
+          ${Heading} {
+            font-size: 1.1rem;
+            padding: 0.5rem 0.8rem;
+          }
+          ${SubHeading} {
+            font-size: 0.8rem;
+            padding: 0.5rem 0.8rem;
+          }
+        }
+        ${Bottom} {
+          ${Button} {
+            padding: 7px 12px;
+            svg {
+              width: 8px;
+              height: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 510px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 0.5rem;
+        margin: unset;
+        ${Top} {
+          ${Heading} {
+            font-size: 1rem;
+            padding: 0.4rem 0.7rem;
+          }
+          ${SubHeading} {
+            padding: 0.4rem 0.7rem;
+            font-size: 0.7rem;
+          }
+        }
+        ${Bottom} {
+          ${Button} {
+            padding: 6px 11px;
+            svg {
+              width: 7px;
+              height: 7px;
+            }
+          }
         }
       }
     }
