@@ -22,6 +22,7 @@
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-alice-carousel": "^1.15.3",
     "react-burger-menu": "^2.6.10",
     "react-dom": "^16.8.6",
     "react-headroom": "^2.2.8",

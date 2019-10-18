@@ -94,12 +94,7 @@ const InfoBar = styled.div`
   @media screen and (max-width: 798px) {
     ${Ad} {
       padding: 1rem;
-      background-color: ${darken(0.06,variable.SiteColor)};
-      color: #fff;
       text-align: center;
-      b {
-        color: #fff;
-      }
     }
     ${Right} {
       display: none;

@@ -6,6 +6,8 @@ import TextLoop from "react-text-loop";
 import GoogleMapReact from 'google-map-react';
 import {darken} from 'polished'
 import Img from "gatsby-image"
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
 
 const IndexHero = () => (
     <StaticQuery
@@ -24,7 +26,7 @@ const IndexHero = () => (
         },
         PlaceholderImage: file(relativePath: { eq: "hero.png" }) {
           childImageSharp {
-            fluid {
+            fluid(toFormat: WEBP) {
               ...GatsbyImageSharpFluid
             }
           }
