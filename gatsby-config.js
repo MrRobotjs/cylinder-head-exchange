@@ -11,7 +11,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Racing Sans One', 'Roboto']
+          families: ['Racing Sans One']
         }
       }
     },

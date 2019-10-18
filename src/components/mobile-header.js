@@ -158,7 +158,6 @@ const MobileNavigationBar = styled.nav`
           opacity: 1;
       }
       ${Title} {
-          font-family: "Roboto", sans-serif;
       }
       @media ${variable.MidPoint} {
           border-bottom: 2px solid #fff;

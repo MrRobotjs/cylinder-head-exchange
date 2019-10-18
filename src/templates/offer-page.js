@@ -103,11 +103,6 @@ ${Coupon} {
         left: 2px;
         transition: background-color 250ms ease-in-out;
       }
-      &:hover {
-        &::before {
-          background-color: ${darken(0.2, variable.SiteColor)};
-        }
-      }
       ${Logo} {
         color: white;
         margin: unset;

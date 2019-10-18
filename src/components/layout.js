@@ -13,7 +13,6 @@ import "./layout.css"
 import Footer from '../components/footer' 
 import styled from 'styled-components'
 import * as variable from 'src/config.js'
-import {darken} from 'polished'
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require

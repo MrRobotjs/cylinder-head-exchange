@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 import * as variable from 'src/config'
 import { StaticQuery, graphql } from "gatsby"
-import TextLoop from "react-text-loop";
-import GoogleMapReact from 'google-map-react';
 import {darken} from 'polished'
 import Img from "gatsby-image"
 import AliceCarousel from 'react-alice-carousel';
@@ -45,15 +43,108 @@ class HeroCom extends React.Component {
     
     render={data => (
       <Section>
-        <Hero>
-          <Slide>
-            <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
-            <Group>
-              <Heading>The best auto shop</Heading>
-              <SubHeading>This is a subheading</SubHeading>
-            </Group>
-          </Slide>
-        </Hero>
+          <AliceCarousel
+          mouseDragEnabled
+          dotsDisabled={true}
+          buttonsDisabled={true}
+          items={this.state.galleryItems}
+          ref={(el) => (this.Carousel = el)}>
+            <Slide onDragStart={handleOnDragStart}>
+              <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
+              <Group>
+                <Top>
+                  <Heading>The best auto shop</Heading>
+                  <SubHeading>This is a subheading</SubHeading>
+                </Top>
+                <Bottom>
+                  <Button onClick={() => this.Carousel.slidePrev()}>
+                    <svg ariaHidden="true" className="icon icon-arrow-left" viewBox="0 0 32 32">
+                        <path
+                          fill="#444"
+                          d="M24.333 28.205l-1.797 1.684L7.666 16l14.87-13.889 1.797 1.675L11.269 16z"
+                        ></path>
+                      </svg>
+                      <span>Prev button</span></Button>
+                  <Button onClick={() => this.Carousel.slideNext()}>
+                  <svg
+                    ariaHidden="true"
+                    className="icon icon-arrow-right"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      fill="#444"
+                      d="M7.667 3.795l1.797-1.684L24.334 16 9.464 29.889l-1.797-1.675L20.731 16z"
+                    ></path>
+                  </svg>
+                  <span>Next button</span></Button>
+                </Bottom>
+              </Group>
+            </Slide>
+            <Slide onDragStart={handleOnDragStart}>
+              <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
+              <Group>
+                <Top>
+                  <Heading>The best auto shop 2</Heading>
+                  <SubHeading>This is a subheading</SubHeading>
+                </Top>
+                <Bottom>
+                  <Button onClick={() => this.Carousel.slidePrev()}>
+                    <svg ariaHidden="true" className="icon icon-arrow-left" viewBox="0 0 32 32">
+                      <path
+                        fill="#444"
+                        d="M24.333 28.205l-1.797 1.684L7.666 16l14.87-13.889 1.797 1.675L11.269 16z"
+                      ></path>
+                    </svg>
+                    <span>Prev button</span></Button>
+                  <Button onClick={() => this.Carousel.slideNext()}>
+                  <svg
+                    ariaHidden="true"
+                    className="icon icon-arrow-right"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      fill="#444"
+                      d="M7.667 3.795l1.797-1.684L24.334 16 9.464 29.889l-1.797-1.675L20.731 16z"
+                    ></path>
+                  </svg>
+                  <span>Next button</span>
+                  </Button>
+                </Bottom>
+              </Group>
+            </Slide>
+            <Slide onDragStart={handleOnDragStart}>
+              <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
+              <Group>
+                <Top>
+                  <Heading>The best auto shop</Heading>
+                  <SubHeading>This is a subheading 3</SubHeading>
+                </Top>
+                <Bottom>
+                  <Button onClick={() => this.Carousel.slidePrev()}>
+                    <svg ariaHidden="true" className="icon icon-arrow-left" viewBox="0 0 32 32">
+                      <path
+                        fill="#444"
+                        d="M24.333 28.205l-1.797 1.684L7.666 16l14.87-13.889 1.797 1.675L11.269 16z"
+                      ></path>
+                    </svg>
+                    <span>Prev button</span></Button>
+                  <Button onClick={() => this.Carousel.slideNext()}>
+                  <svg
+                    ariaHidden="true"
+                    className="icon icon-arrow-right"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      fill="#444"
+                      d="M7.667 3.795l1.797-1.684L24.334 16 9.464 29.889l-1.797-1.675L20.731 16z"
+                    ></path>
+                  </svg>
+                  <span>Next button</span>
+                  </Button>
+                </Bottom>
+              </Group>
+            </Slide>
+          </AliceCarousel>
       </Section>
     )}
     />
@@ -63,96 +154,52 @@ class HeroCom extends React.Component {
 
 export default HeroCom
 
-const Section = styled.section``
-const LocationHeader = styled.div``
-const QuoteContainer = styled.div``
-const SecondaryText =styled.div``
-const PrimaryText = styled.div``
-const ScheduleHeader = styled.div``
-const Left = styled.div``
-const Right = styled.div``
-const DetailsContainer = styled.div``
-const DirectionsBtn = styled.a``
-const Directions = styled.div``
-const Call = styled.a``
-const Center = styled.div``
-const ShopHeader = styled.div``
-const HoursContainer = styled.div``
-const HeroText = styled.div``
-const HeroHeader = styled.h1``
-const HeaderLoop = styled.h2``
-const Phone = styled.div``
-const TableHours = styled.table``
-const Row = styled.tr``
-const Data = styled.td``
-const MapContainer = styled.div``
-const Tooltip = styled.span``
-const MapBtn = styled.a``
+const Top = styled.div``
+const Bottom = styled.div``
 const Slide = styled.div``
 const Group = styled.div``
 const Heading = styled.div``
 const SubHeading = styled.div``
+const Button = styled.button``
 
-const Hero2 = styled.div`
-max-height: calc(100vh - 7rem); /* - 3rem to make image full screen of monitor minus the header height */
-display: flex;
-justify-content: center;
-flex-direction: column;
-background-color: #fff;
-padding: 1.6rem 0.8rem;
-display: none;
-${HeroHeader} {
-  text-align: center;
-  margin-bottom: 0.8rem;
-  font-weight: bold;
-  font-size: 2.8rem;
-}
-.Loop {
-  margin: 0 auto;
-  padding-bottom: 3px;
-  ${HeaderLoop} {
-    font-size: 2.8rem;
-    line-height: 1.1;
-    margin: unset;
-    text-align: center;
-    font-weight: bold;
-  }
-}
-${Phone} {
-  text-align: center;
-  font-weight: bold;
-  color: ${variable.SiteColor};
-  margin-top: 0.7rem;
-  font-size: 2.1rem;
-}
-`
-
-const Hero = styled.div`
+const Section = styled.section`
+.alice-carousel {
+  box-sizing: unset;
+  margin: unset;
   max-height: calc(100vh - 7rem); /* - 3rem to make image full screen of monitor minus the header height */
   display: block;
   width: 100%;
   position: relative;
   overflow: hidden;
-  &::before {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    content: ' ';
-    background-color: rgba(0,0,0,.5);
-    background-color: rgba(0,0,0,.2);
-    z-index: 1;
-  }
-  .alice-carousel {
-    box-sizing: unset;
-    position: unset;
-    width: unset;
-    margin: unset;
+  > div:first-of-type {
+    .alice-carousel__wrapper {
+      li {
+        max-height: calc(100vh - 7rem);
+        margin: unset;
+      }
+    }
   }
   ${Slide} {
-    ${Group} {
+    .gatsby-image-wrapper {
+      &::before {
       position: absolute;
-      bottom: 1rem;
+      top: 0; right: 0; bottom: 0; left: 0;
+      content: ' ';
+      background-color: rgba(0,0,0,.2);
       z-index: 1;
-      left: 0;
+    }
+  }
+  ${Group} {
+    position: absolute;
+    bottom: 3rem;
+    z-index: 1;
+    left: 0;
+    /*opacity: 0;
+    transform: translateY(40px);
+    animation: HeroAnim;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;*/
+    ${Top} {
       ${Heading} {
         color: #fff;
         font-weight: bold;
@@ -171,126 +218,38 @@ const Hero = styled.div`
         display: inline-block;
       }
     }
-  }
-  
-  @media screen and (max-width: 1080px) {
-    ${HeroText} {
-      ${PrimaryText} {
-        font-size: 4rem;
-      }
-      ${SecondaryText} {
-
-      }
-    }
-  }
-  @media screen and (max-width: 964px) {
-    ${HeroText} {
-      ${PrimaryText} {
-        font-size: 3rem;
-      }
-      ${SecondaryText} {
-        font-size: 2rem;
-      }
-    }
-  }
-  @media screen and (max-width: 854px) {
-    ${HeroText} {
-      ${PrimaryText} {
-        font-size: 2.5rem;
-      }
-      ${SecondaryText} {
-          font-size: 1.5rem;
-      }
-    }
-  }
-  @media screen and (max-width: 798px) {
-    ${HeroText} {
-      display: none;
-      ${PrimaryText} {
-        font-size: 2.5rem;
-      }
-      ${SecondaryText} {
-          font-size: 1.5rem;
-      }
-    }
-    ${QuoteContainer} {
-      width: 92%;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-    }
-  }
-  @media screen and (max-width: 698px) {
-    ${QuoteContainer} {
-      height: 86%;
-      padding-bottom: 0.4rem;
-    }
-  }
-  @media screen and (max-height: 503px) {
-    ${QuoteContainer} {
-      height: 86%;
-      padding-bottom: 0.4rem;
-    }
-  }
-  @media screen and (max-width: 475px) {
-    ${QuoteContainer} {
-      ${HoursContainer} {
-        display: none;
-      }
-      ${DetailsContainer} {
-        margin-bottom: unset;
-        ${Right} {
-          display: none;
+    ${Bottom} {
+      display: flex;
+      ${Button} {
+        background-color: #222;
+        border: unset;
+        transition: background-color 0.15s ease-in;
+        padding: 10px 15px;
+        svg {
+          position: relative;
+          width: 11px;
+          height: 11px;
+          fill: currentColor;
+          top: -1px;
+          path {
+            fill: #fff;
+          }
         }
-        ${Left} {
-          ${Center} {
-            ${Call} {
-              display: none;
-            }
-            ${DirectionsBtn} {
-              color: ${variable.SiteColor};
-              font-size: 1.3rem;
-              text-align: center;
-              padding: 0.4rem 0.9rem;
-              font-weight: bold;
-              display: inline-block;
-              text-decoration: unset;
-              margin: 0rem -1rem;
-              svg {
-                height: 17px;
-                width: 17px;
-                margin-right: 6px;
-                fill: ${variable.SiteColor};
-              }
-              &:hover {
-                background-color: ${variable.SiteColor};
-                color: #fff;
-                svg {
-                  fill: #fff;
-                }
-              }
-            }
-          }
-          ${LocationHeader} {
-            margin-bottom: 0.9rem;
-          }
-          ${Directions} {
-            margin-bottom: 0.5rem;
-          }
-          ${HoursContainer} {
-            display: block;
-            margin-top: 0.6rem;
-            margin-bottom: 0.4rem;
-            ${ShopHeader} {
-              margin-bottom: 0.7rem;
-            }
-          }
-          ${MapContainer} {
-            display: initial;
-          }
+        span {
+          position: absolute !important;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          width: 1px;
+          margin: -1px;
+          padding: 0;
+          border: 0;
+        }
+        &:hover {
+          background-color: #363636;
         }
       }
     }
   }
+}
 `
