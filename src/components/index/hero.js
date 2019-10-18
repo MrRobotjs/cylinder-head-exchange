@@ -9,7 +9,16 @@ import Img from "gatsby-image"
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
-const IndexHero = () => (
+
+class HeroCom extends React.Component {
+  items = [1, 2, 3, 4, 5]
+ 
+  state = {
+    galleryItems: this.items.map((i) => (<h2 key={i}>{i}</h2>))
+  }
+  render() {
+    const handleOnDragStart = e => e.preventDefault()
+    return (
     <StaticQuery
     query={graphql`
       query {
@@ -26,30 +35,33 @@ const IndexHero = () => (
         },
         PlaceholderImage: file(relativePath: { eq: "hero.png" }) {
           childImageSharp {
-            fluid(toFormat: WEBP) {
-              ...GatsbyImageSharpFluid
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
       }
     `}
+    
     render={data => (
-    <Section>
+      <Section>
         <Hero>
           <Slide>
-            <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100'}} alt="Hero"/>
+            <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
             <Group>
               <Heading>The best auto shop</Heading>
               <SubHeading>This is a subheading</SubHeading>
             </Group>
           </Slide>
         </Hero>
-    </Section>
-)}
-/>
-);
+      </Section>
+    )}
+    />
+    );
+  }
+}
 
-export default IndexHero
+export default HeroCom
 
 const Section = styled.section``
 const LocationHeader = styled.div``
@@ -128,6 +140,12 @@ const Hero = styled.div`
     background-color: rgba(0,0,0,.5);
     background-color: rgba(0,0,0,.2);
     z-index: 1;
+  }
+  .alice-carousel {
+    box-sizing: unset;
+    position: unset;
+    width: unset;
+    margin: unset;
   }
   ${Slide} {
     ${Group} {
