@@ -396,14 +396,64 @@ const Section = styled.section`
   }
 }
 @media screen 
-and (max-width: 475px)
-and (min-height: 600px) {
+and (max-width: 1400px)
+and (min-height: 820px) {
   .alice-carousel {
-    min-height: calc(100vh - 24rem);
+    height: 27.7rem;
+    min-height: unset;
     > div:first-of-type {
       .alice-carousel__wrapper {
         li {
-          min-height: calc(100vh - 24rem);
+          height: 27.7rem;
+          min-height: unset;
+        }
+      }
+    }
+  }
+}
+@media screen 
+and (max-width: 1050px)
+and (min-height: 740px) {
+  .alice-carousel {
+    height: 24.7rem;
+    min-height: unset;
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          height: 24.7rem;
+          min-height: unset;
+        }
+      }
+    }
+  }
+}
+@media screen 
+and (max-width: 1050px)
+and (min-height: 820px) {
+  .alice-carousel {
+    height: 24.7rem;
+    min-height: unset;
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          height: 24.7rem;
+          min-height: unset;
+        }
+      }
+    }
+  }
+}
+@media screen 
+and (max-width: 800px)
+and (min-height: 820px) {
+  .alice-carousel {
+    height: 20.7rem;
+    min-height: unset;
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          height: 20.7rem;
+          min-height: unset;
         }
       }
     }
@@ -411,55 +461,15 @@ and (min-height: 600px) {
 }
 @media screen 
 and (max-width: 475px)
-and (min-height: 650px) {
+and (min-height: 500px) {
   .alice-carousel {
-    min-height: calc(100vh - 27rem);
+    height: 14.7rem;
+    min-height: unset;
     > div:first-of-type {
       .alice-carousel__wrapper {
         li {
-          min-height: calc(100vh - 27rem);
-        }
-      }
-    }
-  }
-}
-@media screen 
-and (max-width: 475px)
-and (min-height: 700px) {
-  .alice-carousel {
-    min-height: calc(100vh - 29rem);
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          min-height: calc(100vh - 29rem);
-        }
-      }
-    }
-  }
-}
-@media screen 
-and (max-width: 475px)
-and (min-height: 750px) {
-  .alice-carousel {
-    min-height: calc(100vh - 33rem);
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          min-height: calc(100vh - 33rem);
-        }
-      }
-    }
-  }
-}
-@media screen 
-and (max-width: 475px)
-and (min-height: 800px) {
-  .alice-carousel {
-    min-height: calc(100vh - 36rem);
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          min-height: calc(100vh - 36rem);
+          height: 14.7rem;
+          min-height: unset;
         }
       }
     }
