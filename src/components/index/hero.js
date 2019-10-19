@@ -49,7 +49,7 @@ class HeroCom extends React.Component {
               <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
               <Group>
                 <Top>
-                  <Heading>The best auto shop</Heading>
+                  <Heading>5498 W Mission Blvd A</Heading>
                 </Top>
                 <Bottom>
                   <Button onClick={() => this.Carousel.slidePrev()}>
@@ -72,7 +72,7 @@ class HeroCom extends React.Component {
                     ></path>
                   </svg>
                   <span>Next button</span></Button>
-                  <SubHeading>This is a subheading <span>→</span></SubHeading>
+                  <SubHeading>Get Directions <span>→</span></SubHeading>
                 </Bottom>
               </Group>
             </Slide>
@@ -80,7 +80,7 @@ class HeroCom extends React.Component {
               <Img fluid={data.Second.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
               <Group>
                 <Top>
-                  <Heading>The 222222 auto shop 2</Heading>
+                  <Heading>Cylinder Head Exchanges</Heading>
                 </Top>
                 <Bottom>
                   <Button onClick={() => this.Carousel.slidePrev()}>
@@ -104,7 +104,7 @@ class HeroCom extends React.Component {
                   </svg>
                   <span>Next button</span>
                   </Button>
-                  <SubHeading>This is a subheading <span>→</span></SubHeading>
+                  <SubHeading>View Services <span>→</span></SubHeading>
                 </Bottom>
               </Group>
             </Slide>

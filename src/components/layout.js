@@ -69,6 +69,7 @@ const InfoBar = styled.div`
     overflow-y: hidden;
     B {
       font-size: 1.9rem;
+      font-weight: 900;
       color: ${variable.SiteColor};
     }
   }

@@ -57,6 +57,7 @@ const Header = styled.h2`
     margin-bottom: 0.3rem;
     transform: scale(1,1.18);
     letter-spacing: -1px;
+    font-weight: 900;
 `
 
 const Container = styled.div`
