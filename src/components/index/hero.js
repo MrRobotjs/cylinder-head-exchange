@@ -40,6 +40,8 @@ class HeroCom extends React.Component {
     render={data => (
       <Section>
           <AliceCarousel
+          autoPlay={true}
+          autoPlayInterval={7000}
           mouseDragEnabled
           dotsDisabled={true}
           buttonsDisabled={true}

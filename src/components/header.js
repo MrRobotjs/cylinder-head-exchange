@@ -282,7 +282,7 @@ const NavigatonBar = styled.header`
   @media screen and ${variable.iP5s} {
     ${LogoContainer} {
       ${Logo} {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
     }
   }
