@@ -93,7 +93,7 @@ const Headtop = styled(Headroom)`
 height: unset !important;
     .headroom {
         transition: all 320ms ease-in;
-        z-index: 4 !important;
+        z-index: 10 !important;
         will-change: bottom;
     }
     .headroom--unfixed, .headroom--pinned {

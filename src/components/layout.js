@@ -50,7 +50,7 @@ const Ad = styled.div``
 const InfoBar = styled.div`
   background-color: #fff;
   display: flex;
-  z-index: 5 ;
+  z-index: 5;
   position: relative;
   justify-content: space-between;
   background-color: #f2f2f2;
