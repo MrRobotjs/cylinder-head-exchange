@@ -395,55 +395,72 @@ const Section = styled.section`
     }
   }
 }
-@media screen and (max-height: 650px) {
+@media screen 
+and (max-width: 475px)
+and (min-height: 600px) {
   .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 2rem;
-      }
-    }
-  }
-}
-@media screen and (max-height: 550px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 1.5rem;
-      }
-    }
-  }
-}
-@media screen and (max-height: 490px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 1rem;
-      }
-    }
-  }
-}
-@media screen and (max-height: 450px) {
-  .alice-carousel {
-    min-height: calc(100vh - 10.5rem);
+    min-height: calc(100vh - 24rem);
     > div:first-of-type {
       .alice-carousel__wrapper {
         li {
-          min-height: calc(100vh - 10.5rem);
+          min-height: calc(100vh - 24rem);
         }
-      }
-    }
-    ${Slide} {
-      ${Group} {
-        bottom: 1rem;
       }
     }
   }
 }
-@media screen and (max-height: 350px) {
+@media screen 
+and (max-width: 475px)
+and (min-height: 650px) {
   .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 0.5rem;
+    min-height: calc(100vh - 27rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 27rem);
+        }
+      }
+    }
+  }
+}
+@media screen 
+and (max-width: 475px)
+and (min-height: 700px) {
+  .alice-carousel {
+    min-height: calc(100vh - 29rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 29rem);
+        }
+      }
+    }
+  }
+}
+@media screen 
+and (max-width: 475px)
+and (min-height: 750px) {
+  .alice-carousel {
+    min-height: calc(100vh - 33rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 33rem);
+        }
+      }
+    }
+  }
+}
+@media screen 
+and (max-width: 475px)
+and (min-height: 800px) {
+  .alice-carousel {
+    min-height: calc(100vh - 36rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 36rem);
+        }
       }
     }
   }
