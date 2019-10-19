@@ -20,21 +20,17 @@ class HeroCom extends React.Component {
     <StaticQuery
     query={graphql`
       query {
-        Site: contentfulWebsiteInformation {
-            websiteName
-            shopInformation {
-              address
-              phoneNumber
-              shopHours {
-                sunday
-                mondaySaturday
-              }
-            }
-        },
         PlaceholderImage: file(relativePath: { eq: "hero.png" }) {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        Second: file(relativePath: { eq: "hero1.jpg" }) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -54,7 +50,6 @@ class HeroCom extends React.Component {
               <Group>
                 <Top>
                   <Heading>The best auto shop</Heading>
-                  <SubHeading>This is a subheading</SubHeading>
                 </Top>
                 <Bottom>
                   <Button onClick={() => this.Carousel.slidePrev()}>
@@ -77,15 +72,15 @@ class HeroCom extends React.Component {
                     ></path>
                   </svg>
                   <span>Next button</span></Button>
+                  <SubHeading>This is a subheading <span>→</span></SubHeading>
                 </Bottom>
               </Group>
             </Slide>
             <Slide onDragStart={handleOnDragStart}>
-              <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
+              <Img fluid={data.Second.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
               <Group>
                 <Top>
-                  <Heading>The best auto shop 2</Heading>
-                  <SubHeading>This is a subheading</SubHeading>
+                  <Heading>The 222222 auto shop 2</Heading>
                 </Top>
                 <Bottom>
                   <Button onClick={() => this.Carousel.slidePrev()}>
@@ -109,38 +104,7 @@ class HeroCom extends React.Component {
                   </svg>
                   <span>Next button</span>
                   </Button>
-                </Bottom>
-              </Group>
-            </Slide>
-            <Slide onDragStart={handleOnDragStart}>
-              <Img fluid={data.PlaceholderImage.childImageSharp.fluid} style={{ height: '100%'}} alt="Hero"/>
-              <Group>
-                <Top>
-                  <Heading>The best auto shop</Heading>
-                  <SubHeading>This is a subheading 3</SubHeading>
-                </Top>
-                <Bottom>
-                  <Button onClick={() => this.Carousel.slidePrev()}>
-                    <svg ariaHidden="true" className="icon icon-arrow-left" viewBox="0 0 32 32">
-                      <path
-                        fill="#444"
-                        d="M24.333 28.205l-1.797 1.684L7.666 16l14.87-13.889 1.797 1.675L11.269 16z"
-                      ></path>
-                    </svg>
-                    <span>Prev button</span></Button>
-                  <Button onClick={() => this.Carousel.slideNext()}>
-                  <svg
-                    ariaHidden="true"
-                    className="icon icon-arrow-right"
-                    viewBox="0 0 32 32"
-                  >
-                    <path
-                      fill="#444"
-                      d="M7.667 3.795l1.797-1.684L24.334 16 9.464 29.889l-1.797-1.675L20.731 16z"
-                    ></path>
-                  </svg>
-                  <span>Next button</span>
-                  </Button>
+                  <SubHeading>This is a subheading <span>→</span></SubHeading>
                 </Bottom>
               </Group>
             </Slide>
@@ -166,7 +130,7 @@ const Section = styled.section`
 .alice-carousel {
   box-sizing: unset;
   margin: unset;
-  max-height: calc(100vh - 7rem); /* - 3rem to make image full screen of monitor minus the header height */
+  min-height: calc(100vh - 7rem); /* - 3rem to make image full screen of monitor minus the header height */
   display: block;
   width: 100%;
   position: relative;
@@ -174,12 +138,15 @@ const Section = styled.section`
   > div:first-of-type {
     .alice-carousel__wrapper {
       li {
-        max-height: calc(100vh - 7rem);
+        min-height: calc(100vh - 7rem);
         margin: unset;
       }
     }
   }
   ${Slide} {
+    position: absolute;
+    height: 100%;
+    width: 100%;
     .gatsby-image-wrapper {
       &::before {
         position: absolute;
@@ -196,13 +163,15 @@ const Section = styled.section`
       left: 0;
       margin: 0 2rem;
       ${Top} {
+        margin-bottom: 3px;
         ${Heading} {
           color: #fff;
-          font-weight: bold;
+          font-weight: 900;
           background-color: ${variable.SiteColor};
-          padding: 0.7rem 1.4rem;
+          padding: 0.5rem 1rem;
           font-size: 1.7rem;
           text-transform: uppercase;
+          display: -webkit-inline-box;
         }
         ${SubHeading} {
           color: #fff;
@@ -216,11 +185,20 @@ const Section = styled.section`
       }
       ${Bottom} {
         display: flex;
+        ${SubHeading} {
+          color: #fff;
+          font-weight: bold;
+          background-color: #222;
+          padding: 0.7rem 1.4rem;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          display: inline-block;
+          margin-left: 5px;
+        }
         ${Button} {
           background-color: #222;
           border: unset;
           transition: background-color 0.15s ease-in;
-          padding: 10px 15px;
           svg {
             position: relative;
             width: 11px;
@@ -241,88 +219,11 @@ const Section = styled.section`
             padding: 0;
             border: 0;
           }
-          &:hover {
+          &:hover,
+          &:focus,
+          &:active {
             background-color: #363636;
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-height: 650px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 2rem;
-      }
-    }
-  }
-}
-@media screen and (max-height: 550px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 1.5rem;
-      }
-    }
-  }
-}
-@media screen and (max-height: 450px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 1rem;
-      }
-    }
-  }
-}
-@media screen and (max-height: 350px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 0.5rem;
-      }
-    }
-  }
-}
-@media screen and (max-width: 850px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 2.5rem;
-      }
-    }
-  }
-}
-@media screen and (max-width: 800px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 2rem;
-      }
-    }
-  }
-}
-@media screen and (max-width: 750px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 1.5rem;
-      }
-    }
-  }
-}
-@media screen and (max-width: 700px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 1rem;
-        ${Top} {
-          ${Heading} {
-            font-size: 1.5rem;
-          }
-          ${SubHeading} {
-            font-size: 1.1rem;
+            outline: unset;
           }
         }
       }
@@ -350,6 +251,14 @@ const Section = styled.section`
 }
 @media screen and (max-width: 850px) {
   .alice-carousel {
+    min-height: calc(100vh - 16rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 16rem);
+        }
+      }
+    }
     ${Slide} {
       ${Group} {
         bottom: 1.3rem;
@@ -370,6 +279,14 @@ const Section = styled.section`
 }
 @media screen and (max-width: 760px) {
   .alice-carousel {
+    min-height: calc(100vh - 18rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 18rem);
+        }
+      }
+    }
     ${Slide} {
       ${Group} {
         bottom: 1.1rem;
@@ -388,8 +305,33 @@ const Section = styled.section`
     }
   }
 }
+@media screen and (max-width: 700px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1rem;
+        ${Top} {
+          ${Heading} {
+            font-size: 1.5rem;
+          }
+          ${SubHeading} {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 640px) {
   .alice-carousel {
+    min-height: calc(100vh - 20rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 20rem);
+        }
+      }
+    }
     ${Slide} {
       ${Group} {
         bottom: 0.8rem;
@@ -406,7 +348,6 @@ const Section = styled.section`
         }
         ${Bottom} {
           ${Button} {
-            padding: 7px 12px;
             svg {
               width: 8px;
               height: 8px;
@@ -419,6 +360,14 @@ const Section = styled.section`
 }
 @media screen and (max-width: 510px) {
   .alice-carousel {
+    min-height: calc(100vh - 22rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 22rem);
+        }
+      }
+    }
     ${Slide} {
       ${Group} {
         bottom: 0.5rem;
@@ -428,20 +377,73 @@ const Section = styled.section`
             font-size: 1rem;
             padding: 0.4rem 0.7rem;
           }
-          ${SubHeading} {
-            padding: 0.4rem 0.7rem;
-            font-size: 0.7rem;
-          }
         }
         ${Bottom} {
           ${Button} {
-            padding: 6px 11px;
+            top: -2px;
             svg {
               width: 7px;
               height: 7px;
             }
           }
+          ${SubHeading} {
+            padding: 0.4rem 0.7rem;
+            font-size: 0.7rem;
+          }
         }
+      }
+    }
+  }
+}
+@media screen and (max-height: 650px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 2rem;
+      }
+    }
+  }
+}
+@media screen and (max-height: 550px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-height: 490px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 1rem;
+      }
+    }
+  }
+}
+@media screen and (max-height: 450px) {
+  .alice-carousel {
+    min-height: calc(100vh - 10.5rem);
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          min-height: calc(100vh - 10.5rem);
+        }
+      }
+    }
+    ${Slide} {
+      ${Group} {
+        bottom: 1rem;
+      }
+    }
+  }
+}
+@media screen and (max-height: 350px) {
+  .alice-carousel {
+    ${Slide} {
+      ${Group} {
+        bottom: 0.5rem;
       }
     }
   }
