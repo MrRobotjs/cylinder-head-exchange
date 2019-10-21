@@ -96,6 +96,13 @@ const InfoBar = styled.div`
       align-items: center;
       text-decoration: unset;
       color: #000;
+      font-weight: bold;
+      &:hover {
+        color: ${variable.SiteColor};
+        svg {
+          fill: ${variable.SiteColor};
+        }
+      }
       svg {
         height: 16px;
         width: 16px;

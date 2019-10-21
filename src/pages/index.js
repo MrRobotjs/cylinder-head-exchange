@@ -384,6 +384,11 @@ const Navigation = styled.div`
     transition: all 250ms ease-in-out;
     white-space: nowrap;
     margin: 0 0.5rem;
+    svg {
+      height: 26px;
+      width: 26px;
+      fill: #fff;
+    }
     &:hover {
       background-color: #fff;
       color: ${variable.SiteColor};

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as variable from 'src/config'
 import Card from 'src/components/offer-card'
 import { Link } from "gatsby"
+import { darken } from 'polished'
 
 const Offers = ({AllOffers}) => {
   return (
@@ -72,14 +73,18 @@ display: flex;
 justify-content: center;
   ${OffersBtn} {
     margin-bottom: auto;
-    transition: all 285ms linear;
-    color:  ${variable.SiteColor};
+    color: #fff;
+    background-color: ${variable.SiteColor};
+    border-radius: ${variable.BtnBorderRadius};
     text-decoration: unset;
-    border: 1px solid;
-    padding: 0.3rem 0.7rem;
+    background-size: 135px 1px;
+    font-size: 0.85rem;
+    padding: 8px 17px;
+    transition: all 230ms ease-in-out;
+    box-shadow: 0px 2px 10px -3px ${variable.SiteColor};
     &:hover {
-      background-color: ${variable.SiteColor};
-      color: white;
+      background-color: ${darken(0.15, variable.SiteColor)};
+      box-shadow: 0px 2px 10px -1px ${darken(0.18, variable.SiteColor)};
     }
   }
 `
