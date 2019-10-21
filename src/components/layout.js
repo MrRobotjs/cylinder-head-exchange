@@ -94,6 +94,8 @@ const InfoBar = styled.div`
       padding: 1rem;
       display: flex;
       align-items: center;
+      text-decoration: unset;
+      color: #000;
       svg {
         height: 16px;
         width: 16px;
