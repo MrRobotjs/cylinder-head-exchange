@@ -1,6 +1,5 @@
 import React from "react"
 import styled from 'styled-components'
-import Layout from "../components/layout"
 import HELMET from "../components/helmet"
 import * as variable from 'src/config.js'
 import "react-tabs/style/react-tabs.css";
@@ -15,7 +14,7 @@ import { Link } from "gatsby"
 
 /*#f3f3f3*/
 export default ({ data }) => (
-  <Layout BackgroundColor="#fff">
+  <>
     <HELMET title="Home" description="Description coming from Index" />
 
     <Hero/>
@@ -108,7 +107,7 @@ export default ({ data }) => (
 
     <WhyUs />
 
-  </Layout>
+  </>
 )
 
 export const query = graphql`

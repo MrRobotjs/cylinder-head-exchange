@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../layouts/index"
 import styled from 'styled-components'
 import * as variable from 'src/config.js'
 import {darken} from 'polished'

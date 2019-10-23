@@ -1,12 +1,11 @@
 import React from "react"
 import styled from 'styled-components'
-import Layout from "../components/layout"
 import HELMET from "../components/helmet"
 import Card from '../components/offer-card-2'
 import {graphql } from "gatsby"
 
 export default ({ data }) => (
-  <Layout BackgroundColor="#fff">
+  <>
     <HELMET title="Offers & Coupons" />
     <Header>All Offers ({data.allContentfulOffer.totalCount})</Header>
     <OffersContainer>
@@ -25,7 +24,7 @@ export default ({ data }) => (
         />
       ))}
     </OffersContainer>
-  </Layout>
+  </>
 )
 
 export const query = graphql`

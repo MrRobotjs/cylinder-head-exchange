@@ -7,9 +7,9 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import Header from "./header"
-import MobileHeader from "./mobile-header"
-import "./layout.css"
+import Header from "../components/header"
+import MobileHeader from "../components/mobile-header"
+import "../components/layout.css"
 import Footer from '../components/footer' 
 import styled from 'styled-components'
 import * as variable from 'src/config.js'

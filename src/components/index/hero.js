@@ -55,7 +55,7 @@ class HeroCom extends React.Component {
                 </Top>
                 <Bottom>
                   <Button onClick={() => this.Carousel.slidePrev()}>
-                    <svg ariaHidden="true" className="icon icon-arrow-left" viewBox="0 0 32 32">
+                    <svg aria-hidden="true" className="icon icon-arrow-left" viewBox="0 0 32 32">
                         <path
                           fill="#444"
                           d="M24.333 28.205l-1.797 1.684L7.666 16l14.87-13.889 1.797 1.675L11.269 16z"
@@ -64,7 +64,7 @@ class HeroCom extends React.Component {
                       <span>Prev button</span></Button>
                   <Button onClick={() => this.Carousel.slideNext()}>
                   <svg
-                    ariaHidden="true"
+                    aria-hidden="true"
                     className="icon icon-arrow-right"
                     viewBox="0 0 32 32"
                   >
@@ -86,7 +86,7 @@ class HeroCom extends React.Component {
                 </Top>
                 <Bottom>
                   <Button onClick={() => this.Carousel.slidePrev()}>
-                    <svg ariaHidden="true" className="icon icon-arrow-left" viewBox="0 0 32 32">
+                    <svg aria-hidden="true" className="icon icon-arrow-left" viewBox="0 0 32 32">
                       <path
                         fill="#444"
                         d="M24.333 28.205l-1.797 1.684L7.666 16l14.87-13.889 1.797 1.675L11.269 16z"
@@ -95,7 +95,7 @@ class HeroCom extends React.Component {
                     <span>Prev button</span></Button>
                   <Button onClick={() => this.Carousel.slideNext()}>
                   <svg
-                    ariaHidden="true"
+                    aria-hidden="true"
                     className="icon icon-arrow-right"
                     viewBox="0 0 32 32"
                   >

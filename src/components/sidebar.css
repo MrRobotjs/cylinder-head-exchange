@@ -29,13 +29,14 @@
     z-index: 1;
     overflow-x: hidden;
     align-items: center;
+    text-transform: uppercase;
   }
 
   .bm-item svg {
     height: 25px;
     width: 25px;
     margin-right: 17px;
-    fill: #fff;
+    fill: #4d4d4d;
   }
 
   .bm-item::before {
@@ -62,6 +63,10 @@
 
   .bm-item.active {
     color: #fff;
+  }
+
+  .bm-item.active svg {
+    fill: #fff;
   }
   
   .bm-item.active::before {
