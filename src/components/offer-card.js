@@ -162,7 +162,7 @@ text-decoration: unset;
     }
     ${Bottom} {
       ${Claim} {
-        color: #00c99d;
+        color: #005f4a;
         background-color: ${rgba("#00c99d", 0.1)};
         &:hover {
           background-color: #00c99d;
@@ -182,7 +182,7 @@ text-decoration: unset;
     }
     ${Bottom} {
       ${Claim} {
-        color: #ff477d;
+        color: #a20030;
         background-color: ${rgba("#ff477d", 0.1)};
         &:hover {
           background-color: #ff477d;

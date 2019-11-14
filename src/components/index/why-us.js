@@ -454,7 +454,7 @@ padding: 5rem 0;
         ${Why} {
             margin-bottom: 1.5rem;
             line-height: 1.9;
-            color: #828282;
+            color: #585858;
         }
         ul {
             margin: unset;

@@ -31,7 +31,7 @@ const pluginCard = ({author}) => (
             <p>Copyright {new Date().getFullYear()},</p>
             <p>All Rights Reserved</p>
             <Social>
-                <a href="https://www.facebook.com/CylinderHeadExchangeShop/" target="blank">
+                <a href="https://www.facebook.com/CylinderHeadExchangeShop/" target="blank" aria-label="Check out our Facebook!">
                     <Icon>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ const pluginCard = ({author}) => (
                         </svg>
                     </Icon>
                 </a>
-                <a href="https://www.instagram.com/cylinderheadexchangeshop/" target="blank">
+                <a href="https://www.instagram.com/cylinderheadexchangeshop/" target="blank" aria-label="Check out our Instagram!">
                     <Icon>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -191,25 +191,27 @@ ${Website} {
     ${Social} {
         display: flex;
         margin-top: 0.8rem;
-        ${Icon} {
+        a {
             margin-right: 0.5rem;
-            height: 30px;
-            width: 30px;
-            border: 2px solid #fff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            transition: all linear 280ms;
-            svg {
-                width: 60%;
-                height: 60%;
-                align-self: center;
-                fill: #fff;
-            }
-            &:hover {
-                background-color: #fff;
+            ${Icon} {
+                height: 30px;
+                width: 30px;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                transition: all linear 280ms;
                 svg {
-                    fill: #000;
+                    width: 60%;
+                    height: 60%;
+                    align-self: center;
+                    fill: #fff;
+                }
+                &:hover {
+                    background-color: #fff;
+                    svg {
+                        fill: #000;
+                    }
                 }
             }
         }

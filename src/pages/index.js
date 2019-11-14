@@ -165,7 +165,7 @@ padding: 10px;
     margin-bottom: 0.4rem;
   }
   ${ServicesDescription} {
-    color: #828282;
+    color: #585858;
     text-align: center;
     margin-bottom: 1.6rem;
   }

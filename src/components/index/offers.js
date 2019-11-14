@@ -44,9 +44,10 @@ const OffersBtn = styled(Link)``
 
 const Smalltext = styled.p`
     text-align: center;
-    color: #a2a2a2;
+    color: #505050;
     font-size: 0.6rem;
     text-transform: lowercase;
+    /*opacity: 0.6;*/
 `
 
 const Header = styled.h2`

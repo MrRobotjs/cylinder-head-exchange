@@ -1,0 +1,5 @@
+User-agent: *
+Crawl-delay: 100
+Allow: /
+
+Sitemap: https://cylinderheadexchangeshop.com/sitemap.xml

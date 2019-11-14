@@ -5,15 +5,21 @@ module.exports = {
     title: `Cylinder Head Exchange`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@Christopher Ramos`,
+    siteUrl: `https://cylinderheadexchangeshop.com`,
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        google: {
-          families: ['Racing Sans One']
-        }
-      }
+        fonts: {
+          google: [
+            {
+              family: "Racing Sans One",
+              fontDisplay: 'auto',
+            },
+          ],
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
