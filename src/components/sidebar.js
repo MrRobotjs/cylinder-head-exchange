@@ -27,27 +27,6 @@ export default props => {
         </svg>
         Home
       </Link>
-      
-      <Link 
-      className="menu-item" 
-      to="/offers" 
-      activeClassName="active">
-        Offers
-      </Link>
-      
-      <Link 
-      className="menu-item" 
-      to="/page-2" 
-      activeClassName="active">
-        Page 2
-      </Link>
-
-      <Link 
-      className="menu-item" 
-      to="/404" 
-      activeClassName="active">
-        404
-      </Link>
 
       <a href="mailto:contact@cylinderheadexchangeshop.com" target="_blank" rel="noopener noreferrer" className="contact">Contact Us</a>
     </Menu>
