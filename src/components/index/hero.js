@@ -106,7 +106,7 @@ class HeroCom extends React.Component {
                   </svg>
                   <span>Next button</span>
                   </Button>
-                  <SubHeading>View Services <span>→</span></SubHeading>
+                  <SubHeadingUrl href="#services">View Services <span>→</span></SubHeadingUrl>
                 </Bottom>
               </Group>
             </Slide>
@@ -127,12 +127,13 @@ const Group = styled.div``
 const Heading = styled.div``
 const SubHeading = styled.div``
 const Button = styled.button``
+const SubHeadingUrl = styled.a``
 
 const Section = styled.section`
 .alice-carousel {
   box-sizing: unset;
   margin: unset;
-  min-height: calc(100vh - 7rem); /* - 3rem to make image full screen of monitor minus the header height */
+  min-height: calc(100vh - 6.5rem); /* - 3rem to make image full screen of monitor minus the header height */
   display: block;
   width: 100%;
   position: relative;
@@ -140,7 +141,7 @@ const Section = styled.section`
   > div:first-of-type {
     .alice-carousel__wrapper {
       li {
-        min-height: calc(100vh - 7rem);
+        min-height: calc(100vh - 6.5rem);
         margin: unset;
       }
     }
@@ -175,7 +176,7 @@ const Section = styled.section`
           text-transform: uppercase;
           display: -webkit-inline-box;
         }
-        ${SubHeading} {
+        ${SubHeading}, ${SubHeadingUrl} {
           color: #fff;
           font-weight: bold;
           background-color: ${darken(0.12, variable.SiteColor)};
@@ -187,7 +188,7 @@ const Section = styled.section`
       }
       ${Bottom} {
         display: flex;
-        ${SubHeading} {
+        ${SubHeading}, ${SubHeadingUrl} {
           color: #fff;
           font-weight: bold;
           background-color: #222;
@@ -196,6 +197,13 @@ const Section = styled.section`
           text-transform: uppercase;
           display: inline-block;
           margin-left: 5px;
+          text-decoration: unset;
+          transition: all linear 250ms;
+        }
+        ${SubHeadingUrl} {
+          &:hover {
+            background-color: #363636;
+          }
         }
         ${Button} {
           background-color: #222;
@@ -242,7 +250,7 @@ const Section = styled.section`
             font-size: 1.4rem;
             padding: 0.7rem 1rem;
           }
-          ${SubHeading} {
+          ${SubHeading}, ${SubHeadingUrl} {
             font-size: 1.2rem;
             padding: 0.7rem 1rem;
           }
@@ -270,7 +278,7 @@ const Section = styled.section`
             font-size: 1.2rem;
             padding: 0.7rem 1rem;
           }
-          ${SubHeading} {
+          ${SubHeading}, ${SubHeadingUrl} {
             font-size: 1rem;
             padding: 0.7rem 1rem;
           }
@@ -298,7 +306,7 @@ const Section = styled.section`
             font-size: 1.2rem;
             padding: 0.6rem 0.9rem;
           }
-          ${SubHeading} {
+          ${SubHeading}, ${SubHeadingUrl} {
             font-size: 0.9rem;
             padding: 0.6rem 0.9rem;
           }
@@ -316,7 +324,7 @@ const Section = styled.section`
           ${Heading} {
             font-size: 1.5rem;
           }
-          ${SubHeading} {
+          ${SubHeading}, ${SubHeadingUrl} {
             font-size: 1.1rem;
           }
         }
@@ -343,7 +351,7 @@ const Section = styled.section`
             font-size: 1.1rem;
             padding: 0.5rem 0.8rem;
           }
-          ${SubHeading} {
+          ${SubHeading}, ${SubHeadingUrl} {
             font-size: 0.8rem;
             padding: 0.5rem 0.8rem;
           }
@@ -388,7 +396,7 @@ const Section = styled.section`
               height: 7px;
             }
           }
-          ${SubHeading} {
+          ${SubHeading}, ${SubHeadingUrl} {
             padding: 0.4rem 0.7rem;
             font-size: 0.7rem;
           }

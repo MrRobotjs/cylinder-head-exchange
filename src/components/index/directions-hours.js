@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 import * as variable from 'src/config'
 import GoogleMapReact from 'google-map-react';
-import {darken} from 'polished'
+import {darken,lighten} from 'polished'
 
 const DirectionsHours = ({WebsiteName, ShopAddress, MonSat, Sun}) => {
     return (
-        <Section id="Map">
+        <Section id="map">
             <MapContainer>
                 <MapBtn aria-label="Get Directions" href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" target="blank">
                 <svg
@@ -62,7 +62,7 @@ const DirectionsHours = ({WebsiteName, ShopAddress, MonSat, Sun}) => {
                     </Row>
                     <Row>
                     <Data>Sunday</Data>
-                    <Data style={{color: `${Sun === "Closed" ? "black" : "unset"}`,}}>{Sun}</Data>
+                    <Data style={{color: `${Sun === "Closed" ? `${lighten(0.32, variable.SiteColor)}` : "unset"}`,}}>{Sun}</Data>
                     </Row>
                 </tbody>
                 </TableHours>
@@ -171,6 +171,7 @@ flex-wrap: wrap;
   }
   ${InformationContainer} {
     background-color: ${variable.SiteColor};
+    background-color: #1b1b1b;
     flex: 1;
     padding: 1rem 1.5rem;
     ${AddressHeader}, ${HoursHeader} {

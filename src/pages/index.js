@@ -6,11 +6,12 @@ import "react-tabs/style/react-tabs.css";
 import {rgba, darken} from 'polished'
 import MechanicalPart from '../images/background.jpg'
 import { graphql } from "gatsby"
-import OfferSection from '../components/index/offers.js'
+//import OfferSection from '../components/index/offers.js'
 import Hero from '../components/index/hero.js'
 import DirectionsHours from '../components/index/directions-hours'
 import WhyUs from '../components/index/why-us'
 import { Link } from "gatsby"
+import Testimonials from '../components/index/testimonials.js'
 
 /*#f3f3f3*/
 export default ({ data }) => (
@@ -21,33 +22,26 @@ export default ({ data }) => (
 
     <Navigation>
       <Tabd
-      href="#Offers">
-        Offers
-      </Tabd>
-      <Tabd
-      href="#Email">
-        Email Subscription
-      </Tabd>
-      <Tabd
-      href="#Services">
+      href="#services">
         Services
       </Tabd>
       <Tabd
-      href="#Map">
+      href="#email">
+        Email Subscription
+      </Tabd>
+      <Tabd
+      href="#map">
         Map / Info
       </Tabd>
     </Navigation>
     
-    <OfferSection
-    AllOffers={data.All}/>
-
-    <EmailContainer id="Email">
-      <Text>Want more deals? Sign up for exclusive offers</Text>
-      <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
-      <a href="/">Privacy Statement</a>
-    </EmailContainer>
+    {
+      /*
+      <OfferSection AllOffers={data.All}/>
+      */
+    }
     
-    <Content id="Services">
+    <Content id="services">
         <ServicesHeader>Services</ServicesHeader>
         <ServicesDescription>This a description for the service. This a description for the service. This a description for the service. This a description for the service</ServicesDescription>
         <Container>
@@ -99,13 +93,21 @@ export default ({ data }) => (
         </Container>
     </Content>
 
+    <EmailContainer id="email">
+      <Text>Want more deals? Sign up for exclusive offers</Text>
+      <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
+      <a href="/">Privacy Statement</a>
+    </EmailContainer>
+
+    <WhyUs />
+
     <DirectionsHours
     WebsiteName={data.Site.websiteName}
     ShopAddress={data.Site.shopInformation.address}
     MonSat={data.Site.shopInformation.shopHours.mondaySaturday}
     Sun={data.Site.shopInformation.shopHours.sunday}/>
 
-    <WhyUs />
+    <Testimonials />
 
   </>
 )
@@ -162,7 +164,7 @@ padding: 10px;
     text-align: center;
     font-size: 2.8rem;
     font-weight: bold;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
   }
   ${ServicesDescription} {
     color: #585858;

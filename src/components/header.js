@@ -34,21 +34,6 @@ class Header extends React.Component {
               to="/"
               activeClassName="active">Home</Navlink>
             </li>
-            <li>
-              <Navlink
-              to="/offers/"
-              activeClassName="active">Offers</Navlink>
-            </li>
-            <li>
-              <Navlink
-              to="/page-2"
-              activeClassName="active">Page 2</Navlink>
-            </li>
-            <li>
-              <Navlink
-              to="/404"
-              activeClassName="active">404</Navlink>
-            </li>
           </ul>
         </Navmenu>
         <Actionbtns>

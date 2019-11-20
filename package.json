@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
     "babel-plugin-styled-components": "^1.10.6",
     "detect-browser-language": "0.0.2",
     "gatsby": "^2.13.39",
