@@ -54,8 +54,8 @@ const Container = styled.div``
 const Sub = styled.p``
 
 const Section = styled.section`
-padding: 1.5rem;
-padding-bottom: 5.5rem;
+padding-top: 1.5rem;
+padding-bottom: 3.5rem;
   ${Header} {
     text-align: center;
     font-size: 2.8rem;
@@ -71,7 +71,7 @@ padding-bottom: 5.5rem;
         display: flex;
         justify-content: center;
         position: relative;
-        bottom: -4rem;
+        bottom: -1rem;
         ${Secondary} {
             color: ${variable.SiteColor};
             margin-right: 9px;
