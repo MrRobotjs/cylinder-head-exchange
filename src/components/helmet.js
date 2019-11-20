@@ -44,6 +44,7 @@ const Helmett = ({ title, description }) => (
           <link rel="preconnect" href="https://maps.gstatic.com/" crossorigin />
           <link rel="preconnect" href="https://cloud.google.com/" crossorigin />
           <link rel="preconnect" href="https://developers.google.com/" crossorigin />
+
           <link rel="mask-icon" href={Safari} color={variable.SiteColor}/>
 
           <meta name="msapplication-TileColor" content="#2b5797"/>
