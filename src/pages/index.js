@@ -159,29 +159,32 @@ const Desc = styled.div``
 const ServicesDescription = styled.div``
 
 const Content = styled.div`
-padding: 10px;
+padding-top: 1rem;
+padding-bottom: 1rem;
   ${ServicesHeader} {
     text-align: center;
     font-size: 2.8rem;
     font-weight: bold;
+    margin 0 2rem;
     margin-bottom: 0.6rem;
   }
   ${ServicesDescription} {
     color: #585858;
     text-align: center;
+    margin 0 2rem;
     margin-bottom: 1.6rem;
   }
   ${Container} {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0.5rem;
+    margin: 0 1rem;
     justify-content: center;
     ${Card} {
       background-color: #fff;
       box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.2);
       flex-basis: 15.3rem;
       border-radius: 0.4rem;
-      margin: 0 1.5rem;
+      margin: 0 1rem;
       margin-bottom: 2rem;
       position: relative;
       transition: all linear 260ms;
@@ -296,7 +299,7 @@ padding: 10px;
         &:nth-child(4) {
           display: none;
         }
-      }
+      }/*
       @media screen and (max-width: 450px) {
         flex-basis: 21rem;
       }
@@ -305,7 +308,7 @@ padding: 10px;
       }
       @media screen and (max-width: 310px) {
         flex-basis: 16rem;
-      }
+      }*/
     }
   }
 `

@@ -60,11 +60,13 @@ padding-bottom: 3.5rem;
     text-align: center;
     font-size: 2.8rem;
     font-weight: bold;
+    margin: 0 2rem;
     margin-bottom: 0.6rem;
   }
   ${Sub} {
     color: #585858;
     text-align: center;
+    margin: 0 2rem;
     margin-bottom: 1.6rem;
   }
     ${Buttons} {
@@ -103,7 +105,7 @@ padding-bottom: 3.5rem;
   ${Container} {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0.5rem;
+    margin: 0 1rem;
     justify-content: center;
   }
 `

@@ -36,7 +36,7 @@ const Card = styled.div`
     box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.2);
     flex-basis: 15.3rem;
     border-radius: 0.4rem;
-    margin: 0 1.5rem;
+    margin: 0 1rem;
     margin-bottom: 6rem;
     position: relative;
     transition: all linear 260ms;
@@ -119,6 +119,7 @@ const Card = styled.div`
       ${Desc} {
         color: #575757;
         line-height: 1.7;
+        position: relative;
       }
       ${Claim} {
         align-self: center;
@@ -154,6 +155,11 @@ const Card = styled.div`
     &:focus {
       /*box-shadow: 2px 2px 15px 0 rgba(60,60,60,.2);*/
       background-color: #f5f5f5;
+      ${Desc} {
+        &::before, &::after {
+          opacity: 0.35;
+        }
+      }
     }
     @media screen and (max-width: 1081px) {
       &:nth-child(5) {

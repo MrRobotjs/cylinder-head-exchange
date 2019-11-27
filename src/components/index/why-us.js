@@ -445,7 +445,7 @@ padding: 5rem 0;
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding: 0 1.5rem;
+        padding: 0 2rem;
         ${Header} {
             font-size: 2rem;
             font-weight: bold;
@@ -491,7 +491,7 @@ padding: 5rem 0;
     }
     @media screen and (max-width: 798px) {
         flex-direction: column;
-        padding: 2rem 1.5rem;
+        padding: 2rem;
         ${Left} {
             order: 2;
             width: 100%;
@@ -500,7 +500,7 @@ padding: 5rem 0;
         }
         ${Right} {
             order: 1;
-            padding: 0 0.5rem;
+            padding: 0; /*0 0.5rem*/
         }
     }
 `
