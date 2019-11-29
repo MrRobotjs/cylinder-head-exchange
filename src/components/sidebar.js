@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 export default props => {
   return (
     // Pass on our props
-    <Menu {...props}>
+    <Menu {...props} aria-hidden="true">
       <Link 
       className="menu-item" 
       to="/" 

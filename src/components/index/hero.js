@@ -7,7 +7,6 @@ import Img from "gatsby-image"
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
-
 class HeroCom extends React.Component {
   items = [1, 2, 3, 4, 5]
  
