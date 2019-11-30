@@ -163,7 +163,7 @@ const Section = styled.section`
       bottom: 2rem;
       z-index: 1;
       left: 0;
-      margin: 0 2rem;
+      margin: 0 2.5vw;
       ${Top} {
         margin-bottom: 11px;
         ${Heading} {
@@ -286,7 +286,6 @@ const Section = styled.section`
     ${Slide} {
       ${Group} {
         bottom: 1.3rem;
-        margin: 0 1.5rem;
         ${Top} {
           ${Heading} {
             font-size: 1.2rem;
@@ -320,7 +319,6 @@ const Section = styled.section`
     ${Slide} {
       ${Group} {
         bottom: 1.1rem;
-        margin: 0 1.3rem;
         ${Top} {
           ${Heading} {
             font-size: 1.2rem;
@@ -375,7 +373,6 @@ const Section = styled.section`
     ${Slide} {
       ${Group} {
         bottom: 0.8rem;
-        margin: 0 1rem;
         ${Top} {
           ${Heading} {
             font-size: 1.1rem;
@@ -413,9 +410,8 @@ const Section = styled.section`
     ${Slide} {
       ${Group} {
         bottom: 0.5rem;
-        margin: unset;
-        margin-left: 10px;
         ${Top} {
+          margin-bottom: 8px;
           ${Heading} {
             font-size: 0.9rem;
             padding: 0.4rem 0.7rem;
