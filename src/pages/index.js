@@ -43,7 +43,7 @@ export default ({ data }) => (
     
     <Content id="services">
         <ServicesHeader>Services</ServicesHeader>
-        <ServicesDescription>This a description for the service. This a description for the service. This a description for the service. This a description for the service</ServicesDescription>
+        <ServicesDescription>One of our many services. Coming Soon...</ServicesDescription>
         <Container>
 
           <Card>
@@ -56,8 +56,8 @@ export default ({ data }) => (
               </IconContainer>
             </Top>
             <Bottom>
-              <Title>title</Title>
-              <Desc>This a description for the service</Desc>
+              <Title>Coming Soon</Title>
+              <Desc>Coming Soon...</Desc>
             </Bottom>
           </Card>
 
@@ -71,8 +71,8 @@ export default ({ data }) => (
               </IconContainer>
             </Top>
             <Bottom>
-              <Title>title</Title>
-              <Desc>This a description for the service</Desc>
+              <Title>Coming Soon</Title>
+              <Desc>Coming Soon...</Desc>
             </Bottom>
           </Card>
 
@@ -86,8 +86,8 @@ export default ({ data }) => (
               </IconContainer>
             </Top>
             <Bottom>
-              <Title>title</Title>
-              <Desc>This a description for the service. This a description for the service</Desc>
+              <Title>Coming Soon</Title>
+              <Desc>Coming Soon...</Desc>
             </Bottom>
           </Card>
         </Container>
