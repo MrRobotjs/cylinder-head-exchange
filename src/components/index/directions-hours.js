@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as variable from 'src/config'
 import GoogleMapReact from 'google-map-react';
 import {darken,lighten} from 'polished'
+import MapBg from 'src/images/bg-map.png' 
 
 const DirectionsHours = ({WebsiteName, ShopAddress, MonSat, Sun}) => {
     return (
@@ -173,7 +174,11 @@ flex-wrap: wrap;
     background-color: ${variable.SiteColor};
     background-color: #1b1b1b;
     flex: 1;
-    padding: 1rem 1.5rem;
+    padding: 2rem 2.5rem;
+    background-image: url(${MapBg});
+    background-repeat: none;
+    background-size: contain;
+    background-position: center;
     ${AddressHeader}, ${HoursHeader} {
       color: #fff;
       font-weight: bold;

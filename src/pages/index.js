@@ -121,7 +121,7 @@ export default ({ data }) => (
     </Content>
 
     <EmailContainer id="email">
-      <Text>Want more deals? Sign up for exclusive offers</Text>
+      <Text>Sign up for exclusive offers now!</Text>
       <Input disabled placeholder="Enter your email here" title="Disabled. Still a work in progress."></Input>
       <a href="/">Privacy Statement</a>
     </EmailContainer>
@@ -200,7 +200,7 @@ background-color: ${rgba(variable.SiteColor, 0.04)};
     color: #585858;
     text-align: center;
     margin 0 2rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 2.6rem;
   }
   ${Container} {
     display: flex;
@@ -396,6 +396,7 @@ overflow: hidden;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
+padding: 2rem 0;
 &::before {
   content: "";
   position: absolute;
@@ -416,9 +417,11 @@ ${Text} {
   text-align: center;
   font-weight: bold;
   color: #fff;
-  font-size: 1.5rem;
-  margin: 1.5rem 1.5rem 1rem 1.5rem;
+  font-size: 1.8rem;
+  margin: 1.5rem;
+  margin-top: unset;
   z-index: 1;
+  text-transform: uppercase;
 }
 ${Input} {
   margin: 0 auto;
@@ -439,7 +442,8 @@ a {
   color: #fff;
   display: block;
   text-align: center;
-  margin: 1rem 1.5rem 1.5rem 1.5rem;
+  margin: 1.5rem;
+  margin-bottom: unset;
   z-index: 1;
 }
 `

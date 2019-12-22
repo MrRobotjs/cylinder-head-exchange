@@ -37,7 +37,7 @@ const Card = styled.a`
     flex-basis: 15.3rem;
     border-radius: 0.4rem;
     margin: 0 1rem;
-    margin-bottom: 6rem;
+    margin-bottom: 4.1rem !important;
     position: relative;
     transition: all linear 260ms;
     display: flex;
