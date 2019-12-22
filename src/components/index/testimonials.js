@@ -15,6 +15,7 @@ const Testimonials = () => (
                         id
                         name
                         review
+                        link
                     }
                 }
             }
@@ -31,11 +32,12 @@ const Testimonials = () => (
                     name={node.name}
                     review={node.review}
                     key={node.id}
-                    id={node.id}/>
+                    id={node.id}
+                    url={node.link}/>
                 ))}
             </Container>
             <Buttons>
-                <Secondary href="https://g.page/Cylinder-Head-Exchange-Shop?share" target="_blank">Read All</Secondary>
+                <Secondary href="https://www.google.com/maps/place/Cylinder+Head+Exchange/@34.056385,-117.6877477,17z/data=!3m1!4b1!4m7!3m6!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!8m2!3d34.056385!4d-117.685559!9m1!1b1" target="_blank">Read All</Secondary>
                 <Primary href="https://g.page/Cylinder-Head-Exchange-Shop?share" target="_blank">Leave A Review</Primary>
             </Buttons>
         </Section>
@@ -54,8 +56,8 @@ const Container = styled.div``
 const Sub = styled.p``
 
 const Section = styled.section`
-padding-top: 1.5rem;
-padding-bottom: 3.5rem;
+padding-top: 3rem;
+padding-bottom: 4.5rem;
   ${Header} {
     text-align: center;
     font-size: 2.8rem;

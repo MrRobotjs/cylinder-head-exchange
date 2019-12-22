@@ -4,8 +4,8 @@ import React from "react"
 import styled from 'styled-components'
 import Avatar from 'src/images/user.svg'
 
-const OfferCard = ({ id, name, review }) => (
-    <Card key={id}>
+const OfferCard = ({ id, name, review, url }) => (
+    <Card key={id} href={url} target="_blank">
         <Top>
             <IconContainer>
                 <Icon>
@@ -31,7 +31,7 @@ const Url = styled(Link)``
 const Claim = styled(Link)``
 const Desc = styled.div``
 
-const Card = styled.div`
+const Card = styled.a`
     background-color: #fff;
     box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.2);
     flex-basis: 15.3rem;

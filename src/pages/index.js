@@ -182,12 +182,12 @@ const Url = styled(Link)``
 const Claim = styled(Link)``
 const Card = styled.div``
 const Container = styled.div``
-const Desc = styled.div``
+const Desc = styled.p``
 const ServicesDescription = styled.div``
 
 const Content = styled.div`
-padding-top: 1rem;
-padding-bottom: 1rem;
+padding-top: 3rem;
+padding-bottom: 3rem;
 background-color: ${rgba(variable.SiteColor, 0.04)};
   ${ServicesHeader} {
     text-align: center;
@@ -344,7 +344,8 @@ background-color: ${rgba(variable.SiteColor, 0.04)};
       &:hover,
       &:active,
       &:focus {
-        background-color: ${lighten(0.22, variable.SiteColor)};
+        background-color: ${lighten(0.2, variable.SiteColor)};
+        background-color: ${variable.SiteColor};
         ${Top} {
           ${IconContainer} {
             ${Icon} {
