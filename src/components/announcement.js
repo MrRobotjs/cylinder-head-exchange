@@ -56,7 +56,20 @@ const AnnouncementComponent = () => (
         };*/
       return (
         <InfoBar>
-            <Ad>{dataa.contentfulWebsiteInformation.shopInformation.address}</Ad>
+            <Ad>
+              <a href="https://g.page/Cylinder-Head-Exchange-Shop?share" target="_blank">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0"
+                y="0"
+                enableBackground="new 0 0 512 512"
+                version="1.1"
+                viewBox="0 0 512 512"
+                xmlSpace="preserve">
+                  <path d="M256 0C153.755 0 70.573 83.182 70.573 185.426c0 126.888 165.939 313.167 173.004 321.035 6.636 7.391 18.222 7.378 24.846 0 7.065-7.868 173.004-194.147 173.004-321.035C441.425 83.182 358.244 0 256 0zm0 278.719c-51.442 0-93.292-41.851-93.292-93.293S204.559 92.134 256 92.134s93.291 41.851 93.291 93.293-41.85 93.292-93.291 93.292z"></path>
+                </svg>{dataa.contentfulWebsiteInformation.shopInformation.address}
+              </a>
+            </Ad>
             <Right>
               <p>Follow Us</p> 
               <Social>
@@ -103,6 +116,17 @@ const InfoBar = styled.div`
     color: #999;
     font-size: 13px;
     font-weight: 600;
+    a {
+      color: inherit;
+    }
+    svg {
+      height: 11px;
+      width: 11px;
+      margin-right: 4px;
+      path {
+        fill: #999;
+      }
+    }
     p {
         margin: unset;
     }
