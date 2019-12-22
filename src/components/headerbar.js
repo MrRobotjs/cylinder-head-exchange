@@ -101,7 +101,7 @@ const InfoBar = styled.div`
   z-index: 5;
   position: relative;
   justify-content: space-between;
-  background-color: #f2f2f2;
+  background-color: #f0f0f0;
   padding: 6px 1rem;
   ${Ad} {
     align-self: center;
@@ -161,6 +161,7 @@ const InfoBar = styled.div`
         justify-content: center;
         transition: all 250ms linear;
         margin-left: 4px;
+        background-color: #fff;
         svg {
           height: 50%;
           width: 50%;

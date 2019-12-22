@@ -11,7 +11,7 @@ import Header from "../components/header"
 import MobileHeader from "../components/mobile-header"
 import "../components/layout.css"
 import Footer from '../components/footer' 
-import Announcement from '../components/announcement'
+import Announcement from '../components/headerbar'
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]')
