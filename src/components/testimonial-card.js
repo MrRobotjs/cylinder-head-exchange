@@ -43,6 +43,7 @@ const Card = styled.a`
     display: flex;
     flex-direction: column;
     text-decoration: unset;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     ${Url} {
       font-size: 0;
       position: absolute;

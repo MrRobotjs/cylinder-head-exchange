@@ -227,6 +227,7 @@ background-color: ${rgba(variable.SiteColor, 0.04)};
         height: 100%;
         visibility: hidden;
         color: transparent;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
       ${Top} {
         display: flex;
