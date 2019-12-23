@@ -80,6 +80,7 @@ const NavigatonBar = styled.header`
     position: relative;
     text-decoration: none;
     padding: 0 1.0875rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     &::before {
       content: "";
       transform: skew(-19deg, 0deg);
