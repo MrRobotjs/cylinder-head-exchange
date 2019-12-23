@@ -136,6 +136,10 @@ const MobileNavigationBar = styled.nav`
     text-align: center;
     font-size: .54rem;
     font-weight: bold;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
     ${Icon} {
         width: 22px;
         margin: unset;

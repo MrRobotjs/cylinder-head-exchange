@@ -30,6 +30,7 @@
     overflow-x: hidden;
     align-items: center;
     text-transform: uppercase;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   .bm-item svg {
