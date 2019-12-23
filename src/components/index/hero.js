@@ -132,7 +132,6 @@ const Section = styled.section`
 .alice-carousel {
   box-sizing: unset;
   margin: unset;
-  min-height: calc(100vh - 6.5rem); /* - 3rem to make image full screen of monitor minus the header height */
   display: block;
   width: 100%;
   position: relative;
@@ -140,7 +139,7 @@ const Section = styled.section`
   > div:first-of-type {
     .alice-carousel__wrapper {
       li {
-        min-height: calc(100vh - 6.5rem);
+        padding-top: 40.25%;
         margin: unset;
       }
     }
@@ -149,6 +148,7 @@ const Section = styled.section`
     position: absolute;
     height: 100%;
     width: 100%;
+    top: 0;
     .gatsby-image-wrapper {
       &::before {
         position: absolute;
@@ -170,10 +170,11 @@ const Section = styled.section`
           color: #fff;
           font-weight: 900;
           background-color: ${variable.SiteColor};
-          padding: 0.5rem 1rem;
+          padding: 0.6rem 1rem;
           font-size: 1.7rem;
           text-transform: uppercase;
           display: -webkit-inline-box;
+          line-height: 1;
         }
         ${SubHeading}, ${SubHeadingUrl} {
           color: #fff;
@@ -183,6 +184,7 @@ const Section = styled.section`
           font-size: 1.2rem;
           text-transform: uppercase;
           display: inline-block;
+          line-height: 1;
         }
       }
       ${Bottom} {
@@ -275,135 +277,10 @@ const Section = styled.section`
 }
 @media screen and (max-width: 850px) {
   .alice-carousel {
-    min-height: calc(100vh - 16rem);
     > div:first-of-type {
       .alice-carousel__wrapper {
         li {
-          min-height: calc(100vh - 16rem);
-        }
-      }
-    }
-    ${Slide} {
-      ${Group} {
-        bottom: 1.3rem;
-        ${Top} {
-          ${Heading} {
-            font-size: 1.2rem;
-            padding: 0.7rem 1rem;
-          }
-        }
-        ${Bottom} {
-          ${SubHeading}, ${SubHeadingUrl} {
-            font-size: 1rem;
-            padding: 0.7rem 1rem;
-          }
-          ${Button} {
-            width: 44px;
-            height: 44px;
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 760px) {
-  .alice-carousel {
-    min-height: calc(100vh - 18rem);
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          min-height: calc(100vh - 18rem);
-        }
-      }
-    }
-    ${Slide} {
-      ${Group} {
-        bottom: 1.1rem;
-        ${Top} {
-          ${Heading} {
-            font-size: 1.2rem;
-            padding: 0.6rem 0.9rem;
-          }
-        }
-        ${Bottom} {
-          ${SubHeading}, ${SubHeadingUrl} {
-            font-size: 0.9rem;
-            padding: 0.6rem 0.9rem;
-          }
-          ${Button} {
-            width: 39px;
-            height: 39px;
-            svg {
-              height: 14px;
-              width: 14px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 700px) {
-  .alice-carousel {
-    ${Slide} {
-      ${Group} {
-        bottom: 1rem;
-        ${Top} {
-          ${Heading} {
-          }
-        }
-        ${Bottom} {
-          ${SubHeading}, ${SubHeadingUrl} {
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 640px) {
-  .alice-carousel {
-    min-height: calc(100vh - 20rem);
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          min-height: calc(100vh - 20rem);
-        }
-      }
-    }
-    ${Slide} {
-      ${Group} {
-        bottom: 0.8rem;
-        ${Top} {
-          ${Heading} {
-            font-size: 1.1rem;
-            padding: 0.5rem 0.8rem;
-          }
-        }
-        ${Bottom} {
-          ${Button} {
-            height: 33px;
-            width: 33px;
-            svg {
-              width: 14px;
-              height: 14px;
-            }
-          }
-          ${SubHeading}, ${SubHeadingUrl} {
-            font-size: 0.8rem;
-            padding: 0.5rem 0.8rem;
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 510px) {
-  .alice-carousel {
-    min-height: calc(100vh - 22rem);
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          min-height: calc(100vh - 22rem);
+          padding-top: 48.25%;
         }
       }
     }
@@ -413,15 +290,91 @@ const Section = styled.section`
         ${Top} {
           margin-bottom: 8px;
           ${Heading} {
-            font-size: 0.9rem;
-            padding: 0.4rem 0.7rem;
+            font-size: 1.35rem;
+            padding: 0.7rem 0.9rem;
           }
         }
         ${Bottom} {
           ${Button} {
             top: -2px;
-            height: 28px;
-            width: 28px;
+            height: 35px;
+            width: 35px;
+            svg {
+              width: 16px;
+              height: 16px;
+            }
+          }
+          ${SubHeading}, ${SubHeadingUrl} {
+            padding: 0.6rem 0.9rem;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .alice-carousel {
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          padding-top: 56.25%;
+        }
+      }
+    }
+    ${Slide} {
+      ${Group} {
+        bottom: 0.5rem;
+        ${Top} {
+          margin-bottom: 8px;
+          ${Heading} {
+            font-size: 1.2rem;
+            padding: 0.6rem 0.8rem;
+          }
+        }
+        ${Bottom} {
+          ${Button} {
+            top: -2px;
+            height: 30px;
+            width: 30px;
+            svg {
+              width: 14px;
+              height: 14px;
+            }
+          }
+          ${SubHeading}, ${SubHeadingUrl} {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  .alice-carousel {
+    > div:first-of-type {
+      .alice-carousel__wrapper {
+        li {
+          padding-top: 56.25%;
+        }
+      }
+    }
+    ${Slide} {
+      ${Group} {
+        bottom: 0.5rem;
+        ${Top} {
+          margin-bottom: 8px;
+          ${Heading} {
+            font-size: 1.1rem;
+            padding: 0.5rem 0.7rem;
+          }
+        }
+        ${Bottom} {
+          ${Button} {
+            top: -2px;
+            height: 26px;
+            width: 26px;
             svg {
               width: 12px;
               height: 12px;
@@ -429,88 +382,84 @@ const Section = styled.section`
           }
           ${SubHeading}, ${SubHeadingUrl} {
             padding: 0.4rem 0.7rem;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
           }
         }
       }
     }
   }
 }
-@media screen 
-and (max-width: 1400px)
-and (min-height: 820px) {
+@media screen and (max-width: 385px) {
   .alice-carousel {
-    height: 27.7rem;
-    min-height: unset;
     > div:first-of-type {
       .alice-carousel__wrapper {
         li {
-          height: 27.7rem;
-          min-height: unset;
+          padding-top: 56.25%;
+        }
+      }
+    }
+    ${Slide} {
+      ${Group} {
+        bottom: 0.5rem;
+        ${Top} {
+          margin-bottom: 8px;
+          ${Heading} {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.7rem;
+          }
+        }
+        ${Bottom} {
+          ${Button} {
+            top: -2px;
+            height: 26px;
+            width: 26px;
+            svg {
+              width: 12px;
+              height: 12px;
+            }
+          }
+          ${SubHeading}, ${SubHeadingUrl} {
+            padding: 0.4rem 0.7rem;
+            font-size: 0.6rem;
+          }
         }
       }
     }
   }
 }
-@media screen 
-and (max-width: 1050px)
-and (min-height: 740px) {
+@media screen and (max-width: 325px) {
   .alice-carousel {
-    height: 24.7rem;
-    min-height: unset;
     > div:first-of-type {
       .alice-carousel__wrapper {
         li {
-          height: 24.7rem;
-          min-height: unset;
+          padding-top: 56.25%;
         }
       }
     }
-  }
-}
-@media screen 
-and (max-width: 1050px)
-and (min-height: 820px) {
-  .alice-carousel {
-    height: 24.7rem;
-    min-height: unset;
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          height: 24.7rem;
-          min-height: unset;
+    ${Slide} {
+      ${Group} {
+        bottom: 0.5rem;
+        ${Top} {
+          margin-bottom: 8px;
+          ${Heading} {
+            font-size: 0.7rem;
+            padding: 0.4rem 0.5rem;
+          }
         }
-      }
-    }
-  }
-}
-@media screen 
-and (max-width: 800px)
-and (min-height: 820px) {
-  .alice-carousel {
-    height: 20.7rem;
-    min-height: unset;
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          height: 20.7rem;
-          min-height: unset;
-        }
-      }
-    }
-  }
-}
-@media screen 
-and (max-width: 475px)
-and (min-height: 500px) {
-  .alice-carousel {
-    height: 14.7rem;
-    min-height: unset;
-    > div:first-of-type {
-      .alice-carousel__wrapper {
-        li {
-          height: 14.7rem;
-          min-height: unset;
+        ${Bottom} {
+          ${Button} {
+            top: -2px;
+            height: 24px;
+            width: 24px;
+            svg {
+              width: 11px;
+              height: 11px;
+            }
+          }
+          ${SubHeading}, ${SubHeadingUrl} {
+            padding: 0.4rem 0.7rem;
+            font-size: 0.55rem;
+          }
         }
       }
     }
