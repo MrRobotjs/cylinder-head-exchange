@@ -107,6 +107,7 @@ flex-wrap: wrap;
       justify-content: center;
       transition: all 250ms ease-in-out;
       box-shadow: 0px 2px 10px -3px ${variable.SiteColor};
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       &:hover,
       &:focus,
       &:active {
@@ -176,7 +177,7 @@ flex-wrap: wrap;
     flex: 1;
     padding: 2rem 2.5rem;
     background-image: url(${MapBg});
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     ${AddressHeader}, ${HoursHeader} {

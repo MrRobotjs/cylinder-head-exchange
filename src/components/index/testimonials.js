@@ -84,6 +84,7 @@ padding-bottom: 4.5rem;
             transition: 250ms linear all;
             border-radius: 3px;
             box-shadow: 0 0 0 0 ${variable.SiteColor};
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             &:hover {
                 background-color: ${variable.SiteColor};
                 color: #fff;
@@ -99,6 +100,7 @@ padding-bottom: 4.5rem;
             text-decoration: unset;
             border-radius: 3px;
             transition: 250ms linear all;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             &:hover {
                 background-color: ${darken(0.08,variable.SiteColor)};
             }
