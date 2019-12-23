@@ -178,7 +178,7 @@ flex-wrap: wrap;
     padding: 2rem 2.5rem;
     background-image: url(${MapBg});
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     ${AddressHeader}, ${HoursHeader} {
       color: #fff;

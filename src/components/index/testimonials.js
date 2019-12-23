@@ -64,6 +64,7 @@ padding-bottom: 4.5rem;
     font-weight: bold;
     margin: 0 2rem;
     margin-bottom: 0.6rem;
+    white-space: nowrap;
   }
   ${Sub} {
     color: #585858;
