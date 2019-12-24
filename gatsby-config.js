@@ -27,17 +27,17 @@ module.exports = {
         // The property ID; the tracking code won't be generated without it
         trackingId: "UA-131673013-2",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
+        //head: false,
         // Setting this parameter is optional
-        anonymize: true,
+        //anonymize: true,
         // Setting this parameter is also optional
-        respectDNT: true,
+        //respectDNT: true,
         // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**"],
+        //exclude: ["/preview/**"],
         // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "example.com",
+        //sampleRate: 5,
+        //siteSpeedSampleRate: 10,
+        //cookieDomain: "example.com",
       },
     },
     {
