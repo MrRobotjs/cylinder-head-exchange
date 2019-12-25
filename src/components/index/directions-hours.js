@@ -89,9 +89,10 @@ const Tooltip = styled.span``
 const Container = styled.div``
 
 const Section = styled.section`
-display: flex;
-flex-wrap: wrap;
 background-color: #f7f7f7;
+${Container} {
+  display: flex;
+  flex-wrap: wrap;
   ${MapContainer} {
     flex: 1;
     position: relative;
@@ -222,6 +223,7 @@ background-color: #f7f7f7;
       }
     }
   }
+}
 @media screen and (max-width: 798px) {
   padding: 3.5rem 0;
   ${Container} {
