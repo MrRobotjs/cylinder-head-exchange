@@ -204,6 +204,8 @@ const Section = styled.section`
           transition: background-color 0.15s ease-in;
           margin-right: 6px;
           line-height: 0;
+          padding: 1px 6px;
+          display: -webkit-inline-box;
           svg {
             position: relative;
             width: 11px;
@@ -343,6 +345,11 @@ const Section = styled.section`
         li {
           padding-top: 42.50%;
         }
+      }
+    }
+    ${Slide} {
+      ${Group} {
+        bottom: 1vw;
       }
     }
   }
