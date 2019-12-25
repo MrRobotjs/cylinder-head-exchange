@@ -8,6 +8,7 @@ import MapBg from 'src/images/bg-map.png'
 const DirectionsHours = ({WebsiteName, ShopAddress, MonSat, Sun}) => {
     return (
         <Section id="map">
+          <Container>
             <MapContainer>
                 <MapBtn aria-label="Get Directions" href="https://www.google.com/maps/dir//Cylinder+Head+Exchange,+5498+W+Mission+Blvd+A,+Ontario,+CA+91762/@34.0565074,-117.7555996,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!2m2!1d-117.685559!2d34.056385" target="blank">
                 <svg
@@ -68,7 +69,8 @@ const DirectionsHours = ({WebsiteName, ShopAddress, MonSat, Sun}) => {
                 </tbody>
                 </TableHours>
             </InformationContainer>
-        </Section>
+          </Container>
+      </Section>
     )
 }
 
@@ -84,10 +86,12 @@ const InformationContainer = styled.div``
 const Address = styled.p``
 const MapBtn = styled.a``
 const Tooltip = styled.span``
+const Container = styled.div``
 
 const Section = styled.section`
 display: flex;
 flex-wrap: wrap;
+background-color: #f7f7f7;
   ${MapContainer} {
     flex: 1;
     position: relative;
@@ -218,7 +222,9 @@ flex-wrap: wrap;
       }
     }
   }
-  @media screen and (max-width: 798px) {
+@media screen and (max-width: 798px) {
+  padding: 3.5rem 0;
+  ${Container} {
     flex-direction: column;
     margin: 0 2rem;
     box-shadow: 0px 6px 15px -2px rgba(0, 0, 0, 0.6);
@@ -238,82 +244,83 @@ flex-wrap: wrap;
       border-bottom-right-radius: 2rem;
     }
   }
-  @media screen and (max-width: 362px) {
-    ${MapContainer} {
-      height: 17rem;
+}
+@media screen and (max-width: 362px) {
+  ${MapContainer} {
+    height: 17rem;
+  }
+  ${InformationContainer} {
+    ${AddressHeader},
+    ${HoursHeader} {
+      font-size: 1.6rem;
     }
-    ${InformationContainer} {
-      ${AddressHeader},
-      ${HoursHeader} {
-        font-size: 1.6rem;
-      }
-      ${TableHours} {
-        ${Row} {
-          ${Data} {
-            font-size: 0.9rem;
-          }
+    ${TableHours} {
+      ${Row} {
+        ${Data} {
+          font-size: 0.9rem;
         }
       }
     }
   }
-  @media screen and (max-width: 341px) {
-    ${MapContainer} {
-      height: 16rem;
+}
+@media screen and (max-width: 341px) {
+  ${MapContainer} {
+    height: 16rem;
+  }
+  ${InformationContainer} {
+    ${AddressHeader},
+    ${HoursHeader} {
+      font-size: 1.5rem;
     }
-    ${InformationContainer} {
-      ${AddressHeader},
-      ${HoursHeader} {
-        font-size: 1.5rem;
-      }
-      ${TableHours} {
-        ${Row} {
-          ${Data} {
-            font-size: 0.8rem;
-          }
+    ${TableHours} {
+      ${Row} {
+        ${Data} {
+          font-size: 0.8rem;
         }
       }
     }
   }
-  @media screen and (max-width: 319px) {
-    ${InformationContainer} {
-      ${AddressHeader},
-      ${HoursHeader} {
-        font-size: 1.4rem;
-      }
-      ${TableHours} {
-        ${Row} {
-          ${Data} {
-            font-size: 0.7rem;
-            padding-bottom: 0.2rem;
-          }
+}
+@media screen and (max-width: 319px) {
+  ${InformationContainer} {
+    ${AddressHeader},
+    ${HoursHeader} {
+      font-size: 1.4rem;
+    }
+    ${TableHours} {
+      ${Row} {
+        ${Data} {
+          font-size: 0.7rem;
+          padding-bottom: 0.2rem;
         }
       }
     }
   }
-  @media screen and (max-width: 319px) {
-    ${MapContainer} {
-      height: 14rem;
+}
+@media screen and (max-width: 319px) {
+  ${MapContainer} {
+    height: 14rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    div {
       border-top-left-radius: 1.5rem;
       border-top-right-radius: 1.5rem;
-      div {
-        border-top-left-radius: 1.5rem;
-        border-top-right-radius: 1.5rem;
-      }
     }
-    ${InformationContainer} {
-      border-bottom-left-radius: 1.5rem;
-      border-bottom-right-radius: 1.5rem;
-      ${AddressHeader},
-      ${HoursHeader} {
-        font-size: 1.3rem;
-      }
-      ${TableHours} {
-        ${Row} {
-          ${Data} {
-            font-size: 0.6rem;
-          }
+  }
+  ${InformationContainer} {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    ${AddressHeader},
+    ${HoursHeader} {
+      font-size: 1.3rem;
+    }
+    ${TableHours} {
+      ${Row} {
+        ${Data} {
+          font-size: 0.6rem;
         }
       }
     }
   }
+}
 `
