@@ -33,6 +33,10 @@ export default ({ data }) => (
       href="#map">
         Map / Info
       </Tabd>
+      <Tabd
+      href="#testimonials">
+        Testimonials
+      </Tabd>
     </Navigation>
     
     {
