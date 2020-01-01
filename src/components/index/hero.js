@@ -136,6 +136,7 @@ const Section = styled.section`
   width: 100%;
   position: relative;
   overflow: hidden;
+  margin-top: -1px;
   > div:first-of-type {
     .alice-carousel__wrapper {
       li {
