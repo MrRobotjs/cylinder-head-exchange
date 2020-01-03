@@ -360,6 +360,7 @@ flex-direction: column;
                 padding: unset;
                 margin-left: 9px;
                 margin-right: unset;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                 svg {
                     height: 20px;
                     width: 20px;
