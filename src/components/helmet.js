@@ -51,12 +51,12 @@ const Helmett = ({ title, description }) => (
           <meta name="msapplication-TileImage" content={Tile}/>
           <meta name="msapplication-config" content="/browserconfig.xml"/>
 
-          <meta name="og:title" content={title} />
-          <meta name="og:description" content={description} />
-          <meta name="og:image" content={Favicon180} />
-          <meta name="og:site_name" content={title} />
-          <meta name="og:locale" content="en_US" />
-          <meta name="og:type" content="website" />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content={Favicon180} />
+          <meta property="og:site_name" content={title} />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content="website" />
 
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content={title} />
