@@ -280,32 +280,31 @@ flex-direction: column;
             justify-content: center;
             max-width: 300px;
             align-self: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             svg {
-                height: 40px;
-                width: 40px;
-                align-self: center;
-                margin-bottom: 0.5rem;
                 display: none;
             }
             ${Desc} {
                 align-self: center;
-                font-size: 1rem;
+                font-size: 0.85rem;
                 margin-bottom: 0.8rem;
                 line-height: 1.6;
                 order: 1;
                 max-width: 300px;
+                color: #2b5057;
             }
             ${Name} {
                 font-weight: 600;
                 font-size: 1.2rem;
                 order: 2;
                 margin-bottom: 0.1rem;
+                color: #2b5057;
             }
             ${Title} {
                 order: 3;
                 font-weight: 600;
                 font-size: 0.9rem;
+                color: #2b5057;
             }
         }
         ${ButtonContainer} {
@@ -421,7 +420,15 @@ flex-direction: column;
                 max-width: unset;
                 margin-bottom: unset;
                 svg {
+                    height: 55px;
+                    width: 55px;
+                    align-self: center;
+                    margin-bottom: 1.5rem;
                     align-self: flex-start;
+                    display: initial;
+                    path {
+                        fill: #2b5057;
+                    }
                 }
                 ${Desc} {
                     align-self: flex-start;
