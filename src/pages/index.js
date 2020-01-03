@@ -1,6 +1,6 @@
 import React from "react"
 import styled from 'styled-components'
-import HELMET from "../components/helmet"
+import Helmet from "../components/helmet"
 import * as variable from 'src/config.js'
 import "react-tabs/style/react-tabs.css";
 import {rgba, darken, lighten} from 'polished'
@@ -16,7 +16,7 @@ import Testimonials from '../components/index/testimonials.js'
 /*#f3f3f3*/
 export default ({ data }) => (
   <>
-    <HELMET description="Cylinder Head Exchange is an independent machine shop, We specialize in cylinder head re-manufacturing and repair for most makes and models. If a head can be saved, we can save it and in turn save you money!" />
+    <Helmet />
 
     <Hero/>
 
