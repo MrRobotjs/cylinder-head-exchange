@@ -54,7 +54,7 @@ const Helmett = ({ title, description }) => (
 
           <meta property="og:title" content={metaTitle} />
           <meta property="og:description" content={metaDescription} />
-          <meta property="og:image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
+          <meta property="og:image" content={"https:" + data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
           <meta property="og:site_name" content={metaTitle} />
           <meta property="og:locale" content="en_US" />
           <meta property="og:type" content="website" />
@@ -62,8 +62,8 @@ const Helmett = ({ title, description }) => (
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content={metaTitle} />
           <meta name="twitter:description" content={metaDescription} />
-          <meta name="twitter:image" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
-          <meta name="twitter:image:src" content={data.contentfulWebsiteInformation.favicon180x180.fixed.src}/>
+          <meta name="twitter:image" content={"https:" + data.contentfulWebsiteInformation.favicon180x180.fixed.src} />
+          <meta name="twitter:image:src" content={"https:" + data.contentfulWebsiteInformation.favicon180x180.fixed.src}/>
 
           <meta name="apple-mobile-web-app-capable" content="yes"/>
           <meta name="apple-mobile-web-app-status-bar-style" content={variable.SiteColor}/>
