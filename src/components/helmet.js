@@ -2,15 +2,19 @@ import React from 'react';
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Favicon180 from '../images/Favicon180.png'
 import Safari from '../images/safari-pinned-tab.svg'
 import Tile from '../images/mstile-144x144.png'
 import * as variable from 'src/config.js'
 
-const Helmett = ({ title, description }) => (
+const Helmett = ({ title, description, page }) => (
   <StaticQuery
     query={graphql`
       query {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
         contentfulWebsiteInformation {
           id
           websiteName
@@ -27,6 +31,7 @@ const Helmett = ({ title, description }) => (
         }
     `}
     render={data => {
+        const pageUrl = page ? data.site.siteMetadata.siteUrl + "/" + page : data.site.siteMetadata.siteUrl
         const metaDescription = description || data.contentfulWebsiteInformation.websiteDescription.websiteDescription
         const metaTitle = title ? title + " | " + data.contentfulWebsiteInformation.websiteName : data.contentfulWebsiteInformation.websiteName
       return (
@@ -58,6 +63,7 @@ const Helmett = ({ title, description }) => (
           <meta property="og:site_name" content={metaTitle} />
           <meta property="og:locale" content="en_US" />
           <meta property="og:type" content="website" />
+          <meta property="og:url" content={pageUrl} />
 
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content={metaTitle} />

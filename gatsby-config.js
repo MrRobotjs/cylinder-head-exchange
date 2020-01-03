@@ -3,9 +3,9 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `Cylinder Head Exchange`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@Christopher Ramos`,
     siteUrl: `https://cylinderheadexchangeshop.com`,
+    siteUrlClean: `cylinderheadexchangeshop.com`,
   },
   plugins: [
     {
