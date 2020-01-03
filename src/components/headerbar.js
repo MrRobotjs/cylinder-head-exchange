@@ -118,6 +118,14 @@ const InfoBar = styled.div`
     font-weight: 600;
     a {
       color: inherit;
+      &:hover {
+        color: ${variable.SiteColor};
+        svg {
+          path {
+            fill: ${variable.SiteColor};
+          }
+        }
+      }
     }
     svg {
       height: 11px;
