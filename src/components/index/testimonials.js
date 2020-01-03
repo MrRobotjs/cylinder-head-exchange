@@ -299,6 +299,7 @@ flex-direction: column;
             .widget-ratings {
                 svg {
                     margin-bottom: unset;
+                    display: initial;
                 }
             }
             ${Desc} {
