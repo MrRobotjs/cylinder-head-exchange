@@ -19,8 +19,8 @@ const Helmett = ({ title, description }) => (
               websiteDescription
           }
           favicon180x180 {
-              fixed {
-                ...GatsbyContentfulFixed
+              fixed(width: 100) {
+                ...GatsbyContentfulFixed_noBase64
               }
             }
           }
@@ -48,12 +48,12 @@ const Helmett = ({ title, description }) => (
 
           <link rel="mask-icon" href={Safari} color={variable.SiteColor}/>
 
-          <meta name="msapplication-TileColor" content="#2b5797"/>
+          <meta name="msapplication-TileColor" content={variable.SiteColor}/>
           <meta name="msapplication-TileImage" content={Tile}/>
           <meta name="msapplication-config" content="/browserconfig.xml"/>
 
           <meta property="og:title" content={metaTitle} />
-          <meta property="og:description" content={description} />
+          <meta property="og:description" content={metaDescription} />
           <meta property="og:image" content={Favicon180.fixed} />
           <meta property="og:site_name" content={metaTitle} />
           <meta property="og:locale" content="en_US" />
