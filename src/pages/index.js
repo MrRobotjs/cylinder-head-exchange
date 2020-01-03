@@ -16,7 +16,7 @@ import Testimonials from '../components/index/testimonials.js'
 /*#f3f3f3*/
 export default ({ data }) => (
   <>
-    <HELMET title="Home" description="Description coming from Index" />
+    <HELMET description="Cylinder Head Exchange is an independent machine shop, We specialize in cylinder head re-manufacturing and repair for most makes and models. If a head can be saved, we can save it and in turn save you money!" />
 
     <Hero/>
 
