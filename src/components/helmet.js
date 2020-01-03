@@ -64,6 +64,7 @@ const Helmett = ({ title, description, page }) => (
           <meta property="og:locale" content="en_US" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={pageUrl} />
+          <meta property="fb:app_id" content="809824489490456" />
 
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content={metaTitle} />
