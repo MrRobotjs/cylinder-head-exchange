@@ -42,7 +42,7 @@ class Header extends React.Component {
             <Directionsbtn
             href="https://www.google.com/local/place/getaquote?qe=4298828&g2lb=4297498&hl=en&gl=us&lid=4578751527000397004&gie=true&n=Q3lsaW5kZXIgSGVhZCBFeGNoYW5nZQ%3D%3D&c=gcid:auto_repair_shop&ll=DYqXTBQV2pvauQ%3D%3D&cv=CHECK_PRICING"
             target="_blank"
-            rel="noreferrer">Get Quote</Directionsbtn>
+            rel="noopener noreferrer">Get Quote</Directionsbtn>
           </Ripplescontainer>
         </Actionbtns>
       </NavigatonBar>

@@ -155,8 +155,8 @@ class Testimonials extends React.Component {
                 </AliceCarousel>
             </Container>
             <Buttons>
-                <Secondary href="https://www.google.com/maps/place/Cylinder+Head+Exchange/@34.056385,-117.6877477,17z/data=!3m1!4b1!4m7!3m6!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!8m2!3d34.056385!4d-117.685559!9m1!1b1" target="_blank">Read All</Secondary>
-                <Primary href="https://g.page/Cylinder-Head-Exchange-Shop?share" target="_blank">Leave A Review</Primary>
+                <Secondary href="https://www.google.com/maps/place/Cylinder+Head+Exchange/@34.056385,-117.6877477,17z/data=!3m1!4b1!4m7!3m6!1s0x80c333c0eb3839e5:0xae9d7fc2b83f00bd!8m2!3d34.056385!4d-117.685559!9m1!1b1" target="_blank" rel="noopener noreferrer">Read All</Secondary>
+                <Primary href="https://g.page/Cylinder-Head-Exchange-Shop?share" target="_blank" rel="noopener noreferrer">Leave A Review</Primary>
             </Buttons>
         </Section>
 )}

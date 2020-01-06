@@ -12,6 +12,7 @@ import DirectionsHours from '../components/index/directions-hours'
 import WhyUs from '../components/index/why-us'
 import { Link } from "gatsby"
 import Testimonials from '../components/index/testimonials.js'
+import Pricing from '../components/index/pricing'
 
 /*#f3f3f3*/
 export default ({ data }) => (
@@ -51,7 +52,7 @@ export default ({ data }) => (
         <Container>
 
           <Card type="Engine">
-            <Url to={"/"}>Engine Service</Url>
+            <Url to="#pricing">Engine Service</Url>
             <Top>
               <Icon>
                 <svg
@@ -71,7 +72,7 @@ export default ({ data }) => (
           </Card>
 
           <Card type="Cylinder">
-            <Url to={"/"}>Cylinder Head Service</Url>
+            <Url to="#pricing">Cylinder Head Service</Url>
             <Top>
                 <Icon>
                   <svg
@@ -94,7 +95,7 @@ export default ({ data }) => (
           </Card>
 
           <Card type="Leak">
-            <Url to={"/"}>Leak Checks</Url>
+            <Url to="#pricing">Leak Checks</Url>
             <Top>
               <Icon>
                 <svg
@@ -117,6 +118,7 @@ export default ({ data }) => (
           </Card>
         </Container>
     </Content>
+
 
     <EmailContainer id="email">
       <Text>Sign up for exclusive offers now!</Text>
