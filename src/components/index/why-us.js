@@ -493,7 +493,7 @@ padding: 5rem 0;
                 font-weight: bold;
                 font-size: 1.2rem;
                 display: flex;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
                 p {
                     margin: unset;
                     align-self: center;
